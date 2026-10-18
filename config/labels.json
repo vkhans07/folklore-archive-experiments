@@ -1,0 +1,25 @@
+{
+  "status": "candidate_from_annotation_export; definitions_provisional_not_authoritative",
+  "labels": {
+    "collection_context": "Context describing how or when the folklore was learned or collected.",
+    "collection_date": "Date of collection as written on the page.",
+    "collector_address": "Collector's address or location line.",
+    "collector_age": "Collector's age.",
+    "collector_annotation": "Collector's commentary or analysis of the folklore.",
+    "collector_name": "Collector's name.",
+    "folklore_genre": "Genre designation for the folklore item.",
+    "folklore_item": "The folklore story, saying, proverb, or other primary item.",
+    "folklore_language": "Language of the folklore item.",
+    "folklore_origin": "Stated cultural or geographic origin of the folklore.",
+    "folklore_translation": "Translation or gloss of the folklore item.",
+    "informant_address": "Informant's address or location line.",
+    "informant_age": "Informant's age.",
+    "informant_ethnicity": "Informant's stated ethnicity.",
+    "informant_explanation": "Informant's explanation, interpretation, or usage of the folklore.",
+    "informant_gender": "Informant's stated gender.",
+    "informant_languages": "Languages spoken by the informant.",
+    "informant_name": "Informant's name.",
+    "informant_occupation": "Informant's occupation or role.",
+    "informant_region": "Region or background associated with the informant."
+  }
+}

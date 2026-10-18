@@ -1,0 +1,11 @@
+{
+  "provider": "anthropic_direct",
+  "models": {
+    "sonnet": {"id": "claude-sonnet-5-5", "provider": "anthropic_direct"},
+    "haiku": {"id": "claude-haiku-5-5", "provider": "anthropic_direct"},
+    "gemini_flash": {"id": "gemini-3.8-flash", "provider": "gemini_api", "thinking_level": "medium"},
+    "gemini_flash_high": {"id": "gemini-3.8-flash", "provider": "gemini_api", "thinking_level": "high"}
+  },
+  "generation": {"max_tokens": 16384, "temperature": 0},
+  "transport": {"max_attempts": 3, "initial_backoff_seconds": 1, "timeout_seconds": 120}
+}

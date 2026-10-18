@@ -1,0 +1,9 @@
+{
+  "documents": [
+    {"doc_id": "00003_Legend_Vietnam__38.pdf", "pdf": "JSONs/Legend Vietnam 38.pdf"},
+    {"doc_id": "00001_09_Taiwan_holiday_lore__93.pdf", "pdf": "JSONs/Taiwan Holiday Lore.pdf"},
+    {"doc_id": "00002_86_Turkey_Proverbs_III__147.pdf", "pdf": "JSONs/Turkey Proverbs.pdf"},
+    {"doc_id": "00002_56_Thailand_Folkspeech__38.pdf", "pdf": "JSONs/Thailand Folkspeech.pdf"},
+    {"doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf", "pdf": "JSONs/Anglo Folkspeech VI.pdf"}
+  ]
+}

@@ -1,0 +1,130 @@
+import csv
+from collections import defaultdict
+from pathlib import Path
+
+import fitz
+from PIL import Image, ImageDraw, ImageFont
+
+from .common import OUTPUT, ROOT, manifest, read_json, write_json
+from .matching import edit_distance, prf, region_pairs, text_exact_count
+from .references import load_references
+
+
+def score_document(refs, preds):
+    text_tp = text_exact_count(refs, preds)
+    pairs = region_pairs(refs, preds)
+    box_tp = len(pairs)
+    text_p, text_r, text_f1 = prf(text_tp, len(preds), len(refs))
+    box_p, box_r, box_f1 = prf(box_tp, len(preds), len(refs))
+    distances = [edit_distance(refs[i]["text"], preds[j]["text"]) for i, j, _ in pairs]
+    return {"reference_count": len(refs), "prediction_count": len(preds), "text_tp": text_tp, "text_fp": len(preds) - text_tp, "text_fn": len(refs) - text_tp, "text_precision": text_p, "text_recall": text_r, "text_f1": text_f1, "box_tp": box_tp, "box_fp": len(preds) - box_tp, "box_fn": len(refs) - box_tp, "box_precision": box_p, "box_recall": box_r, "box_f1": box_f1, "matched_mean_iou": sum(v for _, _, v in pairs) / box_tp if box_tp else None, "box_matched_char_edit_total": sum(distances), "box_matched_char_edit_mean": sum(distances) / len(distances) if distances else None, "box_matched_char_edit_distances": distances}
+
+
+def render_overlays(doc, refs, preds, destination):
+    source = fitz.open(ROOT / doc["pdf"])
+    destination.mkdir(parents=True, exist_ok=True)
+    for page_num, page in enumerate(source):
+        pix = page.get_pixmap(matrix=fitz.Matrix(1.5, 1.5), alpha=False)
+        image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+        draw = ImageDraw.Draw(image)
+        for color, rows, prefix in (("#008441", refs, "R"), ("#e12323", preds, "P")):
+            for row in rows:
+                if row["page_num"] != page_num:
+                    continue
+                x0, y0, x1, y1 = row["bbox"]
+                box = (x0 * pix.width, y0 * pix.height, x1 * pix.width, y1 * pix.height)
+                draw.rectangle(box, outline=color, width=2)
+                title = prefix + ":" + row["label"]
+                draw.text((box[0] + 2, max(0, box[1] - 12)), title, fill=color, font=ImageFont.load_default())
+        image.save(destination / ("page_%02d.png" % page_num))
+
+
+def _csv(path, rows):
+    if not rows:
+        Path(path).write_text("", encoding="utf-8")
+        return
+    keys = sorted(set().union(*(row.keys() for row in rows)))
+    with open(path, "w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=keys)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({k: row.get(k) for k in keys})
+
+
+def evaluate(phase="evaluation", selected_doc=None, selected_model=None):
+    docs = manifest()
+    if selected_doc:
+        docs = [d for d in docs if d["doc_id"] == selected_doc]
+        if not docs:
+            raise ValueError("Unknown document: " + selected_doc)
+    prepared = {}
+    for doc in docs:
+        path = OUTPUT / "inputs" / (Path(doc["doc_id"]).stem + ".json")
+        prepared[doc["doc_id"]] = read_json(path)
+    refs, flags, audit = load_references(docs, prepared)
+    integrity = read_json(ROOT / "config/integrity.json")
+    for doc in docs:
+        doc_id = doc["doc_id"]
+        if len(refs[doc_id]) != integrity["expected_counts"][doc_id]:
+            raise ValueError("Reference count integrity failure: " + doc_id)
+        if sorted(set(r["page_num"] for r in refs[doc_id])) != integrity["expected_pages"][doc_id]:
+            raise ValueError("Reference page integrity failure: " + doc_id)
+    result_dir = OUTPUT / "evaluation" / phase
+    result_dir.mkdir(parents=True, exist_ok=True)
+    write_json(result_dir / "reference_audit.json", audit)
+    write_json(result_dir / "review_flags.json", flags)
+    rows = []
+    for doc in docs:
+        doc_id = doc["doc_id"]
+        run_root = OUTPUT / "runs" / phase
+        found = list(run_root.glob("*/" + Path(doc_id).stem + "/*/run.json")) if run_root.exists() else []
+        selected = {}
+        for path in found:
+            record = read_json(path)
+            alias = record["model_alias"]
+            if selected_model and alias != selected_model:
+                continue
+            if alias not in selected or path.stat().st_mtime > selected[alias][0].stat().st_mtime:
+                selected[alias] = (path, record)
+        if not selected:
+            render_overlays(doc, refs[doc_id], [], result_dir / "overlays" / "reference_only" / Path(doc_id).stem)
+        for alias, (path, record) in selected.items():
+            pred_path = path.parent / "predictions.json"
+            preds = read_json(pred_path)["annotations"] if record.get("schema_compliant") and pred_path.exists() else []
+            metrics = score_document(refs[doc_id], preds) if record.get("request_completed") else None
+            row = {"phase": phase, "doc_id": doc_id, "model_alias": alias, "requested_model": record["requested_model"], "returned_model": record.get("returned_model"), "run_path": str(path), "prompt_sha256": record["system_prompt_sha256"], "request_completed": record["request_completed"], "json_parsed": record["json_parsed"], "schema_compliant": record["schema_compliant"], "transport_failure": not record["request_completed"], "truncated": record["truncated"], "latency_seconds": record["latency_seconds"], "finish_reason": record["finish_reason"], "input_tokens": (record.get("usage") or {}).get("input_tokens"), "output_tokens": (record.get("usage") or {}).get("output_tokens"), "request_error": record.get("request_error"), "validation_errors": record.get("errors")}
+            if metrics is not None:
+                row.update(metrics)
+            rows.append(row)
+            render_overlays(doc, refs[doc_id], preds, result_dir / "overlays" / alias / Path(doc_id).stem)
+    write_json(result_dir / "per_document.json", rows)
+    _csv(result_dir / "per_document.csv", [{k: v for k, v in row.items() if not isinstance(v, (list, dict))} for row in rows])
+    return rows
+
+
+def evaluate_archive(phase="evaluation", selected_doc=None, selected_model=None):
+    """Archive outputs have no field-level references; report request/schema status only."""
+    docs = manifest()
+    if selected_doc:
+        docs = [d for d in docs if d["doc_id"] == selected_doc]
+        if not docs:
+            raise ValueError("Unknown document: " + selected_doc)
+    run_root = OUTPUT / "runs" / "archive" / phase
+    rows = []
+    for doc in docs:
+        found = list(run_root.glob("*/" + Path(doc["doc_id"]).stem + "/*/run.json")) if run_root.exists() else []
+        selected = {}
+        for path in found:
+            record = read_json(path)
+            alias = record["model_alias"]
+            if selected_model and alias != selected_model:
+                continue
+            if alias not in selected or path.stat().st_mtime > selected[alias][0].stat().st_mtime:
+                selected[alias] = (path, record)
+        for alias, (path, record) in selected.items():
+            rows.append({"target": "archive", "phase": phase, "doc_id": doc["doc_id"], "model_alias": alias, "requested_model": record["requested_model"], "returned_model": record.get("returned_model"), "run_path": str(path), "prompt_sha256": record["system_prompt_sha256"], "request_completed": record["request_completed"], "json_parsed": record["json_parsed"], "schema_compliant": record["schema_compliant"], "transport_failure": not record["request_completed"], "truncated": record["truncated"], "latency_seconds": record["latency_seconds"], "finish_reason": record["finish_reason"], "input_tokens": (record.get("usage") or {}).get("input_tokens"), "output_tokens": (record.get("usage") or {}).get("output_tokens"), "request_error": record.get("request_error"), "validation_errors": record.get("errors")})
+    destination = OUTPUT / "evaluation" / "archive" / phase
+    destination.mkdir(parents=True, exist_ok=True)
+    write_json(destination / "per_document.json", rows)
+    _csv(destination / "per_document.csv", [{k: v for k, v in row.items() if not isinstance(v, (list, dict))} for row in rows])
+    return rows

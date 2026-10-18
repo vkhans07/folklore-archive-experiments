@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Folklore archive document",
+  "description": "Separate archive representation supplied by the user. It is not the region prediction contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["_id", "filename", "contributor", "folklore", "collector", "analysis", "storage_medium", "cleaned_full_text", "date_collected", "location_collected"],
+  "properties": {
+    "_id": {"type": ["string", "null"], "description": "MongoDB document ID; null until one is assigned by storage."},
+    "filename": {"type": "string", "description": "Path to the source PDF."},
+    "contributor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "age_bucket", "gender", "ethnicity", "nationality", "languages_spoken", "occupation"],
+      "properties": {
+        "name": {"type": ["string", "null"]},
+        "age_bucket": {"enum": ["18-24", "25-34", "35-44", "45-4", "55-64", "65+", null], "$comment": "45-4 is preserved exactly as supplied; confirmation requested."},
+        "gender": {"type": ["string", "null"]},
+        "ethnicity": {"type": ["string", "null"]},
+        "nationality": {"type": ["string", "null"]},
+        "languages_spoken": {"type": "array", "items": {"type": "string"}},
+        "occupation": {"type": ["string", "null"]}
+      }
+    },
+    "folklore": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item", "medium", "translation", "place_mentioned"],
+      "properties": {
+        "item": {"type": "string", "description": "Folklore text."},
+        "medium": {"type": ["string", "null"], "description": "Medium of the folklore, such as Oral; distinct from storage_medium."},
+        "translation": {"type": ["string", "null"]},
+        "place_mentioned": {"type": "array", "items": {"$ref": "#/$defs/location"}}
+      }
+    },
+    "collector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "gender", "collector_comments"],
+      "properties": {
+        "name": {"type": ["string", "null"]},
+        "gender": {"type": ["string", "null"]},
+        "collector_comments": {"type": ["string", "null"]}
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["context", "interpretation", "collector_comments"],
+      "properties": {
+        "context": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["use_context", "cultural_background", "collection_context"],
+          "properties": {
+            "use_context": {"type": ["string", "null"], "description": "When people tell or use the folklore."},
+            "cultural_background": {"type": ["string", "null"], "description": "Relevant cultural context."},
+            "collection_context": {"type": ["string", "null"], "description": "How the folklore was collected."}
+          }
+        },
+        "interpretation": {"type": ["string", "null"], "description": "Interpretation of the material."},
+        "collector_comments": {"type": ["string", "null"]}
+      }
+    },
+    "storage_medium": {"type": "string", "description": "Storage format, such as PDF; distinct from folklore.medium."},
+    "cleaned_full_text": {"type": "string", "description": "Full cleaned text of the source document."},
+    "date_collected": {"type": ["string", "null"], "description": "Collection date; no input date format was mandated."},
+    "location_collected": {"$ref": "#/$defs/location"}
+  },
+  "$defs": {
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["city", "state", "country", "geolocation"],
+      "properties": {
+        "city": {"type": ["string", "null"]},
+        "state": {"type": ["string", "null"]},
+        "country": {"type": ["string", "null"]},
+        "geolocation": {"description": "Format not specified in the supplied schema; null is allowed."}
+      }
+    }
+  }
+}
