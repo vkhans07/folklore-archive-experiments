@@ -22,7 +22,8 @@ def report(phase="evaluation", prompt_version=None):
         completed = [r for r in group if r["request_completed"]]
         parsed = [r for r in completed if r["json_parsed"]]
         compliant = [r for r in completed if r["schema_compliant"]]
-        summary = {"phase": phase, "model_alias": alias, "prompt_sha256": prompt_hash, "attempted": len(group), "request_completed": len(completed), "transport_failures": len(group) - len(completed), "json_parsed": len(parsed), "schema_compliant": len(compliant), "request_completion_rate": len(completed) / len(group), "json_parsing_rate_of_completed": len(parsed) / len(completed) if completed else None, "schema_compliance_rate_of_completed": len(compliant) / len(completed) if completed else None}
+        missing_records = [r for r in group if r.get("missing_run_record")]
+        summary = {"phase": phase, "model_alias": alias, "prompt_sha256": prompt_hash, "expected_combinations": len(group), "run_records": len(group) - len(missing_records), "request_completed": len(completed), "transport_failures": sum(bool(r.get("transport_failure")) for r in group), "missing_run_records": len(missing_records), "unrecorded_request_artifacts": sum(bool(r.get("request_artifact_exists")) for r in missing_records), "json_parsed": len(parsed), "schema_compliant": len(compliant), "request_completion_rate": len(completed) / len(group), "json_parsing_rate_of_completed": len(parsed) / len(completed) if completed else None, "schema_compliance_rate_of_completed": len(compliant) / len(completed) if completed else None}
         for family, tp_key, fp_key, fn_key in (("text", "text_tp", "text_fp", "text_fn"), ("box", "box_tp", "box_fp", "box_fn")):
             tp = sum(r[tp_key] for r in completed)
             fp = sum(r[fp_key] for r in completed)
@@ -33,6 +34,8 @@ def report(phase="evaluation", prompt_version=None):
         summary["matched_mean_iou"] = sum((r["matched_mean_iou"] or 0) * r["box_tp"] for r in completed) / box_tp if box_tp else None
         summary["box_matched_char_edit_total"] = sum(r["box_matched_char_edit_total"] for r in completed)
         summary["box_matched_char_edit_mean"] = summary["box_matched_char_edit_total"] / box_tp if box_tp else None
+        summary["box_matched_reference_char_count"] = sum(r["box_matched_reference_char_count"] for r in completed)
+        summary["box_matched_char_error_rate"] = summary["box_matched_char_edit_total"] / summary["box_matched_reference_char_count"] if summary["box_matched_reference_char_count"] else None
         aggregate.append(summary)
     destination = path.parent
     write_json(destination / "aggregate.json", aggregate)

@@ -7,8 +7,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 from .common import OUTPUT, ROOT, evaluation_directory, manifest, read_json, run_directory, write_json
 from .predict import prompt_fingerprint, resolve_prompt_version
-from .matching import edit_distance, prf, region_pairs, text_exact_count
+from .matching import edit_distance, normalized_text, prf, region_pairs, text_exact_count
 from .references import load_references
+from .settings import model_settings
 
 
 def score_document(refs, preds):
@@ -18,7 +19,9 @@ def score_document(refs, preds):
     text_p, text_r, text_f1 = prf(text_tp, len(preds), len(refs))
     box_p, box_r, box_f1 = prf(box_tp, len(preds), len(refs))
     distances = [edit_distance(refs[i]["text"], preds[j]["text"]) for i, j, _ in pairs]
-    return {"reference_count": len(refs), "prediction_count": len(preds), "text_tp": text_tp, "text_fp": len(preds) - text_tp, "text_fn": len(refs) - text_tp, "text_precision": text_p, "text_recall": text_r, "text_f1": text_f1, "box_tp": box_tp, "box_fp": len(preds) - box_tp, "box_fn": len(refs) - box_tp, "box_precision": box_p, "box_recall": box_r, "box_f1": box_f1, "matched_mean_iou": sum(v for _, _, v in pairs) / box_tp if box_tp else None, "box_matched_char_edit_total": sum(distances), "box_matched_char_edit_mean": sum(distances) / len(distances) if distances else None, "box_matched_char_edit_distances": distances}
+    matched_reference_chars = sum(len(normalized_text(refs[i]["text"])) for i, _, _ in pairs)
+    edit_total = sum(distances)
+    return {"reference_count": len(refs), "prediction_count": len(preds), "text_tp": text_tp, "text_fp": len(preds) - text_tp, "text_fn": len(refs) - text_tp, "text_precision": text_p, "text_recall": text_r, "text_f1": text_f1, "box_tp": box_tp, "box_fp": len(preds) - box_tp, "box_fn": len(refs) - box_tp, "box_precision": box_p, "box_recall": box_r, "box_f1": box_f1, "matched_mean_iou": sum(v for _, _, v in pairs) / box_tp if box_tp else None, "box_matched_char_edit_total": edit_total, "box_matched_char_edit_mean": edit_total / len(distances) if distances else None, "box_matched_reference_char_count": matched_reference_chars, "box_matched_char_error_rate": edit_total / matched_reference_chars if matched_reference_chars else None, "box_matched_char_edit_distances": distances}
 
 
 def render_overlays(doc, refs, preds, destination):
@@ -77,6 +80,9 @@ def evaluate(phase="evaluation", selected_doc=None, selected_model=None, prompt_
     write_json(result_dir / "reference_audit.json", audit)
     write_json(result_dir / "review_flags.json", flags)
     rows = []
+    expected_models = model_settings()["models"]
+    if selected_model:
+        expected_models = {selected_model: expected_models[selected_model]}
     for doc in docs:
         doc_id = doc["doc_id"]
         run_root = run_directory(OUTPUT, phase, "regions", version)
@@ -103,6 +109,35 @@ def evaluate(phase="evaluation", selected_doc=None, selected_model=None, prompt_
             row["prompt_version"] = version
             rows.append(row)
             render_overlays(doc, refs[doc_id], preds, result_dir / "overlays" / alias / Path(doc_id).stem)
+        for alias, model in expected_models.items():
+            if alias in selected:
+                continue
+            model_dir = run_root / alias / Path(doc_id).stem
+            has_request = any(model_dir.glob("*/request.json")) if model_dir.exists() else False
+            rows.append({
+                "phase": phase,
+                "doc_id": doc_id,
+                "model_alias": alias,
+                "requested_model": model["id"],
+                "returned_model": None,
+                "run_path": None,
+                "prompt_sha256": fingerprint["system_prompt_sha256"],
+                "request_completed": False,
+                "json_parsed": False,
+                "schema_compliant": False,
+                "transport_failure": False,
+                "missing_run_record": True,
+                "request_artifact_exists": has_request,
+                "run_status": "interrupted_request_artifact" if has_request else "no_run_record",
+                "truncated": False,
+                "latency_seconds": None,
+                "finish_reason": None,
+                "input_tokens": None,
+                "output_tokens": None,
+                "request_error": None,
+                "validation_errors": [],
+                "prompt_version": version,
+            })
     if not rows and prompt_version is not None:
         raise ValueError("No matching region runs for " + version + "; run predict with this version first")
     write_json(result_dir / "per_document.json", rows)
