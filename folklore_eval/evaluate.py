@@ -5,7 +5,8 @@ from pathlib import Path
 import fitz
 from PIL import Image, ImageDraw, ImageFont
 
-from .common import OUTPUT, ROOT, manifest, read_json, write_json
+from .common import OUTPUT, ROOT, evaluation_directory, manifest, read_json, run_directory, write_json
+from .predict import prompt_fingerprint, resolve_prompt_version
 from .matching import edit_distance, prf, region_pairs, text_exact_count
 from .references import load_references
 
@@ -51,7 +52,9 @@ def _csv(path, rows):
             writer.writerow({k: row.get(k) for k in keys})
 
 
-def evaluate(phase="evaluation", selected_doc=None, selected_model=None):
+def evaluate(phase="evaluation", selected_doc=None, selected_model=None, prompt_version=None):
+    version = resolve_prompt_version("regions", prompt_version)
+    fingerprint = prompt_fingerprint("regions", version)
     docs = manifest()
     if selected_doc:
         docs = [d for d in docs if d["doc_id"] == selected_doc]
@@ -69,18 +72,20 @@ def evaluate(phase="evaluation", selected_doc=None, selected_model=None):
             raise ValueError("Reference count integrity failure: " + doc_id)
         if sorted(set(r["page_num"] for r in refs[doc_id])) != integrity["expected_pages"][doc_id]:
             raise ValueError("Reference page integrity failure: " + doc_id)
-    result_dir = OUTPUT / "evaluation" / phase
+    result_dir = evaluation_directory(OUTPUT, phase, "regions", version)
     result_dir.mkdir(parents=True, exist_ok=True)
     write_json(result_dir / "reference_audit.json", audit)
     write_json(result_dir / "review_flags.json", flags)
     rows = []
     for doc in docs:
         doc_id = doc["doc_id"]
-        run_root = OUTPUT / "runs" / phase
+        run_root = run_directory(OUTPUT, phase, "regions", version)
         found = list(run_root.glob("*/" + Path(doc_id).stem + "/*/run.json")) if run_root.exists() else []
         selected = {}
         for path in found:
             record = read_json(path)
+            if any(record.get(k) != v for k, v in fingerprint.items()):
+                continue
             alias = record["model_alias"]
             if selected_model and alias != selected_model:
                 continue
@@ -95,15 +100,19 @@ def evaluate(phase="evaluation", selected_doc=None, selected_model=None):
             row = {"phase": phase, "doc_id": doc_id, "model_alias": alias, "requested_model": record["requested_model"], "returned_model": record.get("returned_model"), "run_path": str(path), "prompt_sha256": record["system_prompt_sha256"], "request_completed": record["request_completed"], "json_parsed": record["json_parsed"], "schema_compliant": record["schema_compliant"], "transport_failure": not record["request_completed"], "truncated": record["truncated"], "latency_seconds": record["latency_seconds"], "finish_reason": record["finish_reason"], "input_tokens": (record.get("usage") or {}).get("input_tokens"), "output_tokens": (record.get("usage") or {}).get("output_tokens"), "request_error": record.get("request_error"), "validation_errors": record.get("errors")}
             if metrics is not None:
                 row.update(metrics)
+            row["prompt_version"] = version
             rows.append(row)
             render_overlays(doc, refs[doc_id], preds, result_dir / "overlays" / alias / Path(doc_id).stem)
+    if not rows and prompt_version is not None:
+        raise ValueError("No matching region runs for " + version + "; run predict with this version first")
     write_json(result_dir / "per_document.json", rows)
     _csv(result_dir / "per_document.csv", [{k: v for k, v in row.items() if not isinstance(v, (list, dict))} for row in rows])
     return rows
 
 
-def evaluate_archive(phase="evaluation", selected_doc=None, selected_model=None):
+def evaluate_archive(phase="evaluation", selected_doc=None, selected_model=None, prompt_version=None):
     """Archive outputs have no field-level references; report request/schema status only."""
+    fingerprint = prompt_fingerprint("archive", prompt_version) if prompt_version is not None else None
     docs = manifest()
     if selected_doc:
         docs = [d for d in docs if d["doc_id"] == selected_doc]
@@ -116,6 +125,8 @@ def evaluate_archive(phase="evaluation", selected_doc=None, selected_model=None)
         selected = {}
         for path in found:
             record = read_json(path)
+            if fingerprint and any(record.get(k) != v for k, v in fingerprint.items()):
+                continue
             alias = record["model_alias"]
             if selected_model and alias != selected_model:
                 continue
@@ -123,7 +134,9 @@ def evaluate_archive(phase="evaluation", selected_doc=None, selected_model=None)
                 selected[alias] = (path, record)
         for alias, (path, record) in selected.items():
             rows.append({"target": "archive", "phase": phase, "doc_id": doc["doc_id"], "model_alias": alias, "requested_model": record["requested_model"], "returned_model": record.get("returned_model"), "run_path": str(path), "prompt_sha256": record["system_prompt_sha256"], "request_completed": record["request_completed"], "json_parsed": record["json_parsed"], "schema_compliant": record["schema_compliant"], "transport_failure": not record["request_completed"], "truncated": record["truncated"], "latency_seconds": record["latency_seconds"], "finish_reason": record["finish_reason"], "input_tokens": (record.get("usage") or {}).get("input_tokens"), "output_tokens": (record.get("usage") or {}).get("output_tokens"), "request_error": record.get("request_error"), "validation_errors": record.get("errors")})
-    destination = OUTPUT / "evaluation" / "archive" / phase
+    if not rows and prompt_version is not None:
+        raise ValueError("No matching archive runs for " + prompt_version)
+    destination = evaluation_directory(OUTPUT, phase, "archive", prompt_version)
     destination.mkdir(parents=True, exist_ok=True)
     write_json(destination / "per_document.json", rows)
     _csv(destination / "per_document.csv", [{k: v for k, v in row.items() if not isinstance(v, (list, dict))} for row in rows])

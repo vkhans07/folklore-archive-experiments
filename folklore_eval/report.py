@@ -1,14 +1,19 @@
 from collections import defaultdict
 from pathlib import Path
 
-from .common import OUTPUT, read_json, write_json
+from .common import OUTPUT, evaluation_directory, read_json, write_json
 from .evaluate import _csv
+from .predict import prompt_fingerprint, resolve_prompt_version
 from .matching import prf
 
 
-def report(phase="evaluation"):
-    path = OUTPUT / "evaluation" / phase / "per_document.json"
+def report(phase="evaluation", prompt_version=None):
+    version = resolve_prompt_version("regions", prompt_version)
+    path = evaluation_directory(OUTPUT, phase, "regions", version) / "per_document.json"
     rows = read_json(path)
+    expected_hash = prompt_fingerprint("regions", version)["system_prompt_sha256"]
+    if any(row["prompt_sha256"] != expected_hash for row in rows):
+        raise ValueError("Report contains a different region prompt; rerun evaluate for " + version)
     groups = defaultdict(list)
     for row in rows:
         groups[(row["model_alias"], row["prompt_sha256"])].append(row)
@@ -35,9 +40,15 @@ def report(phase="evaluation"):
     return aggregate
 
 
-def report_archive(phase="evaluation"):
-    path = OUTPUT / "evaluation" / "archive" / phase / "per_document.json"
+def report_archive(phase="evaluation", prompt_version=None):
+    if prompt_version is not None:
+        resolve_prompt_version("archive", prompt_version)
+    path = evaluation_directory(OUTPUT, phase, "archive", prompt_version) / "per_document.json"
     rows = read_json(path)
+    if prompt_version is not None:
+        expected_hash = prompt_fingerprint("archive", prompt_version)["system_prompt_sha256"]
+        if any(row["prompt_sha256"] != expected_hash for row in rows):
+            raise ValueError("Report contains a different archive prompt; rerun evaluate")
     groups = defaultdict(list)
     for row in rows:
         groups[(row["model_alias"], row["prompt_sha256"])].append(row)

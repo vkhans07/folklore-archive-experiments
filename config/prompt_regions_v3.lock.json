@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-10-19T03:55:25.430544+00:00",
+  "labels_sha256": "15b64d83707f4d3df55963887ecfdd26789847f998dfda638caf03ba95660195",
+  "prompt_version": "regions_v3",
+  "schema_sha256": "69b155692dd189a98034d8488e13e53baffb72162e849a170bf8637bf9bcfb16",
+  "system_prompt_sha256": "d03541010171f9e814bc4665c4d41d17e3d2e2f7bdba11eefb30bf3879d4874a",
+  "target": "regions"
+}

@@ -43,3 +43,21 @@ def manifest():
     if len(paths) != len(set(paths)):
         raise ValueError("One PDF mapped to multiple document IDs")
     return docs
+
+
+def evaluation_directory(output, phase, target, prompt_version=None):
+    base = output / "evaluation"
+    if target == "archive":
+        base = base / "archive"
+    base = base / phase
+    if prompt_version in ("regions_v3", "archive_v3"):
+        base = base / prompt_version
+    return base
+
+
+def run_directory(output, phase, target, prompt_version=None):
+    if target == "archive":
+        return output / "runs" / "archive" / phase
+    if prompt_version == "regions_v3":
+        return output / "runs" / "regions_v3" / phase
+    return output / "runs" / phase

@@ -4,28 +4,49 @@ from pathlib import Path
 
 import anthropic
 
-from .common import OUTPUT, ROOT, canonical, file_sha, manifest, read_json, sha, write_json
+from .common import OUTPUT, ROOT, canonical, file_sha, manifest, read_json, run_directory, sha, write_json
 from .provider import request_anthropic_direct, request_gemini_api, request_gemini_vertex, request_vertex
 from .settings import model_settings
 from .validation import parse_archive_response, parse_response
 
 
-def prompt_data(target="archive"):
+def resolve_prompt_version(target, prompt_version=None):
+    versions = {"archive": ("archive_v2", "archive_v3"), "regions": ("regions_v1", "regions_v3")}
+    if target not in versions:
+        raise ValueError("target must be archive or regions")
+    version = prompt_version or versions[target][0]
+    if version not in versions[target]:
+        raise ValueError("Prompt version %s is incompatible with target %s" % (version, target))
+    return version
+
+
+def prompt_lock_file(target, prompt_version=None):
+    version = resolve_prompt_version(target, prompt_version)
+    return {"archive_v2": "prompt_archive.lock.json", "archive_v3": "prompt_archive_v3.lock.json",
+            "regions_v1": "prompt.lock.json", "regions_v3": "prompt_regions_v3.lock.json"}[version]
+
+
+def prompt_data(target="archive", prompt_version=None):
+    version = resolve_prompt_version(target, prompt_version)
     if target == "archive":
         schema = read_json(ROOT / "config/archive.schema.json")
-        template = (ROOT / "config/prompt_archive_v2.txt").read_text(encoding="utf-8")
+        prompt_files = {"archive_v2": "prompt_archive_v2.txt", "archive_v3": "prompt_archive_v3_draft.txt"}
+        if version not in prompt_files:
+            raise ValueError("Unknown archive prompt version: " + version)
+        template = (ROOT / "config" / prompt_files[version]).read_text(encoding="utf-8")
         age_choices = [value for value in schema["properties"]["contributor"]["properties"]["age_bucket"]["enum"] if value is not None]
         return template.replace("{AGE_BUCKETS}", ", ".join(age_choices)), schema
     if target == "regions":
         labels = read_json(ROOT / "config/labels.json")["labels"]
-        template = (ROOT / "config/prompt_v1.txt").read_text(encoding="utf-8")
+        filename = "prompt_regions_v3.txt" if version == "regions_v3" else "prompt_v1.txt"
+        template = (ROOT / "config" / filename).read_text(encoding="utf-8")
         label_lines = "\n".join("- %s: %s" % (key, definition) for key, definition in labels.items())
         return template.replace("{LABELS}", label_lines), labels
     raise ValueError("target must be archive or regions")
 
 
-def prompt_fingerprint(target="archive"):
-    prompt, _ = prompt_data(target)
+def prompt_fingerprint(target="archive", prompt_version=None):
+    prompt, _ = prompt_data(target, prompt_version)
     schema_file = "archive.schema.json" if target == "archive" else "annotation.schema.json"
     fingerprint = {"system_prompt_sha256": sha(prompt), "schema_sha256": file_sha(ROOT / "config" / schema_file)}
     if target == "regions":
@@ -33,22 +54,25 @@ def prompt_fingerprint(target="archive"):
     return fingerprint
 
 
-def freeze_prompt(target="archive"):
-    lock = {"target": target, "prompt_version": "archive_v2" if target == "archive" else "regions_v1", **prompt_fingerprint(target), "frozen_at": datetime.now(timezone.utc).isoformat()}
-    lock_file = "prompt_archive.lock.json" if target == "archive" else "prompt.lock.json"
+def freeze_prompt(target="archive", prompt_version=None):
+    version = resolve_prompt_version(target, prompt_version)
+    lock = {"target": target, "prompt_version": version, **prompt_fingerprint(target, version), "frozen_at": datetime.now(timezone.utc).isoformat()}
+    lock_file = prompt_lock_file(target, version)
     write_json(ROOT / "config" / lock_file, lock)
     return lock
 
 
-def predict(selected_doc=None, selected_model=None, phase="development", dry_run=False, resume=True, target="archive"):
+def predict(selected_doc=None, selected_model=None, phase="development", dry_run=False, resume=True, target="archive", prompt_version=None):
     if phase not in ("development", "evaluation"):
         raise ValueError("phase must be development or evaluation")
     config = model_settings()
-    prompt, contract = prompt_data(target)
-    fingerprint = prompt_fingerprint(target)
+    version = resolve_prompt_version(target, prompt_version)
+    prompt, contract = prompt_data(target, version)
+    fingerprint = prompt_fingerprint(target, version)
     runner_versions = {"anthropic_sdk_version": anthropic.__version__, "runner_sha256": file_sha(Path(__file__)), "provider_adapter_sha256": file_sha(ROOT / "folklore_eval/provider.py"), "settings_loader_sha256": file_sha(ROOT / "folklore_eval/settings.py"), "validation_sha256": file_sha(ROOT / "folklore_eval/validation.py")}
     if phase == "evaluation":
-        lock_path = ROOT / "config" / ("prompt_archive.lock.json" if target == "archive" else "prompt.lock.json")
+        lock_name = prompt_lock_file(target, version)
+        lock_path = ROOT / "config" / lock_name
         if not lock_path.exists():
             raise ValueError("Evaluation requires freeze-prompt first")
         lock = read_json(lock_path)
@@ -91,7 +115,7 @@ def predict(selected_doc=None, selected_model=None, phase="development", dry_run
                 request["thinking_level"] = model["thinking_level"]
             cache_basis = {"target": target, "phase": phase, "provider": provider, "project_id": provider_project, "location": location, "request": request, "transport": config["transport"], **fingerprint, **runner_versions}
             key = sha(canonical(cache_basis))
-            run_root = OUTPUT / "runs" / "archive" / phase if target == "archive" else OUTPUT / "runs" / phase
+            run_root = run_directory(OUTPUT, phase, target, version)
             run_dir = run_root / alias / Path(doc["doc_id"]).stem / key
             record_path = run_dir / "run.json"
             if resume:
@@ -148,6 +172,7 @@ def predict(selected_doc=None, selected_model=None, phase="development", dry_run
             if parsed is not None:
                 write_json(run_dir / ("archive.json" if target == "archive" else "predictions.json"), parsed)
             record = {"target": target, "doc_id": doc["doc_id"], "model_alias": alias, "requested_model": model["id"], "returned_model": (raw or {}).get("model"), "provider": provider, "project_id": provider_project, "location": location, "phase": phase, "timestamp_utc": datetime.now(timezone.utc).isoformat(), "request_sha256": sha(canonical(request)), "input_sha256": sha(user_input), **fingerprint, **runner_versions, "cache_key": key, "generation": config["generation"], "transport": config["transport"], "latency_seconds": latency, "attempts": attempts, "usage": (raw or {}).get("usage"), "finish_reason": stop_reason, "truncated": stop_reason == "max_tokens", "request_completed": raw is not None, "json_parsed": json_parsed, "schema_compliant": parsed is not None, "errors": validation_errors, "request_error": error}
+            record["prompt_version"] = version
             write_json(record_path, record)
             outcome = {"doc_id": doc["doc_id"], "model": alias, "status": "complete" if raw else "transport_error", "run": str(record_path)}
             if error:
