@@ -1,0 +1,25 @@
+{
+  "status": "benchmark_aligned_candidate; label_names_match_active_reference_annotations",
+  "labels": {
+    "collection_context": "Source passages about how the folklore was learned, collected, or performed in the recorded account. Keep separate source passages as separate regions.",
+    "collection_date": "The date identified by the source as the date of this collection or interview. Copy the written date; do not substitute a story or holiday date.",
+    "collector_address": "The collector's source address or location line, kept distinct from the informant's line.",
+    "collector_age": "The collector's explicitly stated age, copied literally.",
+    "collector_annotation": "The collector's own commentary, analysis, or editorial interpretation, distinct from the informant's explanation and from the folklore text.",
+    "collector_name": "The source-stated name of the person who collected or recorded the account.",
+    "folklore_genre": "A source-stated genre or form designation associated with the folklore, such as legend, proverb, or a named genre.",
+    "folklore_item": "A title, tale, saying, proverb, or other primary folklore text. Preserve source segmentation: annotate each coherent contiguous block separately, including separate story paragraphs and page-local continuations.",
+    "folklore_language": "A source-stated language designation for the folklore item. Do not infer it only from the language of the text.",
+    "folklore_origin": "The source-stated cultural or geographic origin of the folklore tradition or item, not the informant's residence or the collection location.",
+    "folklore_translation": "A source-provided translation or word-by-word gloss of the folklore item. Keep distinct blocks separate and do not generate translations.",
+    "informant_address": "The informant's source address or location line, kept distinct from the collector's line.",
+    "informant_age": "The informant's explicitly stated age, copied literally; do not convert it to an age range.",
+    "informant_ethnicity": "The informant's explicitly stated ethnicity or ethnic identity. Do not infer it from nationality, residence, or language.",
+    "informant_explanation": "The informant's source-stated explanation, interpretation, or use of the folklore. Preserve the full contiguous passage and its speaker attribution.",
+    "informant_gender": "The informant's explicitly stated gender. Do not infer it from a name or pronouns when the source does not state it as profile information.",
+    "informant_languages": "Languages the source identifies as spoken or known by the informant. Do not infer them from the folklore text alone.",
+    "informant_name": "The source-stated name of the person who provided or is represented as providing the account.",
+    "informant_occupation": "The informant's explicitly stated occupation, student status, or other source-stated role.",
+    "informant_region": "A source-stated regional, geographic, or background description associated with the informant. Do not infer it from an address or birthplace."
+  }
+}

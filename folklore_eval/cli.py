@@ -6,7 +6,7 @@ from .predict import freeze_prompt, predict
 from .prepare import prepare
 from .report import report, report_archive
 
-PROMPT_VERSIONS = ["archive_v2", "archive_v3", "regions_v1", "regions_v3"]
+PROMPT_VERSIONS = ["archive_v2", "archive_v3", "regions_v1", "regions_v3", "regions_v4"]
 
 
 def main():
@@ -25,6 +25,10 @@ def main():
     p.add_argument("--prompt-version", choices=PROMPT_VERSIONS)
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--no-resume", action="store_true")
+    p.add_argument("--concurrency", type=int, default=1, help="Maximum in-flight requests (default: 1)")
+    p.add_argument("--timeout-seconds", type=float)
+    p.add_argument("--max-attempts", type=int)
+    p.add_argument("--initial-backoff-seconds", type=float)
     p = commands.add_parser("evaluate")
     p.add_argument("--prompt-version", choices=PROMPT_VERSIONS)
     p.add_argument("--doc")
@@ -41,7 +45,8 @@ def main():
     elif args.command == "freeze-prompt":
         result = freeze_prompt(args.target, args.prompt_version)
     elif args.command == "predict":
-        result = predict(args.doc, args.model, args.phase, args.dry_run, not args.no_resume, args.target, args.prompt_version)
+        result = predict(args.doc, args.model, args.phase, args.dry_run, not args.no_resume, args.target, args.prompt_version,
+                         args.concurrency, args.timeout_seconds, args.max_attempts, args.initial_backoff_seconds)
     elif args.command == "evaluate":
         result = evaluate_archive(args.phase, args.doc, args.model, args.prompt_version) if args.target == "archive" else evaluate(args.phase, args.doc, args.model, args.prompt_version)
     else:

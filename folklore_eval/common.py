@@ -50,7 +50,7 @@ def evaluation_directory(output, phase, target, prompt_version=None):
     if target == "archive":
         base = base / "archive"
     base = base / phase
-    if prompt_version in ("regions_v3", "archive_v3"):
+    if prompt_version in ("regions_v3", "regions_v4", "archive_v3"):
         base = base / prompt_version
     return base
 
@@ -58,6 +58,6 @@ def evaluation_directory(output, phase, target, prompt_version=None):
 def run_directory(output, phase, target, prompt_version=None):
     if target == "archive":
         return output / "runs" / "archive" / phase
-    if prompt_version == "regions_v3":
-        return output / "runs" / "regions_v3" / phase
+    if prompt_version in ("regions_v3", "regions_v4"):
+        return output / "runs" / prompt_version / phase
     return output / "runs" / phase

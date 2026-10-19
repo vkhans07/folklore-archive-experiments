@@ -25,6 +25,7 @@ class RegionVersionTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "incompatible"):
                 prompt_data(target, version)
         for target, version, filename in [("regions", "regions_v1", "prompt.lock.json"),
+                                           ("regions", "regions_v4", "prompt_regions_v4.lock.json"),
                                            ("archive", "archive_v2", "prompt_archive.lock.json"),
                                            ("archive", "archive_v3", "prompt_archive_v3.lock.json")]:
             lock = read_json(ROOT / "config" / filename)
@@ -33,6 +34,11 @@ class RegionVersionTests(unittest.TestCase):
         self.assertNotIn("{LABELS}", prompt)
         self.assertEqual(len(labels), 20)
         self.assertNotEqual(prompt, prompt_data("regions", "regions_v1")[0])
+        benchmark_prompt, benchmark_labels = prompt_data("regions", "regions_v4")
+        self.assertNotIn("{LABELS}", benchmark_prompt)
+        self.assertEqual(set(benchmark_labels), set(labels))
+        self.assertIn("Split at paragraph or layout boundaries", benchmark_prompt)
+        self.assertNotEqual(benchmark_prompt, prompt)
 
     def test_evaluation_selects_v3_even_when_v1_run_is_newer(self):
         prepared = {"doc_id": DOC["doc_id"], "source_pdf": DOC["pdf"],
@@ -50,13 +56,14 @@ class RegionVersionTests(unittest.TestCase):
                  patch.dict(os.environ, {"ANTHROPIC_API_KEY": "fake-test-key"}), \
                  patch.object(prediction, "request_anthropic_direct", return_value=(raw, 0.1, None, 1)) as provider:
                 paths = {}
-                for version in ("regions_v1", "regions_v3"):
+                for version in ("regions_v1", "regions_v3", "regions_v4"):
                     paths[version] = Path(predict(DOC["doc_id"], "test", target="regions", prompt_version=version)[0]["run"])
-                self.assertEqual(provider.call_count, 2)
+                self.assertEqual(provider.call_count, 3)
                 self.assertEqual(read_json(paths["regions_v3"])["prompt_version"], "regions_v3")
                 self.assertEqual(read_json(paths["regions_v3"].parent / "predictions.json")["annotations"], [annotation])
             os.utime(paths["regions_v1"], (2000000000, 2000000000))
-            with patch.object(evaluation, "OUTPUT", output), patch.object(evaluation, "render_overlays") as render:
+            with patch.object(evaluation, "OUTPUT", output), patch.object(evaluation, "render_overlays") as render, \
+                 patch.object(evaluation, "model_settings", return_value=CONFIG):
                 rows = evaluation.evaluate("development", DOC["doc_id"], "test", "regions_v3")
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0]["run_path"], str(paths["regions_v3"]))
@@ -81,6 +88,18 @@ class RegionVersionTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "changed since freeze"):
                 predict(phase="evaluation", target="regions", prompt_version="regions_v3")
             provider.assert_not_called()
+
+    def test_report_leaves_accuracy_unavailable_when_every_request_failed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            path = output / "evaluation" / "development" / "regions_v4" / "per_document.json"
+            write_json(path, [{"model_alias": "test", "prompt_sha256": prompt_fingerprint("regions", "regions_v4")["system_prompt_sha256"],
+                               "request_completed": False, "transport_failure": True}])
+            with patch.object(reporting, "OUTPUT", output):
+                row = reporting.report("development", "regions_v4")[0]
+            self.assertEqual(row["request_completed"], 0)
+            self.assertIsNone(row["text_f1"])
+            self.assertIsNone(row["box_f1"])
 
 
 if __name__ == "__main__":

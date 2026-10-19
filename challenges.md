@@ -1,31 +1,31 @@
-# Folklore evaluation: conversation record and challenges
+# Folklore evaluation: status, findings, and decisions
 
-Updated: 2026-10-18 (America/Los_Angeles).
+Updated: 2026-10-19 (America/Los_Angeles).
 
-This records the substantive conversation available in this session: user requests, work performed, reported results, mistakes, corrections, recommendations, and outstanding work. It is a chronological account rather than a verbatim transcript of every assistant message or tool output. The earliest work is available through conversation summaries and repository artifacts; unavailable wording is not reconstructed as a quotation. No API keys or workspace identifier values are included.
+This document summarizes the evaluation setup, results, limitations, and decisions made during the work. It keeps the experiment history for traceability, but is not a verbatim transcript. Earlier details are supported by repository artifacts and saved run records. No API keys or workspace identifiers are included.
 
-## Current state after the October 18 continuation
+## Latest status (October 19)
 
-- The user asked to carry v3 clarifications into region evaluation. Added `config/prompt_regions_v3.txt` and a separate frozen lock, preserving the existing region schema, all 20 labels, and baseline locks. CLI version selection now covers freeze/predict/evaluate/report and rejects target/version mismatches. Region evaluation filters prompt/schema/label hashes and v3 reports/overlays use a separate folder. `config/prompt_regions_v3_notes.md` documents the adaptation: exact ages instead of archive buckets, supported header/address regions retained, best-attempt attribution, source OCR preservation, item/gloss and interpretation boundaries. Generated uncertainty comments cannot be represented in the existing region contract and are not fabricated as collector annotations. Twenty request previews were prepared locally and checked; mocked workflow tests cover version selection, score/overlay routing, and freeze/report guards. A later live inference pass populated the separate `outputs/runs/regions_v3/evaluation/` tree. It produced 16 schema-compliant responses, two saved transport errors, and two interrupted/skipped Anglo requests after repeated connectivity failures. The region evaluator and aggregate report have now run; they include all 20 expected document/model pairs so missing outputs are visible rather than counted as full coverage. See [`outputs/runs/regions_v3/evaluation/RUN_STATUS.md`](outputs/runs/regions_v3/evaluation/RUN_STATUS.md) for run status and the descriptive metrics; the coverage gaps and 13 OCR mismatch review flags require human consideration.
-- The user pointed out that the supplied results already include bounding boxes and asked to preserve the current outputs before explaining the change needed. All 20 archive v3 objects were exported with run metadata, prompt/schema/lock, and findings to the root-level `SAVED_RESULTS_ARCHIVE_V3_NO_BOUNDING_BOXES_ALL_20_OUTPUTS_2026-10-19.json`, with object equality checked against their originals. `reviews/bounding_box_next_steps.md` explains that the existing `--target regions` path produces predicted page/label/text/box annotations, uses the prepared word coordinates, and already has evaluation/overlay support. Its frozen fingerprints still match. That path uses the older region prompt, so carrying v3 clarifications requires a separately versioned region candidate; a combined archive-plus-regions JSON would require a schema/prompt/validator change. No new provider calls were made. Running archive extraction had not fulfilled the original region-benchmark objective.
-- The user requested review and compiled findings for the 20 v3 outputs. `reviews/archive_v3_findings.md` documents a source-text review of all runs, with five complete source/output dossiers and machine-readable evidence under `outputs/reviews/archive_v3/`, reproducible with `scripts/review_archive_v3.py`. All 20 provider texts re-parse, match their archive objects, and pass the schema and recorded input/prompt/schema hash checks. Findings include retained street-address blocks in 16/20 full-text outputs, definite OCR rewrites (including Sonnet/Thailand ethnicity and Haiku/Vietnam's added word), and disagreements in Thai gloss/role assignment, Vietnamese interpretation attribution, header-derived fields, and transmission medium. The report lists prioritized passages for owner adjudication. Review used supplied OCR, not scanned page pixels; no archive accuracy ranking or region benchmark score was computed.
+- Region evaluation now has a separately versioned v3 prompt and frozen lock in `config/prompt_regions_v3.txt`. Existing schema, labels, and baseline locks remain intact. CLI version selection covers freeze/predict/evaluate/report, rejects target/version mismatches, filters scores by prompt/schema/label hashes, and routes v3 reports and overlays to a separate folder. The prompt notes document the adaptations: exact ages, retained supported header/address regions, best-attempt attribution, source OCR preservation, and item/gloss/interpretation boundaries. The existing region contract cannot represent generated uncertainty comments, so none are fabricated as collector annotations. Twenty request previews were checked locally, and mocked workflow checks cover version selection, score/overlay routing, and freeze/report guards. A live run in `outputs/runs/regions_v3/evaluation/` produced 16 schema-compliant responses, two saved transport errors, and two interrupted/skipped Anglo requests after repeated connectivity failures. The evaluator and aggregate report include all 20 expected document/model pairs so gaps remain visible. See [`outputs/runs/regions_v3/evaluation/RUN_STATUS.md`](outputs/runs/regions_v3/evaluation/RUN_STATUS.md) for run status and descriptive metrics; the coverage gaps and 13 OCR mismatch review flags need human consideration.
+- The supplied results already included bounding boxes. All 20 archive v3 objects were exported with run metadata, prompt/schema/lock, and findings to `SAVED_RESULTS_ARCHIVE_V3_NO_BOUNDING_BOXES_ALL_20_OUTPUTS_2026-10-19.json`; object equality with the originals was checked. `reviews/bounding_box_next_steps.md` describes the existing `--target regions` path, which produces predicted page/label/text/box annotations using prepared word coordinates and supports evaluation/overlays. Its frozen fingerprints still match. Carrying v3 clarifications into that path required a separately versioned region candidate. A combined archive-plus-regions JSON would require schema, prompt, and validator changes. No provider calls were made for this export. Archive extraction alone did not meet the region-benchmark objective.
+- `reviews/archive_v3_findings.md` records a source-text review of all 20 v3 outputs, with five complete source/output dossiers and machine-readable evidence under `outputs/reviews/archive_v3/`; reproduce it with `scripts/review_archive_v3.py`. All 20 provider texts re-parse, match their archive objects, and pass schema and recorded input/prompt/schema hash checks. Findings include retained street-address blocks in 16/20 full-text outputs, definite OCR rewrites (including Sonnet/Thailand ethnicity and Haiku/Vietnam's added word), and disagreements in Thai gloss/role assignment, Vietnamese interpretation attribution, header-derived fields, and transmission medium. The report prioritizes passages for adjudication. Review used supplied OCR, not scanned page pixels. No archive accuracy ranking or region benchmark score was computed.
 - Correction to v3 execution reporting: all 20 saved records have `attempts: 1`; earlier claims of v3 Gemini timeouts/retries were incorrect. Total recorded request latency is 1,508.148 seconds. Temperature 0 was a local configuration value but was omitted from the direct-provider requests, so it was not explicitly enforced. These corrections are reflected in the v3 notes and review report.
-- After the user authorized running the clarified task, `archive_v3` was made selectable with `--prompt-version archive_v3` and frozen to a separate `config/prompt_archive_v3.lock.json`; the v2 baseline lock was left unchanged. The development run covered all five documents and four configured models (20 requests). All 20 completed, parsed as JSON, passed the archive schema, and were not truncated. Generation used max tokens 65,536, with temporary transport overrides of five maximum attempts, 10-second initial backoff, and 300-second timeout; the actual attempt and temperature details are corrected above. Total recorded latency was about 1,508 seconds (25.1 minutes). Outputs are saved under `outputs/runs/archive/development/`. Qualitative review is now recorded above; adjudicated accuracy evaluation remains outstanding.
-- The user clarified the archive prompt's rules. Decisions are recorded in `config/prompt_archive_v3_notes.md` and incorporated in `config/prompt_archive_v3_draft.txt`: keep the schema; interpret its `45-4` option as 45–54 but emit the unchanged literal enum; use model discretion for multiple items/people; preserve suspect OCR; make best-effort uncertain role assignments and note doubts in existing comment fields; restrict mentioned places to item/translation; preserve collection date/location wording; transcribe only the relevant body; follow schema empty-value requirements; and leave medium null without transmission evidence. The item/translation boundary remains a reason to develop few-shot examples. The active v2 prompt/schema remain unchanged; v3 is selectable and has its own frozen lock. No few-shot examples have been added.
-- The user authorized retrying the two remaining quota-failed pairs while comparing well-formed existing outputs with annotations, and explicitly requested smaller Luna agents with the parent orchestrating. Three Luna agents handled the scoped retries, annotation compatibility/text-presence diagnostic, and qualitative output review.
+- After authorization to run the clarified task, `archive_v3` was made selectable with `--prompt-version archive_v3` and frozen to a separate `config/prompt_archive_v3.lock.json`; the v2 baseline lock was left unchanged. The development run covered all five documents and four configured models (20 requests). All 20 completed, parsed as JSON, passed the archive schema, and were not truncated. Generation used max tokens 65,536, with temporary transport overrides of five maximum attempts, 10-second initial backoff, and 300-second timeout; the actual attempt and temperature details are corrected above. Total recorded latency was about 1,508 seconds (25.1 minutes). Outputs are saved under `outputs/runs/archive/development/`. Qualitative review is now recorded above; adjudicated accuracy evaluation remains outstanding.
+- Archive prompt rules were clarified and recorded. Decisions are recorded in `config/prompt_archive_v3_notes.md` and incorporated in `config/prompt_archive_v3_draft.txt`: keep the schema; interpret its `45-4` option as 45–54 but emit the unchanged literal enum; use model discretion for multiple items/people; preserve suspect OCR; make best-effort uncertain role assignments and note doubts in existing comment fields; restrict mentioned places to item/translation; preserve collection date/location wording; transcribe only the relevant body; follow schema empty-value requirements; and leave medium null without transmission evidence. The item/translation boundary remains a reason to develop few-shot examples. The active v2 prompt/schema remain unchanged; v3 is selectable and has its own frozen lock. No few-shot examples have been added.
+- The remaining quota-failed pairs were retried while well-formed outputs were compared with annotations. The work was split into scoped parallel tasks. Three Luna agents handled the scoped retries, annotation compatibility/text-presence diagnostic, and qualitative output review.
 - Both archive retries recovered: Gemini medium / Anglo Folkspeech returned schema-valid output in 24.303 seconds on one attempt; Gemini high / Thailand returned schema-valid output in 478.755 seconds across two attempts. Thailand's first attempt timed out at the configured 300-second request timeout, then the adapter waited 10 seconds before retrying. The saved total latency includes the failed attempt and backoff; it is not the successful generation time alone.
 - The initial sandbox invocation encountered local DNS/network errors and was interrupted; network-enabled commands then ran with approval. The interruption is recorded separately from provider results, without credentials.
 - The two selected requests used temporary overrides of 65,536 maximum tokens, five attempts, 10-second initial backoff, and 300-second timeout. Source code and global settings were unchanged. All other 18 selected run paths were independently verified unchanged.
 - Latest archive schema validity is **16/20**: Sonnet 5/5, Haiku 4/5, Gemini medium 5/5, Gemini high 2/5. All 20 selected requests have completed responses. Four earlier truncated outputs remain: Haiku / Vietnam and Gemini high / Vietnam, Taiwan, and Anglo Folkspeech. No reruns of those four were made.
 - Archive aggregate reports and output-validity graphs were refreshed. Scoped retry evidence is under `outputs/evaluation/archive/retry-20261018/`, including `summary.json` and independent `orchestrator_validation.json`.
-- The compatibility audit confirmed 102 active reference annotations across five documents and zero compatible region prediction artifacts. Existing archive outputs lack predicted page-local labels and boxes. **No full region benchmark, precision/recall/F1, or extraction accuracy ranking was computed.** The user was asked whether to authorize fresh region-target inference; no such inference was launched during this continuation.
-- A fixed pre-retry diagnostic compared the 14 existing schema-valid outputs with reference text: 276 nonempty reference/run comparisons, with exact NFC/whitespace-normalized substring presence in structured string leaves for 143 comparisons and in `cleaned_full_text` for 217. These counts ignore labels, boxes, semantic roles, and duplication; they are not accuracy or recall. Different models cover different document subsets. The parent checked reference text against the canonical loader and corrected an initial prose arithmetic error (211 was corrected to 217).
+- The compatibility audit confirmed 102 active reference annotations across five documents and zero compatible region prediction artifacts. Existing archive outputs lack predicted page-local labels and boxes. **No full region benchmark, precision/recall/F1, or extraction accuracy ranking was computed.** Fresh region-target inference was not launched during that continuation.
+- A fixed pre-retry diagnostic compared the 14 existing schema-valid outputs with reference text: 276 nonempty reference/run comparisons, with exact NFC/whitespace-normalized substring presence in structured string leaves for 143 comparisons and in `cleaned_full_text` for 217. These counts ignore labels, boxes, semantic roles, and duplication; they are not accuracy or recall. Different models cover different document subsets. A consistency check against the canonical loader corrected an initial prose arithmetic error: 211 was corrected to 217.
 - All 14 pre-retry valid outputs and both recovered outputs were independently revalidated against the archive schema; saved parsed objects matched their raw responses. Qualitative review of the 14 prior outputs and a supplementary recovered-Anglo review used OCR/PDF text layers, not scanned page pixels. Findings include item/translation boundary differences, contributor/collector attribution ambiguity, potential collection-location omissions, and suspect source OCR such as Turkey's `Erench`. These require source evidence and adjudicated field rules, not automatic assignment of model errors.
-- Review artifacts and the reproducible text-presence script are under `outputs/evaluation/archive/review-20261018/`. The archive-to-region mapping remains unresolved. The user later clarified that the schema's literal `45-4` age bucket most likely means 45–54; the schema remains unchanged. The aggregate still mixes generation ceilings and transport conditions and is not a controlled model ranking.
+- Review artifacts and the reproducible text-presence script are under `outputs/evaluation/archive/review-20261018/`. The archive-to-region mapping remains unresolved. Later interpretation of the schema treated the literal `45-4` age bucket as most likely meaning 45–54; the schema remains unchanged. The aggregate still mixes generation ceilings and transport conditions and is not a controlled model ranking.
 
-## Historical state after the October 16 selected retry
+## Earlier checkpoint: October 16 retry
 
-- The user authorized retrying only Gemini medium on Taiwan and Anglo Folkspeech, and Gemini high on Thailand. No other document/model pair was sent to a provider.
+- That retry covered only Gemini medium on Taiwan and Anglo Folkspeech, plus Gemini high on Thailand. No other document/model pair was sent to a provider.
 - Taiwan recovered: valid JSON/schema, 49.743 seconds on one fresh attempt, 3,442 thinking tokens and 1,411 answer tokens. An earlier Taiwan process had to be interrupted during a long quota-related sleep; its time is separate from that successful call.
 - Anglo Folkspeech and Thailand returned HTTP 429 for the Gemini free-tier daily limit of 20 requests per project/model. Provider-directed waits were 18,470 and 18,457 seconds (about 5 hours 8 minutes when received).
 - Latest archive validity is **14/20**, up from 13/20: Sonnet 5/5, Haiku 4/5, Gemini medium 4/5, Gemini high 1/5. The other 17 selected run records are unchanged.
@@ -36,25 +36,25 @@ This records the substantive conversation available in this session: user reques
 - Region benchmark scores are still **not computed**. This was the explicitly limited archive retry, not a new benchmark run. The latest aggregate mixes token/transport settings and must not be treated as a controlled model ranking.
 - Before/after results, scope, interruption metadata, and comparison are saved under `outputs/evaluation/archive/scoped-retry-20261016T075710Z/`.
 
-## State when this record was first written
+## Baseline snapshot before later retries
 
-- The user wants to compare folklore extraction against their own annotated benchmarks, with useful graphs.
-- Direct Google Gemini and Anthropic APIs are configured. Anthropic access worked after the user supplied a workspace ID.
+- The project goal is to compare folklore extraction against the supplied annotations and present useful graphs.
+- Direct Google Gemini and Anthropic APIs are configured. Anthropic access worked after a workspace ID was supplied.
 - The completed model runs used the **archive** target, which checks request completion, JSON parsing, and archive schema validity.
-- **No model scores against the user's labeled-region benchmarks have been computed.** No region evaluation predictions are saved, and the region aggregate is empty.
-- The user's benchmarks already exist: 102 active annotations across the five selected documents. Asking the user to create a new reference set was misleading for the region benchmark they supplied.
+- **No model scores against the project's labeled-region benchmarks have been computed.** No region evaluation predictions are saved, and the region aggregate is empty.
+- The supplied benchmark contains 102 active annotations across five selected documents. The earlier suggestion to create another reference set was unnecessary for evaluating against these region annotations.
 - The latest archive results are Sonnet 5/5 valid, Haiku 4/5 valid, Gemini medium 3/5 valid, Gemini high 1/5 valid. These are output-validity counts, not extraction accuracy scores.
 - The generation limit used was 16,384 tokens. Larger limits of 32,768 and then 65,536 were discussed but have **not** been applied.
 - Retry settings remain three attempts, one-second initial backoff, and a 120-second per-request timeout. Longer backoff and jitter were proposed but have **not** been implemented.
 - Creation of the initial conversation record made no provider calls and changed no runtime settings.
 
-## Chronological conversation account
+## Experiment history
 
 ### 1. Resuming the project and choosing providers
 
-The user asked, "where did we leave off", then asked about trying Gemini 3.8 Flash, why the quota default was zero, and whether Anthropic APIs could be used directly.
+The initial discussion covered project status, trying Gemini 3.8 Flash, the zero-quota display, and direct Anthropic API access.
 
-The user then requested replacing `.env.example` with configuration for Google Gemini models, including a higher-thinking comparison, and direct Anthropic Sonnet and Haiku.
+The model setup was changed to include Google Gemini models at two thinking levels and direct Anthropic Sonnet and Haiku.
 
 The resulting model configuration uses:
 
@@ -65,15 +65,15 @@ The resulting model configuration uses:
 | `gemini_flash` | Google Gemini Developer API | `gemini-3.8-flash` | `medium` |
 | `gemini_flash_high` | Google Gemini Developer API | `gemini-3.8-flash` | `high` |
 
-The user's initial idea included extended versus non-extended thinking. The actual Gemini comparison is **medium versus high thinking**, not thinking enabled versus disabled. Anthropic's lack of an explicit thinking parameter does not imply thinking is off; the later Haiku response confirms thinking occurred.
+The initial comparison idea included extended versus non-extended thinking. The actual Gemini comparison is **medium versus high thinking**, not thinking enabled versus disabled. Anthropic's lack of an explicit thinking parameter does not imply thinking is off; the later Haiku response confirms thinking occurred.
 
 Earlier session work updated `.env.example`, `config/models.json`, provider routing, environment loading, and README instructions. The provider adapter gained direct Gemini REST support, Anthropic workspace-header support, and handling for Google's camelCase usage/finish fields. Resume handling was extended to consider saved retry folders.
 
 The original zero-quota question did not establish one universal cause for every zero shown in a console. Later saved Gemini errors specifically identified free-tier quota limits. Direct API access also has separate account configuration, billing, and limits from cloud-hosted provider access.
 
-### 2. Keys supplied; first evaluation requested
+### 2. Credentials supplied; first evaluation
 
-The user said the API keys were in and asked to run the evaluation and present the results as visually as possible.
+With API credentials configured, the evaluation was run and its results presented visually.
 
 The first reported archive evaluation attempted five documents on four model aliases:
 
@@ -88,11 +88,11 @@ The four successful Gemini medium responses used 230,668 input tokens and 7,489 
 
 Google errors included free-tier limits for requests and input tokens: 5 requests/minute, 250,000 input tokens/minute, and a 20-request daily limit were encountered in the earlier work. These are observations from those errors, not a claim about all accounts or current paid-tier limits. The earlier explanation referenced billing and the daily quota reset; neither should be assumed to resolve a later 503 overload error.
 
-Anthropic returned HTTP 400 stating the API key was not scoped to a workspace and required `anthropic-workspace-id`. An attempted workspace listing returned 403. The earlier browser attempt had no available browser backend. The user needed to obtain a workspace ID through the Console or use appropriately scoped credentials.
+Anthropic returned HTTP 400 stating the API key was not scoped to a workspace and required `anthropic-workspace-id`. An attempted workspace listing returned 403. The earlier browser attempt had no available browser backend. The project owner needed to obtain a workspace ID through the Console or use appropriately scoped credentials.
 
 ### 3. Rundown and reusable graphs
 
-The user asked, "give me a rundown, what efficacies are we looking at? potentially build out files to produce relevant graphs".
+The next discussion covered what the initial results measured and which reusable graphs would help.
 
 The assistant read the saved aggregate and per-document results and created `scripts/plot_evaluation.py`. It generates dependency-free SVG charts and Markdown notes in `outputs/evaluation/archive/evaluation/graphs/`:
 
@@ -102,11 +102,11 @@ The assistant read the saved aggregate and per-document results and created `scr
 
 The script was run successfully. A first draft incorrectly labeled the partially successful Gemini medium row as having no successful response; that label was corrected. Later, after the rerun, several hardcoded explanations about quota/workspace failures were replaced with descriptions derived from the current report. The charts still describe archive output validity and latency; they do not visualize benchmark accuracy.
 
-The assistant reported 80% end-to-end valid output for Gemini medium and 100% schema validity among its four completed responses. Those denominators were correct for that run, but they were not scores against the user's annotations. Generated outputs are Git-ignored; the reusable script is a project file. `git diff --check` was run, but it is not visual inspection or a benchmark correctness test, and untracked files are not covered by a normal Git diff.
+The assistant reported 80% end-to-end valid output for Gemini medium and 100% schema validity among its four completed responses. Those denominators were correct for that run, but they were not scores against the project's annotations. Generated outputs are Git-ignored; the reusable script is a project file. `git diff --check` was run, but it is not visual inspection or a benchmark correctness test, and untracked files are not covered by a normal Git diff.
 
-### 4. User challenged delayed diagnosis
+### 4. Delayed diagnosis of Anthropic setup
 
-The user said the assistant spent about 20 minutes without noticing or raising that Anthropic setup was insufficient.
+A delayed diagnosis was identified: Anthropic workspace configuration had blocked requests for about 20 minutes before the issue was surfaced.
 
 The assistant accepted that it should have surfaced the immediate workspace-header errors before continuing a full evaluation or presenting model comparisons. At that point Anthropic had produced no model outputs to evaluate. Repeating requests across every document did not help diagnose the shared configuration error.
 
@@ -114,17 +114,17 @@ Lesson: verify one real request per provider early, distinguish HTTP completion 
 
 ### 5. Workspace ID instructions
 
-The user asked, "how do i set up a workspace id".
+Workspace ID setup was then documented.
 
 The assistant verified the current provider documentation and explained that workspace IDs are assigned by Anthropic. They can be copied from the ID column at Claude Console → Settings → Workspaces, including the Default workspace. IDs begin with `wrkspc_`.
 
-The project reads `ANTHROPIC_WORKSPACE_ID` from `.env` and sends it in the `anthropic-workspace-id` request header. A key scoped to a single workspace can omit that header; the user's observed error specifically required it. Account access may require an organization administrator.
+The project reads `ANTHROPIC_WORKSPACE_ID` from `.env` and sends it in the `anthropic-workspace-id` request header. A key scoped to a single workspace can omit that header; the project's observed error specifically required it. Account access may require an organization administrator.
 
-### 6. User supplied the ID and said "now run"
+### 6. Workspace ID supplied; evaluation resumed
 
 The assistant checked only whether the value was set and had the expected prefix; it did not print the identifier or key. It then ran `predict --phase evaluation`, which defaults to the archive target.
 
-The initial attempt ran inside the network-restricted sandbox and failed with connection/DNS errors. Those failures did not validate the workspace setup. The command was rerun with the required network permission. The user had already authorized the evaluation; the permission step was an environment restriction, not a new product decision.
+The initial attempt ran inside the network-restricted sandbox and failed with connection/DNS errors. Those failures did not validate the workspace setup. The command was rerun with the required network permission. The project owner had already authorized the evaluation; the permission step was an environment restriction, not a new product decision.
 
 The network-enabled run completed across all 20 document/model pairs. Anthropic succeeded in returning responses for all five documents on each model. Gemini returned some HTTP 503 high-demand errors. The runner emitted its full outcome list at the end, so progress was monitored through saved run files. Future reporting should emit individual completions/errors promptly rather than requiring manual file inspection.
 
@@ -143,17 +143,17 @@ For Gemini medium, all three completed responses passed schema validation; for G
 
 The prior successful Gemini medium responses remain saved, but the current aggregate selects the latest run file for each model/document. It does not combine all historically successful responses into a cumulative success rate. This explains why the latest medium completion count fell from four to three despite some earlier successful answers being available.
 
-### 8. Interpretation requested
+### 8. Interpreting the initial results
 
-The user asked, "interpret the results".
+The results were then interpreted, with output validity separated from extraction accuracy.
 
 The assistant described Sonnet as the strongest candidate under the current configuration because it produced valid archive outputs for every document. It distinguished provider availability failures from incomplete answers and suggested reviewing Sonnet's answers against the PDFs.
 
-That interpretation was limited to output formatting and operational behavior. It did not establish Sonnet's extraction accuracy. The advice to create reference answers overlooked that the user's region annotations already existed. A nested archive reference set would be a different evaluation target; it was not a prerequisite to using the supplied region benchmarks.
+That interpretation was limited to output formatting and operational behavior. It did not establish Sonnet's extraction accuracy. The advice to create reference answers overlooked that the project's region annotations already existed. A nested archive reference set would be a different evaluation target; it was not a prerequisite to using the supplied region benchmarks.
 
-### 9. User asked for actual benchmark values, budget changes, and overload handling
+### 9. Benchmark scores, budgets, and overload handling
 
-The user asked, "what were the actual evaluation values based on the benchmarks i produced? and do i need to increase budgets? how do i get around the overload errors considering this isn't a ton of data?"
+The follow-up focused on actual benchmark scores, generation budgets, and provider overload errors.
 
 Inspection confirmed a target mismatch:
 
@@ -209,15 +209,15 @@ The prepared payload contains verbose word-level JSON with coordinates and metad
 
 ### 11. Infinite-token question
 
-The user asked, "why not do like infinite tokens allowed, just let the llms think?"
+Token limits and extended reasoning were discussed, including why an API cannot provide unlimited generation.
 
 The assistant explained that effective generation allowances are finite and provider/model limits still apply. An API may allow omission of an explicit token-limit parameter, but that uses a finite default; it does not enable infinite generation.
 
-The assistant then proposed **65,536 tokens** for the next benchmark, with a suitable timeout and separate tracking of reasoning tokens, answer tokens, latency, and accuracy. This superseded the earlier 32,768 starting suggestion in the discussion; neither recommendation changed the repository or `.env` settings. The user has not yet observed results with either larger limit. Increasing token capacity addresses truncation, not HTTP 503 overload.
+The assistant then proposed **65,536 tokens** for the next benchmark, with a suitable timeout and separate tracking of reasoning tokens, answer tokens, latency, and accuracy. This superseded the earlier 32,768 starting suggestion in the discussion; neither recommendation changed the repository or `.env` settings. The project owner has not yet observed results with either larger limit. Increasing token capacity addresses truncation, not HTTP 503 overload.
 
 ### 12. Longer-retry question and request for this file
 
-The user asked how longer retries work, what needs to be retried, and to note every part of the conversation in `challenges.md`.
+Retry behavior, the requests that needed retrying, and the scope of this project record were clarified.
 
 The unit of retry is **one document × one model × one prompt/settings combination**. After a transient request failure, the runner waits and resends the complete request: system prompt, prepared document input, model ID, and generation settings. It starts a fresh generation. It does not continue a hidden reasoning process, resume a partially generated JSON string, rerun local scoring, or require redoing every document.
 
@@ -241,15 +241,15 @@ The pending archive requests have different recovery needs:
 |---|---|---|
 | Final HTTP 503 | Gemini medium: Taiwan and Anglo Folkspeech; Gemini high: Thailand | Resend these three requests with longer bounded backoff |
 | Generation cap reached | Haiku: Vietnam; Gemini high: Vietnam, Taiwan, Anglo Folkspeech | Rerun these four with a revised generation allowance/effort; waiting alone does not fix truncation |
-| Wrong evaluation target | All model comparisons against the user's region benchmarks | Generate region predictions and run the region evaluator; this is new inference, not an overload retry |
+| Wrong evaluation target | All model comparisons against the project's region benchmarks | Generate region predictions and run the region evaluator; this is new inference, not an overload retry |
 | Earlier missing workspace ID | Sonnet and Haiku | Resolved by configuration; repeating the old bad request would not have helped |
 | Earlier 429 quota exhaustion | Google requests in the first run | Respect the applicable quota window/reset or account configuration; short repeated retries cannot remove a daily cap |
 
 The three 503 requests already received the configured short retries before being recorded as failed. A later retry would be an additional preserved run attempt. For network timeouts, the server may have continued processing after the client stopped waiting, so resending can duplicate computation; successful responses should be reused when appropriate. A fully processed retry can incur its own token usage.
 
-### 13. User authorized only the selected documents/pairs
+### 13. Selected retry scope and outcome
 
-The user said, "ok try on those documents and those documents only, after which we'll evaluate the progress made thus far". The assistant stated the scope as the three overload failures listed above. The separate four truncated responses and all region benchmark requests were outside this retry.
+The retry was limited to the three overload failures listed above. The four truncated responses and all region benchmark requests were outside its scope.
 
 The assistant snapshotted the previous aggregate and per-document reports, then inspected effective settings. The environment now supplied 65,536 tokens. It retained that allowance and used temporary five-attempt, 10-second-backoff, 300-second-timeout overrides. No `.env` or global transport setting was edited.
 
