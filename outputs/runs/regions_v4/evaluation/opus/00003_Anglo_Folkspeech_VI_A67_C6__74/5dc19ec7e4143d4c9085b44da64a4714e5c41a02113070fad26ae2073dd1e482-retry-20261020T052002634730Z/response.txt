@@ -1,0 +1,23 @@
+{"annotations": [
+{"page_num": 0, "label": "folklore_genre", "text": "proverb", "bbox": [0.226666, 0.113897, 0.306189, 0.130532]},
+{"page_num": 0, "label": "folklore_language", "text": "Vietnamese", "bbox": [0.318619, 0.113413, 0.432626, 0.13018]},
+{"page_num": 0, "label": "informant_name", "text": "Thinh Nguyen,", "bbox": [0.625825, 0.112122, 0.770129, 0.129005]},
+{"page_num": 0, "label": "informant_gender", "text": "male,", "bbox": [0.784653, 0.111863, 0.838052, 0.128397]},
+{"page_num": 0, "label": "informant_age", "text": "20", "bbox": [0.854663, 0.111723, 0.874623, 0.128129]},
+{"page_num": 0, "label": "informant_occupation", "text": "student at UCB,", "bbox": [0.580982, 0.128779, 0.747125, 0.142933]},
+{"page_num": 0, "label": "informant_ethnicity", "text": "Vietnamese", "bbox": [0.7628, 0.128779, 0.875654, 0.142933]},
+{"page_num": 0, "label": "informant_languages", "text": "Vietnamese", "bbox": [0.76267, 0.142391, 0.875685, 0.157321]},
+{"page_num": 0, "label": "informant_address", "text": "Berkeley, Ca", "bbox": [0.740857, 0.158411, 0.875653, 0.171476]},
+{"page_num": 0, "label": "collection_date", "text": "11-22-92", "bbox": [0.786673, 0.172794, 0.874648, 0.186663]},
+{"page_num": 0, "label": "folklore_item", "text": "Tre gia mang moc!", "bbox": [0.204807, 0.227624, 0.44096, 0.247221]},
+{"page_num": 0, "label": "folklore_item", "text": "Chare ya mung mowk", "bbox": [0.205852, 0.24714, 0.444096, 0.260205]},
+{"page_num": 0, "label": "folklore_translation", "text": "Bamboo old shoot grow", "bbox": [0.205852, 0.261528, 0.44514, 0.274593]},
+{"page_num": 0, "label": "folklore_translation", "text": "Old bamboo is replaced by its shoots.", "bbox": [0.205852, 0.275862, 0.621736, 0.290015]},
+{"page_num": 0, "label": "collection_context", "text": "My informant learned this proverb from his brother Dung Nguyen, in Orange Country, California when he was a little kid.", "bbox": [0.206897, 0.304639, 0.842216, 0.348368]},
+{"page_num": 0, "label": "informant_explanation", "text": "Thinh believes that this proverb means that the old generation is replaced by the younger generation, meaning a younger person does something better than the older. For instance, when Bill Clinton,46, defeated George Bush, 69, many people might say, \"Tre gia mang moc\", meaning it’s the baby boomer year now; it’s time for the replacement of the old conservative George Bush.", "bbox": [0.204807, 0.334215, 0.887147, 0.435499]},
+{"page_num": 0, "label": "collector_annotation", "text": "I agree with his interpretation. Even though some believe that wisdom grows with age, it does not necessarily mean that the old can always out wit the young. Sometimes, the youth can out smart the older generation like in a game of chess or a debate because the younger generation can speak faster and more articulate. This is where the proverb comes in. The time will come and when it does, the shoot of the plants grows and takes over the older part of the plant, or in other words the older is being replaced by the younger.", "bbox": [0.204807, 0.435734, 0.887147, 0.580845]},
+{"page_num": 0, "label": "collector_name", "text": "Jon Tai Tran,", "bbox": [0.705329, 0.858596, 0.849531, 0.872749]},
+{"page_num": 0, "label": "collector_age", "text": "21", "bbox": [0.866249, 0.858596, 0.886103, 0.872749]},
+{"page_num": 0, "label": "collector_address", "text": "2729 Dwight way", "bbox": [0.717868, 0.872984, 0.887146, 0.887138]},
+{"page_num": 0, "label": "collector_address", "text": "Berkeley, Ca", "bbox": [0.752351, 0.888227, 0.887147, 0.901292]}
+]}

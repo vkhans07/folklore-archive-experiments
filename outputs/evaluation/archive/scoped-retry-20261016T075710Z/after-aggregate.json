@@ -1,0 +1,58 @@
+[
+  {
+    "attempted": 5,
+    "json_parsed": 4,
+    "json_parsing_rate_of_completed": 1.0,
+    "model_alias": "gemini_flash",
+    "phase": "evaluation",
+    "prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+    "request_completed": 4,
+    "request_completion_rate": 0.8,
+    "schema_compliance_rate_of_completed": 1.0,
+    "schema_compliant": 4,
+    "target": "archive",
+    "transport_failures": 1
+  },
+  {
+    "attempted": 5,
+    "json_parsed": 1,
+    "json_parsing_rate_of_completed": 0.25,
+    "model_alias": "gemini_flash_high",
+    "phase": "evaluation",
+    "prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+    "request_completed": 4,
+    "request_completion_rate": 0.8,
+    "schema_compliance_rate_of_completed": 0.25,
+    "schema_compliant": 1,
+    "target": "archive",
+    "transport_failures": 1
+  },
+  {
+    "attempted": 5,
+    "json_parsed": 4,
+    "json_parsing_rate_of_completed": 0.8,
+    "model_alias": "haiku",
+    "phase": "evaluation",
+    "prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+    "request_completed": 5,
+    "request_completion_rate": 1.0,
+    "schema_compliance_rate_of_completed": 0.8,
+    "schema_compliant": 4,
+    "target": "archive",
+    "transport_failures": 0
+  },
+  {
+    "attempted": 5,
+    "json_parsed": 5,
+    "json_parsing_rate_of_completed": 1.0,
+    "model_alias": "sonnet",
+    "phase": "evaluation",
+    "prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+    "request_completed": 5,
+    "request_completion_rate": 1.0,
+    "schema_compliance_rate_of_completed": 1.0,
+    "schema_compliant": 5,
+    "target": "archive",
+    "transport_failures": 0
+  }
+]

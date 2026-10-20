@@ -1,0 +1,16 @@
+{
+  "_id": null,
+  "filename": "JSONs/Legend Vietnam 38.pdf",
+  "contributor": {
+    "name": "Van Pham",
+    "age_bucket": null,
+    "gender": "Female",
+    "ethnicity": "Asian American",
+    "nationality": null,
+    "languages_spoken": [
+      "Vietnamese"
+    ],
+    "occupation": "Manicurist"
+  },
+  "folklore": {
+    "item": "Tam and Cam\n\nA family live together a long time ago. The husband, wife, and daughter name Tam all very happy. One day the wife die and the husband marry again. The second wife is a very bad person. They have a second daughter name Cam. The new wife love Cam very much, but hate Tam. She make Tam do all the work in the house and sleep in the kitchen. Tam wear dirty clothes and work a lot but still very beautiful. The stepmom very jealous of how pretty Tam look. She tell Tam and Cam to go fish in the pond. She tell them to catch a lot of fish or she will beat them. Tam catch a basketful of fish and Cam do nothing all day. Cam tell Tam to get clean in the pond so stepmom don’t get mad. When Tam wash in the water, Cam take all Tam’s fish and run home. When Tam done she see that all her fish stolen, she start to cry. The Goddess appear to help her. Tam tell her everything. The Goddess tell Tam to look in the basket. Tam see one fish left. The Goddess tell her to take the fish home, put in well behind the house and feed three times a day. Tam say thank you to the Goddess and then go home. She feed the fish three times like the Goddess say. The stepmom notice this and catch the fish and eat it when Tam not home. When Tam come home, she go to the well and called, but the fish never come up. She see blood on the water and know what happen. Tam start to cry again. The Goddess appear and tell her not to cry. The Goddess tell her to find the fish bones and bury it in the ground and pray. Tam do what Goddess say. She get jewelry and expensive dress.\n\nSoon Autumn Festival come. The stepmom order Tam to stay home until she sort two big basket of black and green beans. Tam cried to heaven and pray for help. The Goddess appear right away. She magically sort the beans for Tam. Tam stop to cry and put on her dress. She go to the festival and see Cam and her stepmom. She get scared and run home. Her slipper fall off when she run. The king see the slipper want to find the owner. He say that anyone who fit the slipper will be queen. Everyone at the party try on but the slipper too small. Then he make all girls everywhere try on. Tam fit the slipper so she marry the king and become queen. The stepmom and Cam very jealous. On her dad’s birthday, Tam

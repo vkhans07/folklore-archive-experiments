@@ -1,0 +1,37 @@
+[
+  {
+    "doc_id": "00003_Legend_Vietnam__38.pdf",
+    "pages": 5,
+    "pdf": "JSONs/Legend Vietnam 38.pdf",
+    "pdf_sha256": "bded71f02e23936a2b8b723b9c1d9c7bab5bbcf1fb7e4cb8bd807d9ed66b127d",
+    "words": 1584
+  },
+  {
+    "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+    "pages": 2,
+    "pdf": "JSONs/Taiwan Holiday Lore.pdf",
+    "pdf_sha256": "033910ae9816c782d8d6e44954a956eac3b9dfdaa982664b48ff83ec487ae9dd",
+    "words": 446
+  },
+  {
+    "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+    "pages": 1,
+    "pdf": "JSONs/Turkey Proverbs.pdf",
+    "pdf_sha256": "fa4f78ec7bdff5a10c4d547dde33822407b2c0e31394acd4f720fe2c089000e4",
+    "words": 274
+  },
+  {
+    "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+    "pages": 1,
+    "pdf": "JSONs/Thailand Folkspeech.pdf",
+    "pdf_sha256": "9adef7fc8a45d4a492eeca5e558d2a03364931b03f3f16ccd2bc5c45c7bf449d",
+    "words": 153
+  },
+  {
+    "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+    "pages": 1,
+    "pdf": "JSONs/Anglo Folkspeech VI.pdf",
+    "pdf_sha256": "bf3c61a40dd77ddaea24b795f238d78c7ef7c1fb13fbe403bb9568133a096b96",
+    "words": 222
+  }
+]

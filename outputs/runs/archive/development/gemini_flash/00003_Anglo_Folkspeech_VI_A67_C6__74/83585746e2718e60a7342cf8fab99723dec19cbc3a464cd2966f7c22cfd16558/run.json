@@ -1,0 +1,44 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 1,
+  "cache_key": "83585746e2718e60a7342cf8fab99723dec19cbc3a464cd2966f7c22cfd16558",
+  "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+  "errors": [],
+  "finish_reason": "stop",
+  "generation": {
+    "max_tokens": 65536,
+    "temperature": 0
+  },
+  "input_sha256": "5eaa66bd793cddc8965f2af364968c0ba171fd8f115d145d889c15e1aadb1e67",
+  "json_parsed": true,
+  "latency_seconds": 21.734,
+  "location": null,
+  "model_alias": "gemini_flash",
+  "phase": "development",
+  "project_id": null,
+  "provider": "gemini_api",
+  "provider_adapter_sha256": "a7a7d395f5fe7961e38fd2078165d9d7e1e258a3a6d9522387dedad99ad10c41",
+  "request_completed": true,
+  "request_error": null,
+  "request_sha256": "cf824b2eaca843a242605836785e36530ca4fdbaf87110f995640ec9681081ae",
+  "requested_model": "gemini-3.8-flash",
+  "returned_model": "gemini-3.8-flash",
+  "runner_sha256": "b59a5d0b905ab3cc0728f29e5f1cc61a57d9830a24b134b6821957eda8ec1939",
+  "schema_compliant": true,
+  "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+  "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+  "system_prompt_sha256": "b82d16d17fcdbef0dc02715d86c90a02709e23b24f7efacb80659fe494dc07ba",
+  "target": "archive",
+  "timestamp_utc": "2026-10-19T03:37:13.593692+00:00",
+  "transport": {
+    "initial_backoff_seconds": 10.0,
+    "max_attempts": 5,
+    "timeout_seconds": 300.0
+  },
+  "truncated": false,
+  "usage": {
+    "input_tokens": 21666,
+    "output_tokens": 857
+  },
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

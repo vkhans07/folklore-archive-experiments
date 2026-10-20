@@ -1,0 +1,45 @@
+{
+  "_id": null,
+  "filename": "JSONs/Thailand Folkspeech.pdf",
+  "contributor": {
+    "name": "Varinthorn Nakkeow",
+    "age_bucket": "18-24",
+    "gender": "Female",
+    "ethnicity": "‘Thai and 4\" generation Chinese in Thailand",
+    "nationality": null,
+    "languages_spoken": [
+      "English",
+      "Central Thai"
+    ],
+    "occupation": "Student, Library Assistant, Admin. Assistant"
+  },
+  "folklore": {
+    "item": "mutual aly\nony /3u/#/ as tus 14\nsam/wan/dee/ see / wan / khai/",
+    "medium": null,
+    "translation": "three /day /good/ —_four/ day / fever/\nGood for three days and fevered for four days.",
+    "place_mentioned": []
+  },
+  "collector": {
+    "name": "Varinthorn Nakkeow",
+    "gender": "Female",
+    "collector_comments": "The collector appears to be the informant ('Myself', Varinthorn Nakkeow)."
+  },
+  "analysis": {
+    "context": {
+      "use_context": "He used this to describe my relationship with my 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. She was prone to extreme moodswings. One day should she would be laughing and smiling and the next she would be really terse and quiet.",
+      "cultural_background": null,
+      "collection_context": "This is a description I learned from my father, Boonlert Nakkeow."
+    },
+    "interpretation": "This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain why either.",
+    "collector_comments": null
+  },
+  "storage_medium": "PDF",
+  "cleaned_full_text": "Folk Speech — Thai\nMyself, Age 21. Female\nStudent, Library Assistant, Admin. Assistant\n‘Thai and 4\" generation Chinese in Thailand\nEnglish, Central Thai\nBellflower, CA.; November 8, 2002\nmutual aly\nony /3u/#/\nas tus\n14\nsam/wan/dee/ see / wan / khai/\nthree /day /good/ —_four/ day / fever/\nGood for three days and fevered for four days.\nThis is a description I learned from my father, Boonlert Nakkeow. He used this to describe my relationship with my 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. She was prone to extreme moodswings. One day should she would be laughing and smiling and the next she would be really terse and quiet. This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain why either.\nVarinthorn Nakkeow, Age 21.\n10420 Trabuco St.; Bellflower, CA 90706",
+  "date_collected": "November 8, 2002",
+  "location_collected": {
+    "city": "Bellflower",
+    "state": "CA",
+    "country": null,
+    "geolocation": null
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 1,
+  "cache_key": "22588a0f2b1697055856d24170c327aaf13e0ad28c273d7d333a652b838f840e",
+  "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+  "errors": [],
+  "finish_reason": "end_turn",
+  "generation": {
+    "max_tokens": 65536,
+    "temperature": 0
+  },
+  "input_sha256": "76c298330761d81b2ebedf7a2fbce30bb2295a100a08ae90ddc81c776e1cbcb7",
+  "json_parsed": true,
+  "labels_sha256": "c015b892cbb0929c38100c14636a17e62e77dee5e4dd289d71c8cc6d808f8b50",
+  "latency_seconds": 72.556,
+  "location": null,
+  "model_alias": "haiku",
+  "phase": "evaluation",
+  "project_id": null,
+  "prompt_version": "regions_v4",
+  "provider": "anthropic_direct",
+  "provider_adapter_sha256": "a7a7d395f5fe7961e38fd2078165d9d7e1e258a3a6d9522387dedad99ad10c41",
+  "request_completed": true,
+  "request_error": null,
+  "request_sha256": "a13935f98f40b96e8dfcc4304ba40d05a3528f9f8c49895baf0ea7304fd7fa2b",
+  "requested_model": "claude-haiku-5-5",
+  "returned_model": "claude-haiku-5-5",
+  "runner_sha256": "84d97a4e7bf0530e4692a442835daa6e0358f9717b3bb11a2c1f3613ff03c148",
+  "schema_compliant": true,
+  "schema_sha256": "69b155692dd189a98034d8488e13e53baffb72162e849a170bf8637bf9bcfb16",
+  "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+  "system_prompt_sha256": "3e0a3f912a54ba699833e3e3da9494b31776970df435552f422bc0c6e053e994",
+  "target": "regions",
+  "timestamp_utc": "2026-10-19T21:46:55.114836+00:00",
+  "transport": {
+    "initial_backoff_seconds": 1.0,
+    "max_attempts": 3,
+    "timeout_seconds": 120.0
+  },
+  "truncated": false,
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 37121,
+    "output_tokens": 17950,
+    "output_tokens_details": {
+      "thinking_tokens": 15941
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

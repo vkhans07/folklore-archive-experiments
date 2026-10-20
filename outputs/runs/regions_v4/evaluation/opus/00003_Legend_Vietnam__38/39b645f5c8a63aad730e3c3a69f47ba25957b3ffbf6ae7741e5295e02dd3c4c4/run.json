@@ -1,0 +1,53 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 1,
+  "cache_key": "39b645f5c8a63aad730e3c3a69f47ba25957b3ffbf6ae7741e5295e02dd3c4c4",
+  "doc_id": "00003_Legend_Vietnam__38.pdf",
+  "errors": [],
+  "finish_reason": null,
+  "generation": {
+    "max_tokens": 65536,
+    "temperature": 0
+  },
+  "input_sha256": "6573fdfeaf09c692d09650c03c0b15bd121fddbb39f04c9d7d51d05472e582c5",
+  "json_parsed": false,
+  "labels_sha256": "c015b892cbb0929c38100c14636a17e62e77dee5e4dd289d71c8cc6d808f8b50",
+  "latency_seconds": 0.021,
+  "location": null,
+  "max_concurrency": 1,
+  "model_alias": "opus",
+  "phase": "evaluation",
+  "project_id": null,
+  "prompt_version": "regions_v4",
+  "provider": "anthropic_direct",
+  "provider_adapter_sha256": "d34bbb703c2f62b18aeeda7f2669a014a3734da1f45afbe1aad7a02e663a34c3",
+  "request_completed": false,
+  "request_error": {
+    "category": "network_or_timeout",
+    "message": "Connection error.",
+    "next_step": "Check network access and timeout settings, then retry.",
+    "provider_body": null,
+    "provider_request_id": null,
+    "status_code": null,
+    "transient": true,
+    "type": "APIConnectionError"
+  },
+  "request_sha256": "f58ff6a5b353b2099fce5916ccec747937542e2603b601df3a707d4b9006580d",
+  "requested_model": "claude-opus-5-5",
+  "returned_model": null,
+  "runner_sha256": "240e075367a8cb000366870b208c09d34425f4173e61b165266b06686a6be087",
+  "schema_compliant": false,
+  "schema_sha256": "69b155692dd189a98034d8488e13e53baffb72162e849a170bf8637bf9bcfb16",
+  "settings_loader_sha256": "4b22a081bf14685ec8e1039301767973bde82ccdd76be6ddd33f2b7c52f5552f",
+  "system_prompt_sha256": "3e0a3f912a54ba699833e3e3da9494b31776970df435552f422bc0c6e053e994",
+  "target": "regions",
+  "timestamp_utc": "2026-10-20T05:18:03.895112+00:00",
+  "transport": {
+    "initial_backoff_seconds": 1.0,
+    "max_attempts": 1,
+    "timeout_seconds": 300.0
+  },
+  "truncated": false,
+  "usage": null,
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

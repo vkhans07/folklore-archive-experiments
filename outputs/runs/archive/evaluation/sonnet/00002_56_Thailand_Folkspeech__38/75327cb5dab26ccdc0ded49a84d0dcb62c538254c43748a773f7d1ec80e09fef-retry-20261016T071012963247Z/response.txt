@@ -1,0 +1,42 @@
+{
+  "_id": null,
+  "filename": "JSONs/Thailand Folkspeech.pdf",
+  "contributor": {
+    "name": null,
+    "age_bucket": "18-24",
+    "gender": "Female",
+    "ethnicity": "4th generation Chinese in Thailand",
+    "nationality": "Thai",
+    "languages_spoken": ["English", "Central Thai"],
+    "occupation": "Student, Library Assistant, Admin. Assistant"
+  },
+  "folklore": {
+    "item": "sam/wan/dee/ see / wan / khai/",
+    "medium": null,
+    "translation": "three/day/good/ four/day/fever/ Good for three days and fevered for four days.",
+    "place_mentioned": []
+  },
+  "collector": {
+    "name": "Varinthorn Nakkeow",
+    "gender": null,
+    "collector_comments": null
+  },
+  "analysis": {
+    "context": {
+      "use_context": "Boonlert Nakkeow used this to describe the contributor's relationship with her 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. The roommate was prone to extreme moodswings: one day she would be laughing and smiling and the next she would be really terse and quiet.",
+      "cultural_background": null,
+      "collection_context": "This is a description I learned from my father, Boonlert Nakkeow."
+    },
+    "interpretation": "This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain why either.",
+    "collector_comments": null
+  },
+  "storage_medium": "PDF",
+  "cleaned_full_text": "Folk Speech — Thai Myself, Age 21. Female Student, Library Assistant, Admin. Assistant Thai and 4th generation Chinese in Thailand English, Central Thai Bellflower, CA.; November 8, 2002 sam/wan/dee/ see / wan / khai/ three /day /good/ four/ day / fever/ Good for three days and fevered for four days. This is a description I learned from my father, Boonlert Nakkeow. He used this to describe my relationship with my 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. She was prone to extreme moodswings. One day should she would be laughing and smiling and the next she would be really terse and quiet. This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain why either. Varinthorn Nakkeow, Age 21. 10420 Trabuco St.; Bellflower, CA 90706",
+  "date_collected": "November 8, 2002",
+  "location_collected": {
+    "city": "Bellflower",
+    "state": "CA",
+    "country": null,
+    "geolocation": null
+  }
+}

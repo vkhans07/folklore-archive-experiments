@@ -1,0 +1,35 @@
+{
+  "container": null,
+  "content": [
+    {
+      "citations": null,
+      "text": "{\n  \"_id\": null,\n  \"filename\": \"JSONs/Turkey Proverbs.pdf\",\n  \"contributor\": {\n    \"name\": \"Defne Ezgi\",\n    \"age_bucket\": \"18-24\",\n    \"gender\": \"female\",\n    \"ethnicity\": null,\n    \"nationality\": \"Turkish-American\",\n    \"languages_spoken\": [\"English\", \"Turkish\", \"French\"],\n    \"occupation\": \"Student (U.C.Berkeley)\"\n  },\n  \"folklore\": {\n    \"item\": \"Keskin sirke kupune zarar\",\n    \"medium\": null,\n    \"translation\": \"pungent vinegar to its container harm; Pungent vinegar is harmful to its container.\",\n    \"place_mentioned\": [\n      {\"city\": \"Ayvalik\", \"state\": null, \"country\": \"Turkey\", \"geolocation\": null}\n    ]\n  },\n  \"collector\": {\n    \"name\": \"Vivian Samano\",\n    \"gender\": null,\n    \"collector_comments\": \"The following interpretation represents the thoughts of the collector, although I presented this interpretation to the informant and it met with her approval.\"\n  },\n  \"analysis\": {\n    \"context\": {\n      \"use_context\": \"This proverb, which is used by both male and female adults, is most often directed towards young people in their late teens and early twenties.\",\n      \"cultural_background\": \"Defne first heard this proverb from her best friend Banu's mother in Ayvalik, Turkey, when the two girls were on a summer vacation in this resort town, at the age of fifteen in 1994. Banu, who was sixteen at the time, was living a terribly frivolous and extreme life style that included a great deal of parties and frivolous spending. Also, given that they were in a resort town, she had little time to concern herself with such mundane activities as chores and homework that had always kept he so grounded in the past. According to the informant, This proverb has only one meaning: living an extreme life far removed from any balance can do serious damage to an individual.\",\n      \"collection_context\": \"Collected at a dorm in Berkeley, Ca.\"\n    },\n    \"interpretation\": \"In this proverb, I [text partly illegible] vinegar as being of an extremely acidic substance that does damage to every thing it touches. The vinegar, thus, represents a destructive force that can \\\"eat away\\\" at an individual. The container can be interpreted as representing the body, which can be damaged and harmed by such extreme activities as drinking, abusing drugs, and smoking.\",\n    \"collector_comments\": null\n  },\n  \"storage_medium\": \"PDF\",\n  \"cleaned_full_text\": \"Defne Ezgi, female, 18\\nTurkish-American Student (U.C.Berkeley)\\nEnglish, Turkish, Erench\\nBerkeley, Ca. (collected at dorm)\\nNovember 19, 1997\\n\\n4 [rect] Keskin\\nsirke kupune zarar\\npungent vinegar to its container harm\\n\\nPungent vinegar is harmful to its container.\\n\\nDefne first heard this proverb from her best friend Banu's mother in Ayvalik, ‘Turkey, when the two girls were on a summer vacation in this resort town, at the age of fifteen in 1994, Banu, who was sixteen at the time, was living a terribly frivolous and extreme life style that included a great deal of parties and frivolous spending. Also, given that they were in a resort town, she had little time to concern herself with such mundane activities as chores and homework that had always kept he so grounded in the past. According to the informant, This proverb has only one meaning: living an extreme life far removed from any balance can do serious damage to an individual.\\n\\nThe following interpretation represents the thoughts of the collector, although I presented this interpretation to the informant and it met with her approval. This proverb, which is used by both male and female adults, is most often directed towards young people in their late teens and early twenties. In this proverb, I i vinegar as being of an extremely acidic substance that does damage to every thing it touches. The vinegar, thus, represents a destructive force that can “eat away” at an individual. The container can be interpreted as representing the body, which can be damaged and harmed by such extreme activities as drinking, abusing drugs, and smoking.\\n\\nVivian Samano, 19\\n2601 Warring, #215\\nBerkeley, Ca. 94720\",\n  \"date_collected\": \"November 19, 1997\",\n  \"location_collected\": {\n    \"city\": \"Berkeley\",\n    \"state\": \"Ca.\",\n    \"country\": null,\n    \"geolocation\": null\n  }\n}",
+      "type": "text"
+    }
+  ],
+  "diagnostics": null,
+  "id": "msg_011Cg5VebZ3DiyxoiSpe4Y84",
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 22434,
+    "output_tokens": 1490,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  }
+}

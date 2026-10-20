@@ -1,0 +1,338 @@
+{
+  "selected": [
+    {
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00003_Anglo_Folkspeech_VI_A67_C6__74/85ea15bf33deb4f177cd7e6b2ab57f704f2886860f398b0bb0ae265eeb9d89fb/run.json",
+      "timestamp_utc": "2026-10-16T18:52:09.452968+00:00",
+      "request_completed": false,
+      "json_parsed": false,
+      "schema_compliant": false,
+      "attempts": 1,
+      "latency_seconds": 0.258,
+      "request_error": {
+        "category": "quota_or_capacity",
+        "message": "{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\\nPlease retry in 5h7m50.57397206s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.8-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '18470s'}]}}",
+        "next_step": "Provider requests a wait of 18470.0s; defer this request until then instead of blocking the run.",
+        "provider_body": {
+          "error": {
+            "code": 429,
+            "details": [
+              {
+                "@type": "type.googleapis.com/google.rpc.Help",
+                "links": [
+                  {
+                    "description": "Learn more about Gemini API quotas",
+                    "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+                  }
+                ]
+              },
+              {
+                "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+                "violations": [
+                  {
+                    "quotaDimensions": {
+                      "location": "global",
+                      "model": "gemini-3.8-flash"
+                    },
+                    "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+                    "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+                    "quotaValue": "20"
+                  }
+                ]
+              },
+              {
+                "@type": "type.googleapis.com/google.rpc.RetryInfo",
+                "retryDelay": "18470s"
+              }
+            ],
+            "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\nPlease retry in 5h7m50.57397206s.",
+            "status": "RESOURCE_EXHAUSTED"
+          }
+        },
+        "provider_request_id": null,
+        "retry_after_seconds": 18470.0,
+        "retry_deferred": true,
+        "status_code": 429,
+        "transient": true,
+        "type": "ProviderHttpError"
+      }
+    },
+    {
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00002_56_Thailand_Folkspeech__38/3bce7ce84842ff59d7a43176282081f02e511fc5e5a4c2ebcca3ae70c3336b05/run.json",
+      "timestamp_utc": "2026-10-16T18:52:22.410666+00:00",
+      "request_completed": false,
+      "json_parsed": false,
+      "schema_compliant": false,
+      "attempts": 1,
+      "latency_seconds": 0.323,
+      "request_error": {
+        "category": "quota_or_capacity",
+        "message": "{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\\nPlease retry in 5h7m37.62041088s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.8-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '18457s'}]}}",
+        "next_step": "Provider requests a wait of 18457.0s; defer this request until then instead of blocking the run.",
+        "provider_body": {
+          "error": {
+            "code": 429,
+            "details": [
+              {
+                "@type": "type.googleapis.com/google.rpc.Help",
+                "links": [
+                  {
+                    "description": "Learn more about Gemini API quotas",
+                    "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+                  }
+                ]
+              },
+              {
+                "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+                "violations": [
+                  {
+                    "quotaDimensions": {
+                      "location": "global",
+                      "model": "gemini-3.8-flash"
+                    },
+                    "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+                    "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+                    "quotaValue": "20"
+                  }
+                ]
+              },
+              {
+                "@type": "type.googleapis.com/google.rpc.RetryInfo",
+                "retryDelay": "18457s"
+              }
+            ],
+            "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\nPlease retry in 5h7m37.62041088s.",
+            "status": "RESOURCE_EXHAUSTED"
+          }
+        },
+        "provider_request_id": null,
+        "retry_after_seconds": 18457.0,
+        "retry_deferred": true,
+        "status_code": 429,
+        "transient": true,
+        "type": "ProviderHttpError"
+      }
+    }
+  ],
+  "other_selected_pairs": [
+    {
+      "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00001_09_Taiwan_holiday_lore__93/fff8d665b86d3ae416da1f8bd5d9945e4fb8845a07973aa3efee1f8c76d02d99/run.json",
+      "timestamp_utc": "2026-10-16T18:48:08.955522+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 49.743,
+      "request_error": null
+    },
+    {
+      "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00002_86_Turkey_Proverbs_III__147/82f4dc2861e1b279ef66369c87c83b4696021c765f68efc23a011e12aaa02a15-retry-20261016T070830330614Z/run.json",
+      "timestamp_utc": "2026-10-16T07:09:07.988959+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 37.653,
+      "request_error": null
+    },
+    {
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00002_56_Thailand_Folkspeech__38/2168615a7810b3fb8b055c56a7d3d4ba6d672da52aca63a2bc183f8fa5b235af-retry-20261016T071033948647Z/run.json",
+      "timestamp_utc": "2026-10-16T07:11:02.078525+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 28.122,
+      "request_error": null
+    },
+    {
+      "doc_id": "00003_Legend_Vietnam__38.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00003_Legend_Vietnam__38/402b4c0a762e921e6f82e706f50ac7a69513e45a71d030ca61549b3a922ec7f4-retry-20261016T070225965355Z/run.json",
+      "timestamp_utc": "2026-10-16T07:03:39.232389+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 73.257,
+      "request_error": null
+    },
+    {
+      "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+      "model_alias": "haiku",
+      "run_path": "outputs/runs/archive/evaluation/haiku/00001_09_Taiwan_holiday_lore__93/f392f17e6ab7e659ef94b358f64482343a3e5e7c3a41a626166734910e59cdae-retry-20261016T070547117498Z/run.json",
+      "timestamp_utc": "2026-10-16T07:06:10.049295+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 22.925,
+      "request_error": null
+    },
+    {
+      "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+      "model_alias": "haiku",
+      "run_path": "outputs/runs/archive/evaluation/haiku/00002_86_Turkey_Proverbs_III__147/53e2dc9569fb3a03cf20655ac0dc1a0e2b25d92026d196dbfd490834b06e7032-retry-20261016T070804270209Z/run.json",
+      "timestamp_utc": "2026-10-16T07:08:30.328611+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 26.055,
+      "request_error": null
+    },
+    {
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "model_alias": "haiku",
+      "run_path": "outputs/runs/archive/evaluation/haiku/00002_56_Thailand_Folkspeech__38/0ad2828a259f4fd96b2ee90fcfcce8b01b6893cfafbbd43d1fd826fdfc2e6b10-retry-20261016T071019283407Z/run.json",
+      "timestamp_utc": "2026-10-16T07:10:33.945578+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 14.657,
+      "request_error": null
+    },
+    {
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "model_alias": "haiku",
+      "run_path": "outputs/runs/archive/evaluation/haiku/00003_Anglo_Folkspeech_VI_A67_C6__74/b551b6d5a21a25d713ae091237b146032e1a6c2ae1cc322db2d271e37b5de1d0-retry-20261016T071113104689Z/run.json",
+      "timestamp_utc": "2026-10-16T07:11:35.784144+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 22.674,
+      "request_error": null
+    },
+    {
+      "doc_id": "00003_Legend_Vietnam__38.pdf",
+      "model_alias": "haiku",
+      "run_path": "outputs/runs/archive/evaluation/haiku/00003_Legend_Vietnam__38/afdda16e464bb82f0515513fcc41c2810ea10118a796461eedbbf63319b78d50-retry-20261016T070123649347Z/run.json",
+      "timestamp_utc": "2026-10-16T07:02:25.956791+00:00",
+      "request_completed": true,
+      "json_parsed": false,
+      "schema_compliant": false,
+      "attempts": 1,
+      "latency_seconds": 62.304,
+      "request_error": null
+    },
+    {
+      "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+      "model_alias": "sonnet",
+      "run_path": "outputs/runs/archive/evaluation/sonnet/00001_09_Taiwan_holiday_lore__93/33dd4e9f056818282970fec9bcb201188769b7545f27676be1fccf53a1a6841a-retry-20261016T070519932386Z/run.json",
+      "timestamp_utc": "2026-10-16T07:05:47.113614+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 27.176,
+      "request_error": null
+    },
+    {
+      "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+      "model_alias": "sonnet",
+      "run_path": "outputs/runs/archive/evaluation/sonnet/00002_86_Turkey_Proverbs_III__147/0617b4bfeb81befcd42e34509b277b25a270501cf5c837e850914625a0f3bd6f-retry-20261016T070756291593Z/run.json",
+      "timestamp_utc": "2026-10-16T07:08:04.267779+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 7.971,
+      "request_error": null
+    },
+    {
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "model_alias": "sonnet",
+      "run_path": "outputs/runs/archive/evaluation/sonnet/00002_56_Thailand_Folkspeech__38/75327cb5dab26ccdc0ded49a84d0dcb62c538254c43748a773f7d1ec80e09fef-retry-20261016T071012963247Z/run.json",
+      "timestamp_utc": "2026-10-16T07:10:19.279950+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 6.313,
+      "request_error": null
+    },
+    {
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "model_alias": "sonnet",
+      "run_path": "outputs/runs/archive/evaluation/sonnet/00003_Anglo_Folkspeech_VI_A67_C6__74/3d73667821146b4a53f7d4ed5bd1c402e51abb8e0154ff18c4eb2f27c8ace5d3-retry-20261016T071106665678Z/run.json",
+      "timestamp_utc": "2026-10-16T07:11:13.101922+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 6.432,
+      "request_error": null
+    },
+    {
+      "doc_id": "00003_Legend_Vietnam__38.pdf",
+      "model_alias": "sonnet",
+      "run_path": "outputs/runs/archive/evaluation/sonnet/00003_Legend_Vietnam__38/fd894a60dd1f366de654452b555bace63c70279467b96139574c0cb8fac082e2-retry-20261016T070037795626Z/run.json",
+      "timestamp_utc": "2026-10-16T07:01:23.639273+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 45.836,
+      "request_error": null
+    },
+    {
+      "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00001_09_Taiwan_holiday_lore__93/7f3e8f86d57802716fc817ecc7db81e1d5ee64e3ccbc7388cf8ac2579feeff5d-retry-20261016T070615021837Z/run.json",
+      "timestamp_utc": "2026-10-16T07:07:56.285231+00:00",
+      "request_completed": true,
+      "json_parsed": false,
+      "schema_compliant": false,
+      "attempts": 1,
+      "latency_seconds": 101.257,
+      "request_error": null
+    },
+    {
+      "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00002_86_Turkey_Proverbs_III__147/c0f20bf1b3d911c7c2b258611c00f4a25bd5fc0d36dea978d4c2d88a7d837ae3-retry-20261016T070907992744Z/run.json",
+      "timestamp_utc": "2026-10-16T07:10:12.957267+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 64.958,
+      "request_error": null
+    },
+    {
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00003_Anglo_Folkspeech_VI_A67_C6__74/ed6f3b7851d210b2970f050375d7d9e35dc36b2b3e0dc5e0ae7f78664e028c8a-retry-20261016T071140552214Z/run.json",
+      "timestamp_utc": "2026-10-16T07:13:43.136598+00:00",
+      "request_completed": true,
+      "json_parsed": false,
+      "schema_compliant": false,
+      "attempts": 3,
+      "latency_seconds": 122.579,
+      "request_error": null
+    },
+    {
+      "doc_id": "00003_Legend_Vietnam__38.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00003_Legend_Vietnam__38/3d8d60599020e8e31e4045292334e1a7900902c64f32e40ff95ab4e9e4c98d1d-retry-20261016T070339243291Z/run.json",
+      "timestamp_utc": "2026-10-16T07:05:19.920941+00:00",
+      "request_completed": true,
+      "json_parsed": false,
+      "schema_compliant": false,
+      "attempts": 1,
+      "latency_seconds": 100.671,
+      "request_error": null
+    }
+  ]
+}

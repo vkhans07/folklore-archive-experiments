@@ -1,0 +1,47 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 1,
+  "cache_key": "89a33a985b4c17e009c09d000dba54bee6a812a069faae5c7a9db5c673519828",
+  "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+  "errors": [],
+  "finish_reason": "stop",
+  "generation": {
+    "max_tokens": 65536,
+    "temperature": 0
+  },
+  "input_sha256": "225440896fe05f5aead0af99864829194d57e86136385b501a0b3cc5230f9576",
+  "json_parsed": true,
+  "labels_sha256": "c015b892cbb0929c38100c14636a17e62e77dee5e4dd289d71c8cc6d808f8b50",
+  "latency_seconds": 276.816,
+  "location": null,
+  "max_concurrency": 3,
+  "model_alias": "gemini_flash_high",
+  "phase": "evaluation",
+  "project_id": null,
+  "prompt_version": "regions_v4",
+  "provider": "gemini_api",
+  "provider_adapter_sha256": "a7a7d395f5fe7961e38fd2078165d9d7e1e258a3a6d9522387dedad99ad10c41",
+  "request_completed": true,
+  "request_error": null,
+  "request_sha256": "30c258c803697a2b5f71cc1e2af20546496103be7789c1ccc2ca97fcfaf42838",
+  "requested_model": "gemini-3.8-flash",
+  "returned_model": "gemini-3.8-flash",
+  "runner_sha256": "32e8cd714d1c38ebe654d0a1ea73bebbb026929aceca0677153130157d76e9db",
+  "schema_compliant": true,
+  "schema_sha256": "69b155692dd189a98034d8488e13e53baffb72162e849a170bf8637bf9bcfb16",
+  "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+  "system_prompt_sha256": "3e0a3f912a54ba699833e3e3da9494b31776970df435552f422bc0c6e053e994",
+  "target": "regions",
+  "timestamp_utc": "2026-10-19T22:22:02.650648+00:00",
+  "transport": {
+    "initial_backoff_seconds": 1.0,
+    "max_attempts": 1,
+    "timeout_seconds": 300.0
+  },
+  "truncated": false,
+  "usage": {
+    "input_tokens": 15641,
+    "output_tokens": 1447
+  },
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

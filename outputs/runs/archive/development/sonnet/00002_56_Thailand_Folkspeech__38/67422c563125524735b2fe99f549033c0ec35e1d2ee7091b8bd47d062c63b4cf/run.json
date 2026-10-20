@@ -1,0 +1,57 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 1,
+  "cache_key": "67422c563125524735b2fe99f549033c0ec35e1d2ee7091b8bd47d062c63b4cf",
+  "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+  "errors": [],
+  "finish_reason": "end_turn",
+  "generation": {
+    "max_tokens": 65536,
+    "temperature": 0
+  },
+  "input_sha256": "225440896fe05f5aead0af99864829194d57e86136385b501a0b3cc5230f9576",
+  "json_parsed": true,
+  "latency_seconds": 6.609,
+  "location": null,
+  "model_alias": "sonnet",
+  "phase": "development",
+  "project_id": null,
+  "provider": "anthropic_direct",
+  "provider_adapter_sha256": "a7a7d395f5fe7961e38fd2078165d9d7e1e258a3a6d9522387dedad99ad10c41",
+  "request_completed": true,
+  "request_error": null,
+  "request_sha256": "0ec9842138334ea251223877e84e17add6cdd637ba6424816a0120f968e9ce73",
+  "requested_model": "claude-sonnet-5-5",
+  "returned_model": "claude-sonnet-5-5",
+  "runner_sha256": "b59a5d0b905ab3cc0728f29e5f1cc61a57d9830a24b134b6821957eda8ec1939",
+  "schema_compliant": true,
+  "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+  "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+  "system_prompt_sha256": "b82d16d17fcdbef0dc02715d86c90a02709e23b24f7efacb80659fe494dc07ba",
+  "target": "archive",
+  "timestamp_utc": "2026-10-19T03:30:15.699756+00:00",
+  "transport": {
+    "initial_backoff_seconds": 10.0,
+    "max_attempts": 5,
+    "timeout_seconds": 300.0
+  },
+  "truncated": false,
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 14600,
+    "output_tokens": 1147,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

@@ -1,0 +1,54 @@
+{
+  "currency": "USD",
+  "pricing_as_of": "2026-10-19",
+  "models": {
+    "gemini-3.8-flash": {
+      "provider": "Google Gemini API standard tier",
+      "input_per_million": 0.75,
+      "output_per_million": 3.75,
+      "cached_input_per_million": 0.075,
+      "cache_storage_per_million_per_hour": 0.5,
+      "source": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    "claude-haiku-5-5": {
+      "provider": "Anthropic API standard tier",
+      "input_per_million": 0.1,
+      "output_per_million": 0.5,
+      "long_prompt_threshold_tokens": 100000,
+      "long_prompt_input_per_million": 0.5,
+      "long_prompt_output_per_million": 2.5,
+      "cache_read_per_million": 0.01,
+      "long_prompt_cache_read_per_million": 0.05,
+      "cache_write_5m_per_million": 0.125,
+      "long_prompt_cache_write_5m_per_million": 0.625,
+      "cache_write_1h_per_million": 0.2,
+      "long_prompt_cache_write_1h_per_million": 1.0,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "claude-opus-5-5": {
+      "provider": "Anthropic API standard tier",
+      "input_per_million": 4.0,
+      "output_per_million": 20.0,
+      "cache_read_per_million": 0.2,
+      "cache_write_5m_per_million": 5.0,
+      "cache_write_1h_per_million": 8.0,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "claude-sonnet-5-5": {
+      "provider": "Anthropic API standard tier",
+      "input_per_million": 2.0,
+      "output_per_million": 10.0,
+      "cache_read_per_million": 0.1,
+      "cache_write_5m_per_million": 2.5,
+      "cache_write_1h_per_million": 4.0,
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "gpt-6-astra": {
+      "provider": "OpenAI API standard tier",
+      "input_per_million": 10.0,
+      "output_per_million": 50.0,
+      "cached_input_per_million": 1.0,
+      "source": "https://developers.openai.com/api/docs/models/gpt-6-astra"
+    }
+  }
+}

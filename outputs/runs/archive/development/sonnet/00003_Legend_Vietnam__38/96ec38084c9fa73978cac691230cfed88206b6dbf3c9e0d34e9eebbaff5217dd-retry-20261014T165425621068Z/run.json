@@ -1,0 +1,44 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 3,
+  "cache_key": "96ec38084c9fa73978cac691230cfed88206b6dbf3c9e0d34e9eebbaff5217dd",
+  "doc_id": "00003_Legend_Vietnam__38.pdf",
+  "errors": [],
+  "finish_reason": null,
+  "generation": {
+    "max_tokens": 16384,
+    "temperature": 0.0
+  },
+  "input_sha256": "6573fdfeaf09c692d09650c03c0b15bd121fddbb39f04c9d7d51d05472e582c5",
+  "json_parsed": false,
+  "latency_seconds": 4.591,
+  "location": "global",
+  "model_alias": "sonnet",
+  "phase": "development",
+  "project_id": "gen-lang-client-0368342590",
+  "provider_adapter_sha256": "62c8c944c83fdfe164f64213fefa96d9a8a611a30afafbf579132f79a7c8ce34",
+  "request_completed": false,
+  "request_error": {
+    "message": "Error code: 429 - {'error': {'code': 429, 'message': 'Quota exceeded for aiplatform.googleapis.com/global_online_prediction_requests_per_base_model with base model: anthropic-claude-sonnet. Please submit a quota increase request. https://cloud.google.com/vertex-ai/docs/generative-ai/quotas-genai.', 'status': 'RESOURCE_EXHAUSTED'}}",
+    "transient": true,
+    "type": "RateLimitError"
+  },
+  "request_sha256": "e91dd55a54b9c4d492cd0f7a7574c65a16b0ca69912797b664b9781c45d6fc74",
+  "requested_model": "claude-sonnet-5-5",
+  "returned_model": null,
+  "runner_sha256": "b43bd10bc4750e5728f1b4f6a54b20fc83846b45c1e735c665d6593d75e1b2e0",
+  "schema_compliant": false,
+  "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+  "settings_loader_sha256": "3e644c27540498e0ec9c26fb0427a24ca8f09beb400f733ad340c7dbe78565e4",
+  "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+  "target": "archive",
+  "timestamp_utc": "2026-10-14T16:54:30.213688+00:00",
+  "transport": {
+    "initial_backoff_seconds": 1.0,
+    "max_attempts": 3,
+    "timeout_seconds": 120.0
+  },
+  "truncated": false,
+  "usage": null,
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

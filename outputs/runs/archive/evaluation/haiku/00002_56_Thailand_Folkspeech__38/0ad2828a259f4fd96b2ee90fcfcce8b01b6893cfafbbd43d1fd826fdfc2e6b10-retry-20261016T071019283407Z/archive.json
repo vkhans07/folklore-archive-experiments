@@ -1,0 +1,52 @@
+{
+  "_id": null,
+  "analysis": {
+    "collector_comments": null,
+    "context": {
+      "collection_context": "Submitted as a folk speech entry with the contributor's personal details, dated November 8, 2002.",
+      "cultural_background": null,
+      "use_context": "The contributor's father used the saying to describe the contributor's relationship with a 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley, who was prone to extreme mood swings."
+    },
+    "interpretation": "The contributor explains the saying as a personality description used for a person with rapidly changing moods who also does not pause to explain either."
+  },
+  "cleaned_full_text": "Aaland “Fore sfeecn\nFolk Speech — Thai\nMyself, Age 21. Female\nStudent, Library Assistant, Admin. Assistant\n‘Thai and 4\" generation Chinese in Thailand\nEnglish, Central Thai\nBellflower, CA.; November 8, 2002\nmutual aly\nony /3u/#/ as tus 14\nsam/wan/dee/ see / wan / khai/\nthree /day /good/ —_four/ day / fever/\nGood for three days and fevered for four days.\nThis is a description I learned from my father, Boonlert Nakkeow. He used this to describe my relationship with my 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. She was prone to extreme moodswings. One day should she would be laughing and smiling and the next she would be really terse and quiet. This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain either.\nVarinthorn Nakkeow, Age 21.\n10420 Trabuco St.; Bellflower, CA 90706",
+  "collector": {
+    "collector_comments": null,
+    "gender": null,
+    "name": null
+  },
+  "contributor": {
+    "age_bucket": "18-24",
+    "ethnicity": "Thai and 4th generation Chinese in Thailand",
+    "gender": "Female",
+    "languages_spoken": [
+      "English",
+      "Central Thai"
+    ],
+    "name": "Varinthorn Nakkeow",
+    "nationality": null,
+    "occupation": "Student, Library Assistant, Admin. Assistant"
+  },
+  "date_collected": "November 8, 2002",
+  "filename": "JSONs/Thailand Folkspeech.pdf",
+  "folklore": {
+    "item": "sam/wan/dee/ see / wan / khai/ three /day /good/ —_four/ day / fever/ Good for three days and fevered for four days.",
+    "medium": "Oral",
+    "place_mentioned": [
+      {
+        "city": "Berkeley",
+        "country": null,
+        "geolocation": null,
+        "state": null
+      }
+    ],
+    "translation": "Good for three days and fevered for four days."
+  },
+  "location_collected": {
+    "city": "Bellflower",
+    "country": null,
+    "geolocation": null,
+    "state": "CA"
+  },
+  "storage_medium": "PDF"
+}

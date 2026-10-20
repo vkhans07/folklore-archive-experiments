@@ -1,0 +1,20 @@
+{
+  "fallbacks": [],
+  "source_exports": [
+    {
+      "canonical_file": "JSONs/Anglo Folkspeech VI.json",
+      "duplicate_files": [
+        "JSONs/Legend Vietnam 38.json",
+        "JSONs/Thailand Folkspeech.json",
+        "JSONs/Turkey Proverbs.json"
+      ],
+      "sha256": "174f804350c399f8308cbb9cd63fcf3b56b13e3fc755878ba9f28132823555f3"
+    },
+    {
+      "canonical_file": "JSONs/Taiwan Holiday Lore.json",
+      "duplicate_files": [],
+      "sha256": "7c6a812f22b0676c5fb4044ac11fe536da5fe5b4871521fbfd480001aa76f45f"
+    }
+  ],
+  "unique_annotation_ids_all_documents": 228
+}

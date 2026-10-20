@@ -12,16 +12,62 @@ from .references import load_references
 from .settings import model_settings
 
 
-def score_document(refs, preds):
+def _word_label_memberships(rows, pages):
+    """Expand boxes to page-local OCR words using word-center containment."""
+    memberships = set()
+    for row in rows:
+        page_num = row["page_num"]
+        if page_num >= len(pages):
+            continue
+        x0, y0, x1, y1 = row["bbox"]
+        for word_index, word in enumerate(pages[page_num]["words"]):
+            wx0, wy0, wx1, wy1 = word["bbox"]
+            center_x, center_y = (wx0 + wx1) / 2, (wy0 + wy1) / 2
+            if x0 <= center_x <= x1 and y0 <= center_y <= y1:
+                memberships.add((page_num, word_index, row["label"]))
+    return memberships
+
+
+def _box_fp_containment_exemptions(refs, preds, matched_pred_indices):
+    """Return unmatched predictions fully contained by a same-page/label reference."""
+    exempt = set()
+    for pred_index, pred in enumerate(preds):
+        if pred_index in matched_pred_indices:
+            continue
+        px0, py0, px1, py1 = pred["bbox"]
+        for ref in refs:
+            if ref["page_num"] != pred["page_num"] or ref["label"] != pred["label"]:
+                continue
+            rx0, ry0, rx1, ry1 = ref["bbox"]
+            if rx0 <= px0 and ry0 <= py0 and px1 <= rx1 and py1 <= ry1:
+                exempt.add(pred_index)
+                break
+    return exempt
+
+
+def score_document(refs, preds, pages=None):
     text_tp = text_exact_count(refs, preds)
     pairs = region_pairs(refs, preds)
     box_tp = len(pairs)
+    matched_pred_indices = {pred_index for _, pred_index, _ in pairs}
+    containment_exemptions = _box_fp_containment_exemptions(refs, preds, matched_pred_indices)
+    box_fp = len(preds) - box_tp - len(containment_exemptions)
+    box_fn = len(refs) - box_tp
     text_p, text_r, text_f1 = prf(text_tp, len(preds), len(refs))
-    box_p, box_r, box_f1 = prf(box_tp, len(preds), len(refs))
+    box_p, box_r, box_f1 = prf(box_tp, box_tp + box_fp, box_tp + box_fn)
+    pages = pages or []
+    reference_words = _word_label_memberships(refs, pages)
+    predicted_words = _word_label_memberships(preds, pages)
+    word_label_tp = len(reference_words & predicted_words)
+    word_label_fp = len(predicted_words - reference_words)
+    word_label_fn = len(reference_words - predicted_words)
+    word_label_p, word_label_r, word_label_f1 = prf(
+        word_label_tp, len(predicted_words), len(reference_words)
+    )
     distances = [edit_distance(refs[i]["text"], preds[j]["text"]) for i, j, _ in pairs]
     matched_reference_chars = sum(len(normalized_text(refs[i]["text"])) for i, _, _ in pairs)
     edit_total = sum(distances)
-    return {"reference_count": len(refs), "prediction_count": len(preds), "text_tp": text_tp, "text_fp": len(preds) - text_tp, "text_fn": len(refs) - text_tp, "text_precision": text_p, "text_recall": text_r, "text_f1": text_f1, "box_tp": box_tp, "box_fp": len(preds) - box_tp, "box_fn": len(refs) - box_tp, "box_precision": box_p, "box_recall": box_r, "box_f1": box_f1, "matched_mean_iou": sum(v for _, _, v in pairs) / box_tp if box_tp else None, "box_matched_char_edit_total": edit_total, "box_matched_char_edit_mean": edit_total / len(distances) if distances else None, "box_matched_reference_char_count": matched_reference_chars, "box_matched_char_error_rate": edit_total / matched_reference_chars if matched_reference_chars else None, "box_matched_char_edit_distances": distances}
+    return {"reference_count": len(refs), "prediction_count": len(preds), "text_tp": text_tp, "text_fp": len(preds) - text_tp, "text_fn": len(refs) - text_tp, "text_precision": text_p, "text_recall": text_r, "text_f1": text_f1, "box_tp": box_tp, "box_fp": box_fp, "box_fn": box_fn, "box_containment_fp_exempt": len(containment_exemptions), "box_precision": box_p, "box_recall": box_r, "box_f1": box_f1, "word_label_tp": word_label_tp, "word_label_fp": word_label_fp, "word_label_fn": word_label_fn, "word_label_precision": word_label_p, "word_label_recall": word_label_r, "word_label_f1": word_label_f1, "reference_ocr_word_label_count": len(reference_words), "prediction_ocr_word_label_count": len(predicted_words), "matched_mean_iou": sum(v for _, _, v in pairs) / box_tp if box_tp else None, "box_matched_char_edit_total": edit_total, "box_matched_char_edit_mean": edit_total / len(distances) if distances else None, "box_matched_reference_char_count": matched_reference_chars, "box_matched_char_error_rate": edit_total / matched_reference_chars if matched_reference_chars else None, "box_matched_char_edit_distances": distances}
 
 
 def render_overlays(doc, refs, preds, destination):
@@ -102,7 +148,7 @@ def evaluate(phase="evaluation", selected_doc=None, selected_model=None, prompt_
         for alias, (path, record) in selected.items():
             pred_path = path.parent / "predictions.json"
             preds = read_json(pred_path)["annotations"] if record.get("schema_compliant") and pred_path.exists() else []
-            metrics = score_document(refs[doc_id], preds) if record.get("request_completed") else None
+            metrics = score_document(refs[doc_id], preds, prepared[doc_id]["pages"]) if record.get("request_completed") else None
             row = {"phase": phase, "doc_id": doc_id, "model_alias": alias, "requested_model": record["requested_model"], "returned_model": record.get("returned_model"), "run_path": str(path), "prompt_sha256": record["system_prompt_sha256"], "request_completed": record["request_completed"], "json_parsed": record["json_parsed"], "schema_compliant": record["schema_compliant"], "transport_failure": not record["request_completed"], "truncated": record["truncated"], "latency_seconds": record["latency_seconds"], "finish_reason": record["finish_reason"], "input_tokens": (record.get("usage") or {}).get("input_tokens"), "output_tokens": (record.get("usage") or {}).get("output_tokens"), "request_error": record.get("request_error"), "validation_errors": record.get("errors")}
             if metrics is not None:
                 row.update(metrics)

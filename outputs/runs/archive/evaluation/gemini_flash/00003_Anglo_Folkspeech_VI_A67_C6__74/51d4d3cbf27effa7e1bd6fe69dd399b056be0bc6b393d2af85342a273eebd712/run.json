@@ -1,0 +1,85 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 3,
+  "cache_key": "51d4d3cbf27effa7e1bd6fe69dd399b056be0bc6b393d2af85342a273eebd712",
+  "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+  "errors": [],
+  "finish_reason": null,
+  "generation": {
+    "max_tokens": 16384,
+    "temperature": 0
+  },
+  "input_sha256": "5eaa66bd793cddc8965f2af364968c0ba171fd8f115d145d889c15e1aadb1e67",
+  "json_parsed": false,
+  "latency_seconds": 3.751,
+  "location": null,
+  "model_alias": "gemini_flash",
+  "phase": "evaluation",
+  "project_id": null,
+  "provider": "gemini_api",
+  "provider_adapter_sha256": "607cb38593ea0675564ffec32a0ff3d36c926b37e9ee43c083e1250b5333e475",
+  "request_completed": false,
+  "request_error": {
+    "category": "quota_or_capacity",
+    "message": "{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.8-flash\\nPlease retry in 34.814096148s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.8-flash'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '34s'}]}}",
+    "next_step": "Check the provider's quota for this model and endpoint.",
+    "provider_body": {
+      "error": {
+        "code": 429,
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Learn more about Gemini API quotas",
+                "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+              }
+            ]
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+            "violations": [
+              {
+                "quotaDimensions": {
+                  "location": "global",
+                  "model": "gemini-3.8-flash"
+                },
+                "quotaId": "GenerateRequestsPerMinutePerProjectPerModel-FreeTier",
+                "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+                "quotaValue": "5"
+              }
+            ]
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.RetryInfo",
+            "retryDelay": "34s"
+          }
+        ],
+        "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.8-flash\nPlease retry in 34.814096148s.",
+        "status": "RESOURCE_EXHAUSTED"
+      }
+    },
+    "provider_request_id": null,
+    "status_code": 429,
+    "transient": true,
+    "type": "ProviderHttpError"
+  },
+  "request_sha256": "b4afe79dba0963c0f1d28f937d796fb4ca3b00c6f8c2dd8ae68419a3994d8f38",
+  "requested_model": "gemini-3.8-flash",
+  "returned_model": null,
+  "runner_sha256": "f94913eeffe74bf1e11ab3372730d011955577884f3b28cac7a73c8600fbf75a",
+  "schema_compliant": false,
+  "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+  "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+  "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+  "target": "archive",
+  "timestamp_utc": "2026-10-16T06:35:25.216801+00:00",
+  "transport": {
+    "initial_backoff_seconds": 1.0,
+    "max_attempts": 3,
+    "timeout_seconds": 120.0
+  },
+  "truncated": false,
+  "usage": null,
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

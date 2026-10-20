@@ -1,0 +1,1185 @@
+{
+  "created_at": "2026-10-18T21:41:54.191569+00:00",
+  "selected": [
+    {
+      "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00001_09_Taiwan_holiday_lore__93/7f3e8f86d57802716fc817ecc7db81e1d5ee64e3ccbc7388cf8ac2579feeff5d-retry-20261016T070615021837Z/run.json",
+      "record_sha256": "1aba59469c3150bd18bded00935290aa396c18fbaf2ae148f7a0b733f33cf806",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "7f3e8f86d57802716fc817ecc7db81e1d5ee64e3ccbc7388cf8ac2579feeff5d",
+        "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+        "errors": [
+          "JSON parsing: Unterminated string starting at: line 33 column 23 (char 2388)",
+          "Output truncated at max_tokens"
+        ],
+        "finish_reason": "max_tokens",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "76c298330761d81b2ebedf7a2fbce30bb2295a100a08ae90ddc81c776e1cbcb7",
+        "json_parsed": false,
+        "latency_seconds": 101.257,
+        "location": null,
+        "model_alias": "gemini_flash_high",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "gemini_api",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "4da4443cae4ec03b52675cce85e6723fbabb29f5b79f9b6048ad8f919202bdb4",
+        "requested_model": "gemini-3.8-flash",
+        "returned_model": "gemini-3.8-flash",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": false,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:07:56.285231+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": true,
+        "usage": {
+          "input_tokens": 40974,
+          "output_tokens": 648
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00003_Anglo_Folkspeech_VI_A67_C6__74/ed6f3b7851d210b2970f050375d7d9e35dc36b2b3e0dc5e0ae7f78664e028c8a-retry-20261016T071140552214Z/run.json",
+      "record_sha256": "44db3204609f082f5ca2adea04c7b8a970df7c0c9f9ecd12c8c95692e9f34658",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 3,
+        "cache_key": "ed6f3b7851d210b2970f050375d7d9e35dc36b2b3e0dc5e0ae7f78664e028c8a",
+        "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+        "errors": [
+          "JSON parsing: Unterminated string starting at: line 36 column 24 (char 1835)",
+          "Output truncated at max_tokens"
+        ],
+        "finish_reason": "max_tokens",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "5eaa66bd793cddc8965f2af364968c0ba171fd8f115d145d889c15e1aadb1e67",
+        "json_parsed": false,
+        "latency_seconds": 122.579,
+        "location": null,
+        "model_alias": "gemini_flash_high",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "gemini_api",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "109e1adebec6435c82460ee48224edaa151622c61f1d9bfdc6b7ab1c44bb214f",
+        "requested_model": "gemini-3.8-flash",
+        "returned_model": "gemini-3.8-flash",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": false,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:13:43.136598+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": true,
+        "usage": {
+          "input_tokens": 20755,
+          "output_tokens": 649
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00003_Legend_Vietnam__38.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00003_Legend_Vietnam__38/3d8d60599020e8e31e4045292334e1a7900902c64f32e40ff95ab4e9e4c98d1d-retry-20261016T070339243291Z/run.json",
+      "record_sha256": "13f398efb7dcb9629b5f2f7d0dcc22d5224282d16c1610787af51a8ae4937969",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "3d8d60599020e8e31e4045292334e1a7900902c64f32e40ff95ab4e9e4c98d1d",
+        "doc_id": "00003_Legend_Vietnam__38.pdf",
+        "errors": [
+          "JSON parsing: Unterminated string starting at: line 16 column 13 (char 329)",
+          "Output truncated at max_tokens"
+        ],
+        "finish_reason": "max_tokens",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "6573fdfeaf09c692d09650c03c0b15bd121fddbb39f04c9d7d51d05472e582c5",
+        "json_parsed": false,
+        "latency_seconds": 100.671,
+        "location": null,
+        "model_alias": "gemini_flash_high",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "gemini_api",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "d66f160a502d2b3c75f3c3c5d8c3d2823f5fd7d9676dd5d804d1f1523751d33c",
+        "requested_model": "gemini-3.8-flash",
+        "returned_model": "gemini-3.8-flash",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": false,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:05:19.920941+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": true,
+        "usage": {
+          "input_tokens": 143259,
+          "output_tokens": 650
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00003_Legend_Vietnam__38.pdf",
+      "model_alias": "haiku",
+      "run_path": "outputs/runs/archive/evaluation/haiku/00003_Legend_Vietnam__38/afdda16e464bb82f0515513fcc41c2810ea10118a796461eedbbf63319b78d50-retry-20261016T070123649347Z/run.json",
+      "record_sha256": "33e2c4e50ef9ea8d1bbaa2fed2c7d78b9c5fdd6dd410507684c2b98c929f1d3b",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "afdda16e464bb82f0515513fcc41c2810ea10118a796461eedbbf63319b78d50",
+        "doc_id": "00003_Legend_Vietnam__38.pdf",
+        "errors": [
+          "JSON parsing: Expecting value: line 1 column 1 (char 0)",
+          "Output truncated at max_tokens"
+        ],
+        "finish_reason": "max_tokens",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "6573fdfeaf09c692d09650c03c0b15bd121fddbb39f04c9d7d51d05472e582c5",
+        "json_parsed": false,
+        "latency_seconds": 62.304,
+        "location": null,
+        "model_alias": "haiku",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "anthropic_direct",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "0cd763eddc3d71372346c32ffe63c5bbc7b1c70e1210ea97d319d5856c4a23ec",
+        "requested_model": "claude-haiku-5-5",
+        "returned_model": "claude-haiku-5-5",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": false,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:02:25.956791+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": true,
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 123249,
+          "output_tokens": 16384,
+          "output_tokens_details": {
+            "thinking_tokens": 16384
+          },
+          "server_tool_use": null,
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    }
+  ],
+  "other_selected_pairs": [
+    {
+      "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00001_09_Taiwan_holiday_lore__93/fff8d665b86d3ae416da1f8bd5d9945e4fb8845a07973aa3efee1f8c76d02d99/run.json",
+      "record_sha256": "daecd268abb6dd989f0b72611b3117e416f8ff5dcb03130fc26d9840cceb684d",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "fff8d665b86d3ae416da1f8bd5d9945e4fb8845a07973aa3efee1f8c76d02d99",
+        "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+        "errors": [],
+        "finish_reason": "stop",
+        "generation": {
+          "max_tokens": 65536,
+          "temperature": 0
+        },
+        "input_sha256": "76c298330761d81b2ebedf7a2fbce30bb2295a100a08ae90ddc81c776e1cbcb7",
+        "json_parsed": true,
+        "latency_seconds": 49.743,
+        "location": null,
+        "model_alias": "gemini_flash",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "gemini_api",
+        "provider_adapter_sha256": "a7a7d395f5fe7961e38fd2078165d9d7e1e258a3a6d9522387dedad99ad10c41",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "43a97ee25962bb5c6df243f1a4061bebbfefbe757a66c6264a46d645f540a1ab",
+        "requested_model": "gemini-3.8-flash",
+        "returned_model": "gemini-3.8-flash",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T18:48:08.955522+00:00",
+        "transport": {
+          "initial_backoff_seconds": 10.0,
+          "max_attempts": 5,
+          "timeout_seconds": 300.0
+        },
+        "truncated": false,
+        "usage": {
+          "input_tokens": 40974,
+          "output_tokens": 1411
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+      "model_alias": "haiku",
+      "run_path": "outputs/runs/archive/evaluation/haiku/00001_09_Taiwan_holiday_lore__93/f392f17e6ab7e659ef94b358f64482343a3e5e7c3a41a626166734910e59cdae-retry-20261016T070547117498Z/run.json",
+      "record_sha256": "a57c61a5bc9e71055bbadad5aeded38edd8fe18efa2758b5e7ab3ce65b52da12",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "f392f17e6ab7e659ef94b358f64482343a3e5e7c3a41a626166734910e59cdae",
+        "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+        "errors": [],
+        "finish_reason": "end_turn",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "76c298330761d81b2ebedf7a2fbce30bb2295a100a08ae90ddc81c776e1cbcb7",
+        "json_parsed": true,
+        "latency_seconds": 22.925,
+        "location": null,
+        "model_alias": "haiku",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "anthropic_direct",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "2f18551c5c3dc7ff0cb3ba7fcbc5cf8a27c3ebd8826a0528b75ca6a280832a64",
+        "requested_model": "claude-haiku-5-5",
+        "returned_model": "claude-haiku-5-5",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:06:10.049295+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 35642,
+          "output_tokens": 6034,
+          "output_tokens_details": {
+            "thinking_tokens": 4110
+          },
+          "server_tool_use": null,
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+      "model_alias": "sonnet",
+      "run_path": "outputs/runs/archive/evaluation/sonnet/00001_09_Taiwan_holiday_lore__93/33dd4e9f056818282970fec9bcb201188769b7545f27676be1fccf53a1a6841a-retry-20261016T070519932386Z/run.json",
+      "record_sha256": "3d234a3306914309d2e77b42a1ca09fd1b523987e0a991f879cf08a754077852",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "33dd4e9f056818282970fec9bcb201188769b7545f27676be1fccf53a1a6841a",
+        "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+        "errors": [],
+        "finish_reason": "end_turn",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "76c298330761d81b2ebedf7a2fbce30bb2295a100a08ae90ddc81c776e1cbcb7",
+        "json_parsed": true,
+        "latency_seconds": 27.176,
+        "location": null,
+        "model_alias": "sonnet",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "anthropic_direct",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "91f0ae5660a5f29cd57fee5b4f79dc98cb7c177b365865a74dbc64403c942862",
+        "requested_model": "claude-sonnet-5-5",
+        "returned_model": "claude-sonnet-5-5",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:05:47.113614+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 35642,
+          "output_tokens": 4245,
+          "output_tokens_details": {
+            "thinking_tokens": 2335
+          },
+          "server_tool_use": null,
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00002_56_Thailand_Folkspeech__38/2168615a7810b3fb8b055c56a7d3d4ba6d672da52aca63a2bc183f8fa5b235af-retry-20261016T071033948647Z/run.json",
+      "record_sha256": "f6a0173c89bd60dbad495bc2a5f96bd670561e7eb62efdff11202aec3191eecc",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "2168615a7810b3fb8b055c56a7d3d4ba6d672da52aca63a2bc183f8fa5b235af",
+        "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+        "errors": [],
+        "finish_reason": "stop",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "225440896fe05f5aead0af99864829194d57e86136385b501a0b3cc5230f9576",
+        "json_parsed": true,
+        "latency_seconds": 28.122,
+        "location": null,
+        "model_alias": "gemini_flash",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "gemini_api",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "c159ebd78b190a3137dba1ba76f92d0dcc78b772868538423852db1b231cd8b3",
+        "requested_model": "gemini-3.8-flash",
+        "returned_model": "gemini-3.8-flash",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:11:02.078525+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "input_tokens": 14648,
+          "output_tokens": 798
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00002_56_Thailand_Folkspeech__38/3bce7ce84842ff59d7a43176282081f02e511fc5e5a4c2ebcca3ae70c3336b05-retry-20261018T210518010105Z/run.json",
+      "record_sha256": "0cdc7971f88666a6d28ab1012d11a5becb744c85aa5612015263cf0507216672",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 2,
+        "cache_key": "3bce7ce84842ff59d7a43176282081f02e511fc5e5a4c2ebcca3ae70c3336b05",
+        "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+        "errors": [],
+        "finish_reason": "stop",
+        "generation": {
+          "max_tokens": 65536,
+          "temperature": 0
+        },
+        "input_sha256": "225440896fe05f5aead0af99864829194d57e86136385b501a0b3cc5230f9576",
+        "json_parsed": true,
+        "latency_seconds": 478.755,
+        "location": null,
+        "model_alias": "gemini_flash_high",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "gemini_api",
+        "provider_adapter_sha256": "a7a7d395f5fe7961e38fd2078165d9d7e1e258a3a6d9522387dedad99ad10c41",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "0159392b0d1755ecec4880f89042be0031c5832266fff8ecaf24c8c9df943188",
+        "requested_model": "gemini-3.8-flash",
+        "returned_model": "gemini-3.8-flash",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-18T21:13:16.737416+00:00",
+        "transport": {
+          "initial_backoff_seconds": 10.0,
+          "max_attempts": 5,
+          "timeout_seconds": 300.0
+        },
+        "truncated": false,
+        "usage": {
+          "input_tokens": 14648,
+          "output_tokens": 787
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "model_alias": "haiku",
+      "run_path": "outputs/runs/archive/evaluation/haiku/00002_56_Thailand_Folkspeech__38/0ad2828a259f4fd96b2ee90fcfcce8b01b6893cfafbbd43d1fd826fdfc2e6b10-retry-20261016T071019283407Z/run.json",
+      "record_sha256": "6189fd5022d4dadd97277af71a019a01732cdc530a6362cb5651ba49f392eef8",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "0ad2828a259f4fd96b2ee90fcfcce8b01b6893cfafbbd43d1fd826fdfc2e6b10",
+        "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+        "errors": [],
+        "finish_reason": "end_turn",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "225440896fe05f5aead0af99864829194d57e86136385b501a0b3cc5230f9576",
+        "json_parsed": true,
+        "latency_seconds": 14.657,
+        "location": null,
+        "model_alias": "haiku",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "anthropic_direct",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "cc24592f0d38a6a88d109d480703cee5696ab4a38f78542930d721aeaf40435b",
+        "requested_model": "claude-haiku-5-5",
+        "returned_model": "claude-haiku-5-5",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:10:33.945578+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 13171,
+          "output_tokens": 3779,
+          "output_tokens_details": {
+            "thinking_tokens": 2718
+          },
+          "server_tool_use": null,
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "model_alias": "sonnet",
+      "run_path": "outputs/runs/archive/evaluation/sonnet/00002_56_Thailand_Folkspeech__38/75327cb5dab26ccdc0ded49a84d0dcb62c538254c43748a773f7d1ec80e09fef-retry-20261016T071012963247Z/run.json",
+      "record_sha256": "dd9eddc6e5f6136eb573fc9e546e3bcfb3dcb47477c6768270d0e59ddc964a53",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "75327cb5dab26ccdc0ded49a84d0dcb62c538254c43748a773f7d1ec80e09fef",
+        "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+        "errors": [],
+        "finish_reason": "end_turn",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "225440896fe05f5aead0af99864829194d57e86136385b501a0b3cc5230f9576",
+        "json_parsed": true,
+        "latency_seconds": 6.313,
+        "location": null,
+        "model_alias": "sonnet",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "anthropic_direct",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "43fb918eb0b937e6ed62cff6d5eb6445a3ed4cccdb0cc350cf1fa7e589077c25",
+        "requested_model": "claude-sonnet-5-5",
+        "returned_model": "claude-sonnet-5-5",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:10:19.279950+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 13171,
+          "output_tokens": 955,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": null,
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00002_86_Turkey_Proverbs_III__147/82f4dc2861e1b279ef66369c87c83b4696021c765f68efc23a011e12aaa02a15-retry-20261016T070830330614Z/run.json",
+      "record_sha256": "ca4d163dd71750800310359ca4f0487198005654c5126335e20f97a14cd44301",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "82f4dc2861e1b279ef66369c87c83b4696021c765f68efc23a011e12aaa02a15",
+        "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+        "errors": [],
+        "finish_reason": "stop",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "9f8ec181c64b7ce09d4c8a6c3201f8ecda0c61ff8dec437136eedcd27cf9d41b",
+        "json_parsed": true,
+        "latency_seconds": 37.653,
+        "location": null,
+        "model_alias": "gemini_flash",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "gemini_api",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "55dd808c1c1673fa96ae15f31f8cd8646f766211a8fd898edc06ad5211bfd443",
+        "requested_model": "gemini-3.8-flash",
+        "returned_model": "gemini-3.8-flash",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:09:07.988959+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "input_tokens": 25680,
+          "output_tokens": 1063
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00002_86_Turkey_Proverbs_III__147/c0f20bf1b3d911c7c2b258611c00f4a25bd5fc0d36dea978d4c2d88a7d837ae3-retry-20261016T070907992744Z/run.json",
+      "record_sha256": "eb6e02d845444cdd3cd7becf7215e47aa2cbeade74d3a3c6c11bbe8e25788c59",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "c0f20bf1b3d911c7c2b258611c00f4a25bd5fc0d36dea978d4c2d88a7d837ae3",
+        "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+        "errors": [],
+        "finish_reason": "stop",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "9f8ec181c64b7ce09d4c8a6c3201f8ecda0c61ff8dec437136eedcd27cf9d41b",
+        "json_parsed": true,
+        "latency_seconds": 64.958,
+        "location": null,
+        "model_alias": "gemini_flash_high",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "gemini_api",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "1aecd5f15fc0a3d26a632bf8f870e73ef565f1f679add605967027242d702095",
+        "requested_model": "gemini-3.8-flash",
+        "returned_model": "gemini-3.8-flash",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:10:12.957267+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "input_tokens": 25680,
+          "output_tokens": 1032
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+      "model_alias": "haiku",
+      "run_path": "outputs/runs/archive/evaluation/haiku/00002_86_Turkey_Proverbs_III__147/53e2dc9569fb3a03cf20655ac0dc1a0e2b25d92026d196dbfd490834b06e7032-retry-20261016T070804270209Z/run.json",
+      "record_sha256": "162c618896f3155977608e8ad04fdd67b71044290a042f86869b1bba59b184cd",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "53e2dc9569fb3a03cf20655ac0dc1a0e2b25d92026d196dbfd490834b06e7032",
+        "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+        "errors": [],
+        "finish_reason": "end_turn",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "9f8ec181c64b7ce09d4c8a6c3201f8ecda0c61ff8dec437136eedcd27cf9d41b",
+        "json_parsed": true,
+        "latency_seconds": 26.055,
+        "location": null,
+        "model_alias": "haiku",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "anthropic_direct",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "0d45730e9848c7dcbc362197a9d52ce09965dc2c74fb1b201928235f518dec38",
+        "requested_model": "claude-haiku-5-5",
+        "returned_model": "claude-haiku-5-5",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:08:30.328611+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 22434,
+          "output_tokens": 6855,
+          "output_tokens_details": {
+            "thinking_tokens": 5503
+          },
+          "server_tool_use": null,
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+      "model_alias": "sonnet",
+      "run_path": "outputs/runs/archive/evaluation/sonnet/00002_86_Turkey_Proverbs_III__147/0617b4bfeb81befcd42e34509b277b25a270501cf5c837e850914625a0f3bd6f-retry-20261016T070756291593Z/run.json",
+      "record_sha256": "c94e40f96516524c3595403e5b8df7af87ef8b4ca0c086d334b99a9ac312c995",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "0617b4bfeb81befcd42e34509b277b25a270501cf5c837e850914625a0f3bd6f",
+        "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+        "errors": [],
+        "finish_reason": "end_turn",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "9f8ec181c64b7ce09d4c8a6c3201f8ecda0c61ff8dec437136eedcd27cf9d41b",
+        "json_parsed": true,
+        "latency_seconds": 7.971,
+        "location": null,
+        "model_alias": "sonnet",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "anthropic_direct",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "39d8b52ae4b3a6377b619380d7f6a802282a6305d88d186ad2911021a4040909",
+        "requested_model": "claude-sonnet-5-5",
+        "returned_model": "claude-sonnet-5-5",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:08:04.267779+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 22434,
+          "output_tokens": 1490,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": null,
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00003_Anglo_Folkspeech_VI_A67_C6__74/85ea15bf33deb4f177cd7e6b2ab57f704f2886860f398b0bb0ae265eeb9d89fb-retry-20261018T210435458144Z/run.json",
+      "record_sha256": "299edf8dfc67da9f847b603b875902d2cb5e3f11a8df17184e56ba8653af0d1a",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "85ea15bf33deb4f177cd7e6b2ab57f704f2886860f398b0bb0ae265eeb9d89fb",
+        "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+        "errors": [],
+        "finish_reason": "stop",
+        "generation": {
+          "max_tokens": 65536,
+          "temperature": 0
+        },
+        "input_sha256": "5eaa66bd793cddc8965f2af364968c0ba171fd8f115d145d889c15e1aadb1e67",
+        "json_parsed": true,
+        "latency_seconds": 24.303,
+        "location": null,
+        "model_alias": "gemini_flash",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "gemini_api",
+        "provider_adapter_sha256": "a7a7d395f5fe7961e38fd2078165d9d7e1e258a3a6d9522387dedad99ad10c41",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "930124747ad77bed6a0160ed985b2315fb6ffa71d6d18f4be90cac46efde6b62",
+        "requested_model": "gemini-3.8-flash",
+        "returned_model": "gemini-3.8-flash",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-18T21:04:59.766222+00:00",
+        "transport": {
+          "initial_backoff_seconds": 10.0,
+          "max_attempts": 5,
+          "timeout_seconds": 300.0
+        },
+        "truncated": false,
+        "usage": {
+          "input_tokens": 20755,
+          "output_tokens": 902
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "model_alias": "haiku",
+      "run_path": "outputs/runs/archive/evaluation/haiku/00003_Anglo_Folkspeech_VI_A67_C6__74/b551b6d5a21a25d713ae091237b146032e1a6c2ae1cc322db2d271e37b5de1d0-retry-20261016T071113104689Z/run.json",
+      "record_sha256": "ece27104f840d635011b40b1922b2ccbf9e1845627ff52302c76a146a92a0948",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "b551b6d5a21a25d713ae091237b146032e1a6c2ae1cc322db2d271e37b5de1d0",
+        "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+        "errors": [],
+        "finish_reason": "end_turn",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "5eaa66bd793cddc8965f2af364968c0ba171fd8f115d145d889c15e1aadb1e67",
+        "json_parsed": true,
+        "latency_seconds": 22.674,
+        "location": null,
+        "model_alias": "haiku",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "anthropic_direct",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "0a39afd7e68d2d498ddef0ec56f62a1288c2e8b8b2839973aa984b70beb3f88b",
+        "requested_model": "claude-haiku-5-5",
+        "returned_model": "claude-haiku-5-5",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:11:35.784144+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 18449,
+          "output_tokens": 5261,
+          "output_tokens_details": {
+            "thinking_tokens": 4050
+          },
+          "server_tool_use": null,
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "model_alias": "sonnet",
+      "run_path": "outputs/runs/archive/evaluation/sonnet/00003_Anglo_Folkspeech_VI_A67_C6__74/3d73667821146b4a53f7d4ed5bd1c402e51abb8e0154ff18c4eb2f27c8ace5d3-retry-20261016T071106665678Z/run.json",
+      "record_sha256": "e0ae669af22b78ab75cc3289bf41da76db1a9cb54f185e10fed87a44292f2191",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "3d73667821146b4a53f7d4ed5bd1c402e51abb8e0154ff18c4eb2f27c8ace5d3",
+        "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+        "errors": [],
+        "finish_reason": "end_turn",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "5eaa66bd793cddc8965f2af364968c0ba171fd8f115d145d889c15e1aadb1e67",
+        "json_parsed": true,
+        "latency_seconds": 6.432,
+        "location": null,
+        "model_alias": "sonnet",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "anthropic_direct",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "e965966d9d407770f5e236789a3d252de45b8eb8b9574f3e61e0e28b06cd96a9",
+        "requested_model": "claude-sonnet-5-5",
+        "returned_model": "claude-sonnet-5-5",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:11:13.101922+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 18449,
+          "output_tokens": 1151,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": null,
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00003_Legend_Vietnam__38.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00003_Legend_Vietnam__38/402b4c0a762e921e6f82e706f50ac7a69513e45a71d030ca61549b3a922ec7f4-retry-20261016T070225965355Z/run.json",
+      "record_sha256": "0f3271d933e88bf7016898ad543b601af8f58517252f9899ee6255520bdfda59",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "402b4c0a762e921e6f82e706f50ac7a69513e45a71d030ca61549b3a922ec7f4",
+        "doc_id": "00003_Legend_Vietnam__38.pdf",
+        "errors": [],
+        "finish_reason": "stop",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "6573fdfeaf09c692d09650c03c0b15bd121fddbb39f04c9d7d51d05472e582c5",
+        "json_parsed": true,
+        "latency_seconds": 73.257,
+        "location": null,
+        "model_alias": "gemini_flash",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "gemini_api",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "c13420d4c7fcc9beb0ef7f3631d69e871ed025ce432806195bef07e054944dec",
+        "requested_model": "gemini-3.8-flash",
+        "returned_model": "gemini-3.8-flash",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:03:39.232389+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "input_tokens": 143259,
+          "output_tokens": 4155
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    },
+    {
+      "doc_id": "00003_Legend_Vietnam__38.pdf",
+      "model_alias": "sonnet",
+      "run_path": "outputs/runs/archive/evaluation/sonnet/00003_Legend_Vietnam__38/fd894a60dd1f366de654452b555bace63c70279467b96139574c0cb8fac082e2-retry-20261016T070037795626Z/run.json",
+      "record_sha256": "f48903bfb26282735cae98208e8aea9247e9baef888cd358b1fee151ab6e71ef",
+      "record": {
+        "anthropic_sdk_version": "0.125.0",
+        "attempts": 1,
+        "cache_key": "fd894a60dd1f366de654452b555bace63c70279467b96139574c0cb8fac082e2",
+        "doc_id": "00003_Legend_Vietnam__38.pdf",
+        "errors": [],
+        "finish_reason": "end_turn",
+        "generation": {
+          "max_tokens": 16384,
+          "temperature": 0
+        },
+        "input_sha256": "6573fdfeaf09c692d09650c03c0b15bd121fddbb39f04c9d7d51d05472e582c5",
+        "json_parsed": true,
+        "latency_seconds": 45.836,
+        "location": null,
+        "model_alias": "sonnet",
+        "phase": "evaluation",
+        "project_id": null,
+        "provider": "anthropic_direct",
+        "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+        "request_completed": true,
+        "request_error": null,
+        "request_sha256": "03737f82568a7f8b1439648031ebabba9ef0ccd63c85303462157c53eae195c8",
+        "requested_model": "claude-sonnet-5-5",
+        "returned_model": "claude-sonnet-5-5",
+        "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+        "schema_compliant": true,
+        "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+        "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+        "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+        "target": "archive",
+        "timestamp_utc": "2026-10-16T07:01:23.639273+00:00",
+        "transport": {
+          "initial_backoff_seconds": 1.0,
+          "max_attempts": 3,
+          "timeout_seconds": 120.0
+        },
+        "truncated": false,
+        "usage": {
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "inference_geo": "global",
+          "input_tokens": 123249,
+          "output_tokens": 8102,
+          "output_tokens_details": {
+            "thinking_tokens": 2092
+          },
+          "server_tool_use": null,
+          "service_tier": "standard",
+          "speed": "standard"
+        },
+        "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+      }
+    }
+  ],
+  "planned_settings": {
+    "max_tokens": 65536,
+    "max_attempts": 3,
+    "initial_backoff_seconds": 10,
+    "timeout_seconds": 600
+  },
+  "prompt": "archive_v2",
+  "scope": "Retry only the four latest truncated archive evaluation outputs. Preserve source/input/prompt/settings files; all other 16 selected runs remain unchanged. Gemini billed-account switch reported by user; account tier not independently verified.",
+  "source_hashes": {
+    "folklore_eval/provider.py": "a7a7d395f5fe7961e38fd2078165d9d7e1e258a3a6d9522387dedad99ad10c41",
+    "folklore_eval/references.py": "bf5085d09c6aa07e8156196f14480d3dbb2e4082a4aa3992f68d2ea58955d6f9",
+    "folklore_eval/predict.py": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+    "folklore_eval/__init__.py": "5ec3dbbb1445eb5f200ec074689d876b16c9546a0ceeea6f476de7df78da2d2a",
+    "folklore_eval/matching.py": "7584c6e197b6d286a7eb8887c841885cb8141fa122b04637c362a190b0928051",
+    "folklore_eval/cli.py": "bf5f956ca1965798a5b1f57b043ed55bb9b22d53481f07b0b675abc8ccd9df83",
+    "folklore_eval/common.py": "77a5fb4e1adb6f4489f09860dd1d239ba05d3e4e53a74d5ba2698decf443d8d2",
+    "folklore_eval/settings.py": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+    "folklore_eval/evaluate.py": "f81fab73c4c324c9f5ebc57fc34a78b3ec55ddc304042d5c9dcfd1f686b079a6",
+    "folklore_eval/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "folklore_eval/report.py": "3ace4419d4e7e6e9c95e82b8f6863c7b0acb1d79c8ad30fe850329e18c08fe73",
+    "folklore_eval/prepare.py": "ad58bb5f64f52871ffb512c887ec01b47edfdd4282e1410a2c2fa4eebf0e5c2d",
+    "folklore_eval/validation.py": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642",
+    "config/annotation.schema.json": "69b155692dd189a98034d8488e13e53baffb72162e849a170bf8637bf9bcfb16",
+    "config/prompt_archive.lock.json": "27c612cd341f63f5722b5d315306cf360a46abcd408708fc29ac9cfd356b63ed",
+    "config/labels.json": "15b64d83707f4d3df55963887ecfdd26789847f998dfda638caf03ba95660195",
+    "config/models.json": "2d996a321a9163164c1d8fff0d07b473e5358f3f3f3d2df24b9a3d4867d77e7c",
+    "config/prompt_v1.txt": "74a074fe215c66ecd20b3d4bc45388adb47fd0c96c3f0ac450020ac6f42c623f",
+    "config/archive_region_relationship.md": "ab786bf5d3551348cc903a6896d3cdc0ed92706f8d5414fa6780b470f015cb21",
+    "config/prompt_archive_v3_draft.txt": "996139a84545344e487a27f7e852094ac954a6ea9ef97846b60433b0d0e5956f",
+    "config/prompt_archive_v2.txt": "af2b13ecc7cf29958bc6d3b1e4582dca31b6a74c1575090cc6065d44552109d5",
+    "config/manifest.json": "eef42bf452262a2653010be9a49508cfab55fd64d5fdc309eceb718f04954281",
+    "config/archive.schema.json": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+    "config/prompt_archive_v3_notes.md": "c643d6dab99a7cf4f196ac26b8fc0726ef01310292983e7e5d168a44ae33ed19",
+    "config/prompt.lock.json": "d01b986ebb921fc804054da581f0adf953cf4041d9ad86a545b2aa41ddcc7ba7",
+    "config/integrity.json": "a446466cc0fd04b8ec164f8f423f37e4cad05d616a4daf1d0299a7727d42ef02"
+  }
+}

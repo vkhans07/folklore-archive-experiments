@@ -1,0 +1,154 @@
+{
+  "title": "Qualitative review of pre-retry archive outputs",
+  "review_date": "2026-10-18",
+  "snapshot_path": "outputs/evaluation/archive/retry-20261018/before-selected-runs.json",
+  "selection_semantics": "Latest run by file modification time per document/model, as implemented in folklore_eval/evaluate.py::evaluate_archive. This inventory follows the frozen pre-retry snapshot and does not switch to post-retry runs.",
+  "scope": {
+    "schema_valid_output_count": 14,
+    "selected_valid_count_by_model": {
+      "gemini_flash": 4,
+      "haiku": 4,
+      "sonnet": 5,
+      "gemini_flash_high": 1
+    },
+    "accuracy_scored": false,
+    "review_mode": "Qualitative read of all selected archive.json objects and comparison of representative disputed fields against local PDF text layer/prepared OCR. No visual page-image inspection."
+  },
+  "settings": {
+    "max_tokens_distribution": {
+      "16384": 13,
+      "65536": 1
+    },
+    "note": "13 selected outputs used 16,384 tokens; Taiwan Gemini medium used 65,536. Retry transport settings and generation conditions vary across history; do not infer a controlled model ranking."
+  },
+  "findings": [
+    {
+      "id": "thailand_item_translation",
+      "type": "field_boundary_and_ocr_quality",
+      "evidence": {
+        "source_text_layer": [
+          "sam/wan/dee/",
+          "see / wan / khai/",
+          "three /day /good/",
+          "four/ day / fever/",
+          "Good for three days and fevered for four days."
+        ],
+        "gemini_medium_item_excerpt": "mutual aly ony /3u/#/ as tus 14 sam/wan/dee/ see / wan / khai/",
+        "haiku_item_excerpt": "sam/wan/dee/ see / wan / khai/ three /day /good/ —_four/ day / fever/ Good for three days and fevered for four days.",
+        "haiku_translation": "Good for three days and fevered for four days.",
+        "sonnet_item": "sam/wan/dee/ see / wan / khai/",
+        "sonnet_translation": "three/day/good/ four/day/fever/ Good for three days and fevered for four days."
+      },
+      "interpretation": "Clear placement differences and repeated English rendering in Haiku; OCR fragments in source text layer mean romanization accuracy is unresolved."
+    },
+    {
+      "id": "thailand_roles",
+      "type": "ambiguous_field_semantics",
+      "evidence": {
+        "source_text_layer": [
+          "Myself, Age 21. Female",
+          "This is a description I learned from my father, Boonlert Nakkeow."
+        ],
+        "gemini_medium_collector": "Varinthorn Nakkeow",
+        "haiku_collector": null,
+        "sonnet_collector": "Varinthorn Nakkeow"
+      },
+      "interpretation": "Source supports Varinthorn as narrator/contributor and Boonlert as transmission source; no separate collector is explicitly named. Decide whether first-person narrator also belongs in collector field."
+    },
+    {
+      "id": "turkey_language_ocr",
+      "type": "source_ocr_uncertainty",
+      "evidence": {
+        "source_text_layer": "English, Turkish, Erench",
+        "schema_valid_outputs_preserve": "Erench in contributor.languages_spoken across all three valid Turkey outputs (Gemini medium, Haiku, Sonnet)."
+      },
+      "interpretation": "Faithful to supplied text layer; image-level verification is needed before correcting or treating this spelling as source fact."
+    },
+    {
+      "id": "turkey_place_policy",
+      "type": "ambiguous_field_semantics",
+      "evidence": {
+        "source_text_layer": "Defne first heard this proverb from her best friend Banu’s mother in Ayvalik, Turkey...",
+        "sonnet_place_mentioned": "Ayvalik, Turkey",
+        "gemini_medium_haiku_gemini_high_place_mentioned": []
+      },
+      "interpretation": "Whether a provenance location in source prose qualifies as folklore.place_mentioned needs a consistent annotation rule; not asserted as a definite omission."
+    },
+    {
+      "id": "anglo_collector_comment_placement",
+      "type": "field_boundary",
+      "evidence": {
+        "source_text_layer": "I agree with his interpretation. Even though some believe that wisdom grows with age...",
+        "sonnet_collector_comments": "Copies collector's first-person interpretation passage.",
+        "haiku_collector_comments": null
+      },
+      "interpretation": "Source supports the passage; placement between collector.collector_comments and analysis.interpretation needs a clearer field boundary."
+    },
+    {
+      "id": "cleaned_full_text_coverage",
+      "type": "completeness_review_required",
+      "evidence": {
+        "vietnam_pdf_text_layer_characters": 8853,
+        "gemini_medium_cleaned_full_text_characters": 8741,
+        "sonnet_cleaned_full_text_characters": 8721
+      },
+      "interpretation": "Length differences motivate page-by-page/token comparison but do not prove omission because whitespace and normalization vary."
+    },
+    {
+      "id": "taiwan_collection_location",
+      "type": "cross_output_inconsistency",
+      "evidence": {
+        "source_header": "San Jose, California",
+        "haiku_location_collected": {
+          "city": null,
+          "state": null,
+          "country": null,
+          "geolocation": null
+        },
+        "gemini_medium_location_collected": {
+          "city": "San Jose",
+          "state": "California",
+          "country": null,
+          "geolocation": null
+        },
+        "sonnet_location_collected": {
+          "city": "San Jose",
+          "state": "California",
+          "country": null,
+          "geolocation": null
+        }
+      },
+      "interpretation": "Source header supports San Jose, California as collection location; Haiku leaves all components null."
+    }
+  ],
+  "manual_review_needed": [
+    "Verify OCR against page images, especially Thailand romanization and Turkey Erench.",
+    "Define contributor/collector handling for first-person records.",
+    "Define separation of item, gloss, and translation, and collector comments versus analysis.",
+    "Define whether provenance places count toward place_mentioned.",
+    "Create field-level archive references or adjudicated checklists; existing region annotation boxes/labels are not direct references for the archive schema.",
+    "Review full cleaned text for completeness and source fidelity page by page.",
+    "Align prompt/input/generation/retry conditions before controlled model accuracy comparison."
+  ],
+  "limitations": [
+    "No visual PDF page-image inspection was performed; source comparisons use text layer/prepared OCR.",
+    "No benchmark accuracy score or model ranking was computed.",
+    "This is representative qualitative review, not a double-annotated exhaustive audit."
+  ],
+  "selected_outputs": [
+    {"doc_id":"00001_09_Taiwan_holiday_lore__93.pdf","model_alias":"gemini_flash","run_path":"outputs/runs/archive/evaluation/gemini_flash/00001_09_Taiwan_holiday_lore__93/fff8d665b86d3ae416da1f8bd5d9945e4fb8845a07973aa3efee1f8c76d02d99/run.json","output_path":"outputs/runs/archive/evaluation/gemini_flash/00001_09_Taiwan_holiday_lore__93/fff8d665b86d3ae416da1f8bd5d9945e4fb8845a07973aa3efee1f8c76d02d99/archive.json","max_tokens":65536},
+    {"doc_id":"00002_86_Turkey_Proverbs_III__147.pdf","model_alias":"gemini_flash","run_path":"outputs/runs/archive/evaluation/gemini_flash/00002_86_Turkey_Proverbs_III__147/82f4dc2861e1b279ef66369c87c83b4696021c765f68efc23a011e12aaa02a15-retry-20261016T070830330614Z/run.json","output_path":"outputs/runs/archive/evaluation/gemini_flash/00002_86_Turkey_Proverbs_III__147/82f4dc2861e1b279ef66369c87c83b4696021c765f68efc23a011e12aaa02a15-retry-20261016T070830330614Z/archive.json","max_tokens":16384},
+    {"doc_id":"00002_56_Thailand_Folkspeech__38.pdf","model_alias":"gemini_flash","run_path":"outputs/runs/archive/evaluation/gemini_flash/00002_56_Thailand_Folkspeech__38/2168615a7810b3fb8b055c56a7d3d4ba6d672da52aca63a2bc183f8fa5b235af-retry-20261016T071033948647Z/run.json","output_path":"outputs/runs/archive/evaluation/gemini_flash/00002_56_Thailand_Folkspeech__38/2168615a7810b3fb8b055c56a7d3d4ba6d672da52aca63a2bc183f8fa5b235af-retry-20261016T071033948647Z/archive.json","max_tokens":16384},
+    {"doc_id":"00003_Legend_Vietnam__38.pdf","model_alias":"gemini_flash","run_path":"outputs/runs/archive/evaluation/gemini_flash/00003_Legend_Vietnam__38/402b4c0a762e921e6f82e706f50ac7a69513e45a71d030ca61549b3a922ec7f4-retry-20261016T070225965355Z/run.json","output_path":"outputs/runs/archive/evaluation/gemini_flash/00003_Legend_Vietnam__38/402b4c0a762e921e6f82e706f50ac7a69513e45a71d030ca61549b3a922ec7f4-retry-20261016T070225965355Z/archive.json","max_tokens":16384},
+    {"doc_id":"00001_09_Taiwan_holiday_lore__93.pdf","model_alias":"haiku","run_path":"outputs/runs/archive/evaluation/haiku/00001_09_Taiwan_holiday_lore__93/f392f17e6ab7e659ef94b358f64482343a3e5e7c3a41a626166734910e59cdae-retry-20261016T070547117498Z/run.json","output_path":"outputs/runs/archive/evaluation/haiku/00001_09_Taiwan_holiday_lore__93/f392f17e6ab7e659ef94b358f64482343a3e5e7c3a41a626166734910e59cdae-retry-20261016T070547117498Z/archive.json","max_tokens":16384},
+    {"doc_id":"00002_86_Turkey_Proverbs_III__147.pdf","model_alias":"haiku","run_path":"outputs/runs/archive/evaluation/haiku/00002_86_Turkey_Proverbs_III__147/53e2dc9569fb3a03cf20655ac0dc1a0e2b25d92026d196dbfd490834b06e7032-retry-20261016T070804270209Z/run.json","output_path":"outputs/runs/archive/evaluation/haiku/00002_86_Turkey_Proverbs_III__147/53e2dc9569fb3a03cf20655ac0dc1a0e2b25d92026d196dbfd490834b06e7032-retry-20261016T070804270209Z/archive.json","max_tokens":16384},
+    {"doc_id":"00002_56_Thailand_Folkspeech__38.pdf","model_alias":"haiku","run_path":"outputs/runs/archive/evaluation/haiku/00002_56_Thailand_Folkspeech__38/0ad2828a259f4fd96b2ee90fcfcce8b01b6893cfafbbd43d1fd826fdfc2e6b10-retry-20261016T071019283407Z/run.json","output_path":"outputs/runs/archive/evaluation/haiku/00002_56_Thailand_Folkspeech__38/0ad2828a259f4fd96b2ee90fcfcce8b01b6893cfafbbd43d1fd826fdfc2e6b10-retry-20261016T071019283407Z/archive.json","max_tokens":16384},
+    {"doc_id":"00003_Anglo_Folkspeech_VI_A67_C6__74.pdf","model_alias":"haiku","run_path":"outputs/runs/archive/evaluation/haiku/00003_Anglo_Folkspeech_VI_A67_C6__74/b551b6d5a21a25d713ae091237b146032e1a6c2ae1cc322db2d271e37b5de1d0-retry-20261016T071113104689Z/run.json","output_path":"outputs/runs/archive/evaluation/haiku/00003_Anglo_Folkspeech_VI_A67_C6__74/b551b6d5a21a25d713ae091237b146032e1a6c2ae1cc322db2d271e37b5de1d0-retry-20261016T071113104689Z/archive.json","max_tokens":16384},
+    {"doc_id":"00001_09_Taiwan_holiday_lore__93.pdf","model_alias":"sonnet","run_path":"outputs/runs/archive/evaluation/sonnet/00001_09_Taiwan_holiday_lore__93/33dd4e9f056818282970fec9bcb201188769b7545f27676be1fccf53a1a6841a-retry-20261016T070519932386Z/run.json","output_path":"outputs/runs/archive/evaluation/sonnet/00001_09_Taiwan_holiday_lore__93/33dd4e9f056818282970fec9bcb201188769b7545f27676be1fccf53a1a6841a-retry-20261016T070519932386Z/archive.json","max_tokens":16384},
+    {"doc_id":"00002_86_Turkey_Proverbs_III__147.pdf","model_alias":"sonnet","run_path":"outputs/runs/archive/evaluation/sonnet/00002_86_Turkey_Proverbs_III__147/0617b4bfeb81befcd42e34509b277b25a270501cf5c837e850914625a0f3bd6f-retry-20261016T070756291593Z/run.json","output_path":"outputs/runs/archive/evaluation/sonnet/00002_86_Turkey_Proverbs_III__147/0617b4bfeb81befcd42e34509b277b25a270501cf5c837e850914625a0f3bd6f-retry-20261016T070756291593Z/archive.json","max_tokens":16384},
+    {"doc_id":"00002_56_Thailand_Folkspeech__38.pdf","model_alias":"sonnet","run_path":"outputs/runs/archive/evaluation/sonnet/00002_56_Thailand_Folkspeech__38/75327cb5dab26ccdc0ded49a84d0dcb62c538254c43748a773f7d1ec80e09fef-retry-20261016T071012963247Z/run.json","output_path":"outputs/runs/archive/evaluation/sonnet/00002_56_Thailand_Folkspeech__38/75327cb5dab26ccdc0ded49a84d0dcb62c538254c43748a773f7d1ec80e09fef-retry-20261016T071012963247Z/archive.json","max_tokens":16384},
+    {"doc_id":"00003_Anglo_Folkspeech_VI_A67_C6__74.pdf","model_alias":"sonnet","run_path":"outputs/runs/archive/evaluation/sonnet/00003_Anglo_Folkspeech_VI_A67_C6__74/3d73667821146b4a53f7d4ed5bd1c402e51abb8e0154ff18c4eb2f27c8ace5d3-retry-20261016T071106665678Z/run.json","output_path":"outputs/runs/archive/evaluation/sonnet/00003_Anglo_Folkspeech_VI_A67_C6__74/3d73667821146b4a53f7d4ed5bd1c402e51abb8e0154ff18c4eb2f27c8ace5d3-retry-20261016T071106665678Z/archive.json","max_tokens":16384},
+    {"doc_id":"00003_Legend_Vietnam__38.pdf","model_alias":"sonnet","run_path":"outputs/runs/archive/evaluation/sonnet/00003_Legend_Vietnam__38/fd894a60dd1f366de654452b555bace63c70279467b96139574c0cb8fac082e2-retry-20261016T070037795626Z/run.json","output_path":"outputs/runs/archive/evaluation/sonnet/00003_Legend_Vietnam__38/fd894a60dd1f366de654452b555bace63c70279467b96139574c0cb8fac082e2-retry-20261016T070037795626Z/archive.json","max_tokens":16384},
+    {"doc_id":"00002_86_Turkey_Proverbs_III__147.pdf","model_alias":"gemini_flash_high","run_path":"outputs/runs/archive/evaluation/gemini_flash_high/00002_86_Turkey_Proverbs_III__147/c0f20bf1b3d911c7c2b258611c00f4a25bd5fc0d36dea978d4c2d88a7d837ae3-retry-20261016T070907992744Z/run.json","output_path":"outputs/runs/archive/evaluation/gemini_flash_high/00002_86_Turkey_Proverbs_III__147/c0f20bf1b3d911c7c2b258611c00f4a25bd5fc0d36dea978d4c2d88a7d837ae3-retry-20261016T070907992744Z/archive.json","max_tokens":16384}
+  ]
+}

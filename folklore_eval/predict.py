@@ -7,7 +7,7 @@ from pathlib import Path
 import anthropic
 
 from .common import OUTPUT, ROOT, canonical, file_sha, manifest, read_json, run_directory, sha, write_json
-from .provider import request_anthropic_direct, request_gemini_api, request_gemini_vertex, request_vertex
+from .provider import request_anthropic_direct, request_gemini_api, request_gemini_vertex, request_openai_api, request_vertex
 from .settings import model_settings
 from .validation import parse_archive_response, parse_response
 
@@ -134,7 +134,14 @@ def predict(selected_doc=None, selected_model=None, phase="development", dry_run
         provider = model.get("provider", config["provider"])
         location = model.get("location")
         provider_project = project if provider in ("anthropic_vertex", "gemini_vertex") else None
-        request = {"model": model["id"], "max_tokens": config["generation"]["max_tokens"], "system": prompt, "messages": [{"role": "user", "content": user_input}]}
+        if provider == "openai_api":
+            request = {"model": model["id"], "max_output_tokens": config["generation"]["max_tokens"],
+                       "instructions": prompt, "input": user_input, "store": False,
+                       "text": {"format": {"type": "json_object"}}}
+            if model.get("reasoning_effort"):
+                request["reasoning"] = {"effort": model["reasoning_effort"]}
+        else:
+            request = {"model": model["id"], "max_tokens": config["generation"]["max_tokens"], "system": prompt, "messages": [{"role": "user", "content": user_input}]}
         if provider in ("anthropic_vertex", "gemini_vertex"):
             request["temperature"] = config["generation"]["temperature"]
         if model.get("thinking_level"):
@@ -165,6 +172,8 @@ def predict(selected_doc=None, selected_model=None, phase="development", dry_run
             raise ValueError("Set GOOGLE_CLOUD_PROJECT to use Vertex")
         if provider == "anthropic_direct" and not os.getenv("ANTHROPIC_API_KEY"):
             raise ValueError("Set ANTHROPIC_API_KEY to use the direct Anthropic API")
+        if provider == "openai_api" and not os.getenv("OPENAI_API_KEY"):
+            raise ValueError("Set OPENAI_API_KEY to use the OpenAI API")
         if provider == "gemini_api" and not os.getenv("GEMINI_API_KEY") and not os.getenv("GOOGLE_API_KEY"):
             raise ValueError("Set GEMINI_API_KEY to use the Google Gemini API")
         run_dir.mkdir(parents=True, exist_ok=True)
@@ -175,6 +184,8 @@ def predict(selected_doc=None, selected_model=None, phase="development", dry_run
             raw, latency, error, attempts = request_gemini_vertex(project, location, request, transport)
         elif provider == "anthropic_direct":
             raw, latency, error, attempts = request_anthropic_direct(request, transport)
+        elif provider == "openai_api":
+            raw, latency, error, attempts = request_openai_api(request, transport)
         else:
             raw, latency, error, attempts = request_vertex(project, location, request, transport)
         if raw is not None:

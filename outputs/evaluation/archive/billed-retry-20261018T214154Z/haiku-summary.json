@@ -1,0 +1,36 @@
+{
+  "doc_id": "00003_Legend_Vietnam__38.pdf",
+  "model": "haiku",
+  "requested_model": "claude-haiku-5-5",
+  "returned_model": "claude-haiku-5-5",
+  "status": "complete",
+  "run_path": "outputs/runs/archive/evaluation/haiku/00003_Legend_Vietnam__38/b643254778f5515ced8466bcb009032ce5a048f0258bc8360501c0f7c6bfa12f/run.json",
+  "attempts": 1,
+  "latency_seconds": 83.62,
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 123249,
+    "output_tokens": 24378,
+    "output_tokens_details": {
+      "thinking_tokens": 18442
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "truncated": false,
+  "json_parsed": false,
+  "schema_compliant": false,
+  "errors": [
+    "JSON parsing: Expecting value: line 1 column 1 (char 0)"
+  ],
+  "request_error": null,
+  "request_completed": true,
+  "timestamp_utc": "2026-10-18T21:43:48.552249+00:00"
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 470" role="img" aria-label="Gemini Flash: observed time per document">
+<style>text{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#182230}.title{font-size:27px;font-weight:700}.sub{font-size:14px;fill:#667085}.label{font-size:15px}.small{font-size:12px;fill:#667085}.value{font-size:14px;font-weight:700}.axis{font-size:12px;fill:#667085}</style>
+<rect width="1100" height="470" rx="18" fill="white"/>
+<text x="42" y="48" class="title">Gemini Flash: observed time per document</text>
+<text x="42" y="76" class="sub">Successful requests · bars show provider request latency; token counts shown at right</text>
+<path d="M365.0 120 V435" stroke="#e4e7ec"/>
+<text x="365.0" y="112.0" class="axis" text-anchor="middle">0s</text>
+<path d="M465.0 120 V435" stroke="#e4e7ec"/>
+<text x="465.0" y="112.0" class="axis" text-anchor="middle">20s</text>
+<path d="M565.0 120 V435" stroke="#e4e7ec"/>
+<text x="565.0" y="112.0" class="axis" text-anchor="middle">40s</text>
+<path d="M665.0 120 V435" stroke="#e4e7ec"/>
+<text x="665.0" y="112.0" class="axis" text-anchor="middle">60s</text>
+<path d="M765.0 120 V435" stroke="#e4e7ec"/>
+<text x="765.0" y="112.0" class="axis" text-anchor="middle">80s</text>
+<text x="42.0" y="157.0" class="label" text-anchor="start">Legend_Vietnam__38</text>
+<rect x="365.0" y="140.0" width="366.3" height="18.0" rx="6" fill="#3777e8"/>
+<text x="783.0" y="154.0" class="value" text-anchor="start">73.3s</text>
+<text x="42.0" y="177.0" class="small" text-anchor="start">143,259 input · 4,155 output tokens</text>
+<text x="42.0" y="219.0" class="label" text-anchor="start">09_Taiwan_holiday_lore__93</text>
+<rect x="365.0" y="202.0" width="248.7" height="18.0" rx="6" fill="#3777e8"/>
+<text x="783.0" y="216.0" class="value" text-anchor="start">49.7s</text>
+<text x="42.0" y="239.0" class="small" text-anchor="start">40,974 input · 1,411 output tokens</text>
+<text x="42.0" y="281.0" class="label" text-anchor="start">86_Turkey_Proverbs_III__147</text>
+<rect x="365.0" y="264.0" width="188.3" height="18.0" rx="6" fill="#3777e8"/>
+<text x="783.0" y="278.0" class="value" text-anchor="start">37.7s</text>
+<text x="42.0" y="301.0" class="small" text-anchor="start">25,680 input · 1,063 output tokens</text>
+<text x="42.0" y="343.0" class="label" text-anchor="start">56_Thailand_Folkspeech__38</text>
+<rect x="365.0" y="326.0" width="140.6" height="18.0" rx="6" fill="#3777e8"/>
+<text x="783.0" y="340.0" class="value" text-anchor="start">28.1s</text>
+<text x="42.0" y="363.0" class="small" text-anchor="start">14,648 input · 798 output tokens</text>
+<text x="42.0" y="405.0" class="label" text-anchor="start">Anglo_Folkspeech_VI_A67_C6__74</text>
+<rect x="365.0" y="388.0" width="121.5" height="18.0" rx="6" fill="#3777e8"/>
+<text x="783.0" y="402.0" class="value" text-anchor="start">24.3s</text>
+<text x="42.0" y="425.0" class="small" text-anchor="start">20,755 input · 902 output tokens</text>
+<text x="42.0" y="430.0" class="small" text-anchor="start">Latency varies with document size and provider load; this sample is too small for a stable speed ranking.</text>
+</svg>

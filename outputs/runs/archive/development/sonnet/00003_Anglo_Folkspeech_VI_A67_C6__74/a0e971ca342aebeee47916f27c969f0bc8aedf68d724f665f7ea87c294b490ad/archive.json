@@ -1,0 +1,42 @@
+{
+  "_id": null,
+  "analysis": {
+    "collector_comments": "I agree with his interpretation. Even though some believe that wisdom grows with age, it does not necessarily mean that the old can always out wit the young. Sometimes, the youth can out smart the older generation like in a game of chess or a debate because the younger generation can speak faster and more articulate. This is where the proverb comes in. The time will come and when it does, the shoot of the plants grows and takes over the older part of the plant, or in other words the older is being replaced by the younger.",
+    "context": {
+      "collection_context": "My informant learned this proverb from his brother Dung Nguyen, in Orange Country, California when he was a little kid.",
+      "cultural_background": null,
+      "use_context": "For instance, when Bill Clinton,46, defeated George Bush, 69, many people might say, \"Tre gia mang moc\", meaning it’s the baby boomer year now; it’s time for the replacement of the old conservative George Bush."
+    },
+    "interpretation": "Thinh believes that this proverb means that the old generation is replaced by the younger generation, meaning a younger person does something better than the older."
+  },
+  "cleaned_full_text": "1 proverb Vietnamese Thinh Nguyen, male, 20 student at UCB, Vietnamese Vietnamese Berkeley, Ca 11-22-92 Tre gia mang moc! Chare ya mung mowk Bamboo old shoot grow Old bamboo is replaced by its shoots. My informant learned this proverb from his brother Dung Nguyen, in Orange Country, California when he was a little kid. Thinh believes that this proverb means that the old generation is replaced by the younger generation, meaning a younger person does something better than the older. For instance, when Bill Clinton,46, defeated George Bush, 69, many people might say, \"Tre gia mang moc\", meaning it’s the baby boomer year now; it’s time for the replacement of the old conservative George Bush. I agree with his interpretation. Even though some believe that wisdom grows with age, it does not necessarily mean that the old can always out wit the young. Sometimes, the youth can out smart the older generation like in a game of chess or a debate because the younger generation can speak faster and more articulate. This is where the proverb comes in. The time will come and when it does, the shoot of the plants grows and takes over the older part of the plant, or in other words the older is being replaced by the younger. Jon Tai Tran, 21 2729 Dwight way Berkeley, Ca",
+  "collector": {
+    "collector_comments": "Collector attribution is uncertain: the name and address 'Jon Tai Tran, 21, 2729 Dwight way Berkeley, Ca' appear at the bottom of the page without a label; the text gives 'My informant', so this is likely the collector.",
+    "gender": null,
+    "name": "Jon Tai Tran"
+  },
+  "contributor": {
+    "age_bucket": "18-24",
+    "ethnicity": "Vietnamese",
+    "gender": "male",
+    "languages_spoken": [],
+    "name": "Thinh Nguyen",
+    "nationality": null,
+    "occupation": "student at UCB"
+  },
+  "date_collected": "11-22-92",
+  "filename": "JSONs/Anglo Folkspeech VI.pdf",
+  "folklore": {
+    "item": "Tre gia mang moc!\nChare ya mung mowk",
+    "medium": null,
+    "place_mentioned": [],
+    "translation": "Bamboo old shoot grow\nOld bamboo is replaced by its shoots."
+  },
+  "location_collected": {
+    "city": "Berkeley",
+    "country": null,
+    "geolocation": null,
+    "state": "Ca"
+  },
+  "storage_medium": "PDF"
+}

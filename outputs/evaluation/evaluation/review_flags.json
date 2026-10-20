@@ -1,0 +1,67 @@
+[
+  {
+    "annotation_id": "84c3b808-a761-4f05-9933-31e6fbad02a7",
+    "doc_id": "00003_Legend_Vietnam__38.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "d9ea4423-6929-4f22-b39b-26979cfb1523",
+    "doc_id": "00003_Legend_Vietnam__38.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "83bdbe10-28bf-4650-91f1-15243a6b84b3",
+    "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "b972e757-36e1-4931-bfdc-aa039844de72",
+    "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "15dd2ca4-e72a-4d04-a2d0-9625caff5917",
+    "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "7e748e4d-5392-48d6-bcae-9179a1c31191",
+    "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "b47805e1-8f15-43a8-ba60-859b71b9ae0e",
+    "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "7ff211cb-c3dc-405f-8a59-525cac406192",
+    "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "bdb55b64-87bc-492b-bfd4-112701f599bc",
+    "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "0fda7db8-e1b8-4774-98c8-ec1bd9fda2da",
+    "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "6ff5fe8b-05bc-4438-b8f7-182f2ff45860",
+    "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "63acef92-7d19-4c01-b732-46ee70122f90",
+    "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  },
+  {
+    "annotation_id": "e6415e91-5bd7-4522-b59f-2efb28c1c53d",
+    "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+    "type": "reference_text_ocr_mismatch_candidate"
+  }
+]

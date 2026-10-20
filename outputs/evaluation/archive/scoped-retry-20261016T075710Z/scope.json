@@ -1,0 +1,41 @@
+{
+  "target": "archive",
+  "selected_pairs": [
+    [
+      "gemini_flash",
+      "00001_09_Taiwan_holiday_lore__93.pdf"
+    ],
+    [
+      "gemini_flash",
+      "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf"
+    ],
+    [
+      "gemini_flash_high",
+      "00002_56_Thailand_Folkspeech__38.pdf"
+    ]
+  ],
+  "generation": {
+    "max_tokens": 65536,
+    "temperature": 0
+  },
+  "before_transport": {
+    "max_attempts": 3,
+    "initial_backoff_seconds": 1.0,
+    "timeout_seconds": 120.0
+  },
+  "retry_transport": {
+    "max_attempts": 5,
+    "initial_backoff_seconds": 10,
+    "timeout_seconds": 300,
+    "max_retry_delay_seconds": 300
+  },
+  "note": "Only the three final HTTP 503 pairs will be requested. Current .env generation limit is 65536, versus 16384 in the previous run. Thinking levels remain medium/high. Timeout increased to 300 seconds. Existing exponential backoff is deterministic; no jitter added.",
+  "interrupted_attempt": {
+    "interrupted_at": "2026-10-16T18:47:11.204448+00:00",
+    "request_path": "outputs/runs/archive/evaluation/gemini_flash/00001_09_Taiwan_holiday_lore__93/07dd5ce8828bf9f815742027a75bc21d3e4d651423c800298fac67397176c6da/request.json",
+    "elapsed_seconds": 1658,
+    "observed_http_status": 429,
+    "reason": "Interrupted long retry sleep; traceback confirmed HTTP 429 handling. Full provider error body was not persisted by this interrupted process."
+  },
+  "adapter_changes": "Added attempt/retry logging and defer provider-requested waits above 300 seconds without retrying early."
+}

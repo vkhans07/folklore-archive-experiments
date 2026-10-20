@@ -1,0 +1,29 @@
+{
+  "review_date": "2026-10-18",
+  "scope": "14 schema-valid archive outputs in before-selected-runs.json; excludes later retries",
+  "schema_revalidation": {
+    "checked": 14,
+    "valid": 14,
+    "saved_archive_matches_parsed_raw_response": true
+  },
+  "reference_diagnostic_verification": {
+    "canonical_loader": "folklore_eval.references.load_references",
+    "unique_reference_rows": 102,
+    "comparison_rows": 276,
+    "distinct_valid_runs": 14,
+    "all_reference_texts_match_canonical_loader": true,
+    "duplicate_run_annotation_pairs": 0,
+    "structured_text_presence": 143,
+    "cleaned_full_text_presence": 217,
+    "ocr_mismatch_review_flags": 13
+  },
+  "content_review_links": {
+    "checked": 8,
+    "broken": 0
+  },
+  "limitations": [
+    "Schema and text-presence checks are not accuracy scores.",
+    "Qualitative source review used prepared OCR and PDF text layer, not scanned page images.",
+    "The 14-output sample covers different document subsets by model and heterogeneous token ceilings."
+  ]
+}

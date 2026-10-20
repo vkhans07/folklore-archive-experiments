@@ -1,0 +1,11 @@
+{
+  "source_run": "outputs/runs/archive/evaluation/haiku/00003_Legend_Vietnam__38/b643254778f5515ced8466bcb009032ce5a048f0258bc8360501c0f7c6bfa12f/run.json",
+  "raw_response_sha256": "4e4271ce527bdee78397bbfddc2d88c05051bc0f6cfbb2c7b8281ad5016fe97f",
+  "diagnostic_transformation": "Remove exactly the leading ```json newline and trailing newline ```; no other repair.",
+  "json_parsed_without_wrapper": true,
+  "schema_valid_without_wrapper": true,
+  "errors": [],
+  "official_run_unchanged": true,
+  "counts_as_strict_success": false,
+  "diagnostic_payload": "haiku-vietnam-unwrapped.archive.json"
+}

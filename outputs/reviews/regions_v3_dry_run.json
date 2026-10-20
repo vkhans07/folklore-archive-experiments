@@ -1,0 +1,122 @@
+[
+  {
+    "doc_id": "00003_Legend_Vietnam__38.pdf",
+    "model": "sonnet",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/sonnet/00003_Legend_Vietnam__38/8ce78d32f77781eee28b57c5f13694179cf14d2687dc91b01bcf2a9d7c77d17b/request.preview.json"
+  },
+  {
+    "doc_id": "00003_Legend_Vietnam__38.pdf",
+    "model": "haiku",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/haiku/00003_Legend_Vietnam__38/4bf45a2749356917beb5a2ac9b39d30467bcfbb2fffa4b62bf8ac61a0b381a48/request.preview.json"
+  },
+  {
+    "doc_id": "00003_Legend_Vietnam__38.pdf",
+    "model": "gemini_flash",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/gemini_flash/00003_Legend_Vietnam__38/cba934893a33cb7ad44d69f351190ab117b8e4acf9a8fe0367104ee38094128b/request.preview.json"
+  },
+  {
+    "doc_id": "00003_Legend_Vietnam__38.pdf",
+    "model": "gemini_flash_high",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/gemini_flash_high/00003_Legend_Vietnam__38/33b57e5b96cc8b1bd2d801ec2c5b2bb768b1a609089aef339280d495856fc9cc/request.preview.json"
+  },
+  {
+    "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+    "model": "sonnet",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/sonnet/00001_09_Taiwan_holiday_lore__93/bb534331e23b5a95e69ff83b9f80e64da8622dfe572695da5a3702f747257b39/request.preview.json"
+  },
+  {
+    "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+    "model": "haiku",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/haiku/00001_09_Taiwan_holiday_lore__93/0eee294204ede4bfca3b1d911b1b4d3900d57b99a7d98f948668b02a569f6d8e/request.preview.json"
+  },
+  {
+    "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+    "model": "gemini_flash",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/gemini_flash/00001_09_Taiwan_holiday_lore__93/a2d0924b13658e7ee872362e0b7b80975a3976cce1a871bc028fc8747534be87/request.preview.json"
+  },
+  {
+    "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+    "model": "gemini_flash_high",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/gemini_flash_high/00001_09_Taiwan_holiday_lore__93/84e85a95fc97166de6581398c453cf5b4641c222fb919827a53b169264d16e6c/request.preview.json"
+  },
+  {
+    "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+    "model": "sonnet",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/sonnet/00002_86_Turkey_Proverbs_III__147/3cb173ba03fcf5422db5e3a9104c1404acd530500c4a0067fc3d6ecfc37a2434/request.preview.json"
+  },
+  {
+    "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+    "model": "haiku",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/haiku/00002_86_Turkey_Proverbs_III__147/acf931bcf3f99c1c1de62163e22c06f18da07bc5ece4bccbf07a3f6b20ea36fc/request.preview.json"
+  },
+  {
+    "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+    "model": "gemini_flash",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/gemini_flash/00002_86_Turkey_Proverbs_III__147/e861ee168c97ac965e60ebcc7542cdbf0eee43b45692c001b2ae64e202534ae2/request.preview.json"
+  },
+  {
+    "doc_id": "00002_86_Turkey_Proverbs_III__147.pdf",
+    "model": "gemini_flash_high",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/gemini_flash_high/00002_86_Turkey_Proverbs_III__147/76a8aed59943b011950a967fef101fbfcf5fda7ecb96a41fc50f1c4ce543116d/request.preview.json"
+  },
+  {
+    "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+    "model": "sonnet",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/sonnet/00002_56_Thailand_Folkspeech__38/85117bdd0279086aa3b23c956fb0fe12f97fea3f908d6c6eb9a3c48f7f25b2ff/request.preview.json"
+  },
+  {
+    "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+    "model": "haiku",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/haiku/00002_56_Thailand_Folkspeech__38/35c46477308d9db7ac70e56aa3de7121c1237383bfd8d4a8f763476ebe5cb067/request.preview.json"
+  },
+  {
+    "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+    "model": "gemini_flash",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/gemini_flash/00002_56_Thailand_Folkspeech__38/f7399f5bb409b0d6eab16d765f21b65502fc5460a5e054f5a26805fb925c4d31/request.preview.json"
+  },
+  {
+    "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+    "model": "gemini_flash_high",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/gemini_flash_high/00002_56_Thailand_Folkspeech__38/ad7147821453a8422f87baa760348f45d4ce8ff13997444551228fdb8e9d68e6/request.preview.json"
+  },
+  {
+    "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+    "model": "sonnet",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/sonnet/00003_Anglo_Folkspeech_VI_A67_C6__74/90ebadbbc6168c79dc0ed4c6a96d0076a66e2377f2de08c75f9880fd223d1e20/request.preview.json"
+  },
+  {
+    "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+    "model": "haiku",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/haiku/00003_Anglo_Folkspeech_VI_A67_C6__74/1df7b8bd1b7df5703428a99a12809dff6abc0f8ed5400c2c0a59d21388ddd581/request.preview.json"
+  },
+  {
+    "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+    "model": "gemini_flash",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/gemini_flash/00003_Anglo_Folkspeech_VI_A67_C6__74/f7a7932e4f2048bf1e53656c9cd3b612f4202c75ac2e92dea5e0cd53b5fb11b1/request.preview.json"
+  },
+  {
+    "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+    "model": "gemini_flash_high",
+    "status": "dry_run",
+    "request": "/Users/vkhans/Desktop/folklore-archive-experiments/outputs/runs/regions_v3/evaluation/gemini_flash_high/00003_Anglo_Folkspeech_VI_A67_C6__74/01297c2be0c7d678dba87b3f25924e70e042dac8257afc004b81470864443a9b/request.preview.json"
+  }
+]

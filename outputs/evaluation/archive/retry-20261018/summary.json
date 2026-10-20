@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-18",
+  "scope": "Only two authorized archive evaluation pairs; no source/config or aggregate/challenge files edited by this task.",
+  "effective_temporary_settings": {
+    "max_tokens": 65536,
+    "max_attempts": 5,
+    "initial_backoff_seconds": 10,
+    "timeout_seconds": 300,
+    "max_retry_delay_seconds_default": 300
+  },
+  "sandbox_network_failure_record": "sandbox-network-failure.json",
+  "selected_results": [
+    {
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "model_alias": "gemini_flash",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00003_Anglo_Folkspeech_VI_A67_C6__74/85ea15bf33deb4f177cd7e6b2ab57f704f2886860f398b0bb0ae265eeb9d89fb-retry-20261018T210435458144Z/run.json",
+      "timestamp_utc": "2026-10-18T21:04:59.766222+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 1,
+      "latency_seconds": 24.303,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "input_tokens": 20755,
+        "output_tokens": 902
+      },
+      "request_error": null,
+      "errors": []
+    },
+    {
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "model_alias": "gemini_flash_high",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00002_56_Thailand_Folkspeech__38/3bce7ce84842ff59d7a43176282081f02e511fc5e5a4c2ebcca3ae70c3336b05-retry-20261018T210518010105Z/run.json",
+      "timestamp_utc": "2026-10-18T21:13:16.737416+00:00",
+      "request_completed": true,
+      "json_parsed": true,
+      "schema_compliant": true,
+      "attempts": 2,
+      "latency_seconds": 478.755,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "input_tokens": 14648,
+        "output_tokens": 787
+      },
+      "request_error": null,
+      "errors": []
+    }
+  ],
+  "other_selected_pairs": {
+    "count_before": 18,
+    "unchanged_count": 18,
+    "changed_count": 0,
+    "changed": []
+  },
+  "notes": [
+    "Thailand attempt 1 hit the configured 300-second request timeout; attempt 2 completed.",
+    "A timed-out provider computation may continue remotely; the timeout is transport elapsed time, not model reasoning time.",
+    "Summary latency comes from each persisted run record."
+  ]
+}

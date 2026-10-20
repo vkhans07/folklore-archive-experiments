@@ -1,0 +1,145 @@
+{
+  "completed_at": "2026-10-16T18:53:01.563273+00:00",
+  "unselected_pairs_unchanged": 17,
+  "comparison": [
+    {
+      "model": "gemini_flash",
+      "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+      "before_completed": false,
+      "after_completed": true,
+      "before_schema_valid": false,
+      "after_schema_valid": true,
+      "http_status": null,
+      "latency_seconds": 49.743,
+      "attempts": 1,
+      "generation": {
+        "max_tokens": 65536,
+        "temperature": 0
+      },
+      "transport": {
+        "initial_backoff_seconds": 10.0,
+        "max_attempts": 5,
+        "timeout_seconds": 300.0
+      },
+      "run_path": "/Users/vkhans/Desktop/foklore-archive-experiments/outputs/runs/archive/evaluation/gemini_flash/00001_09_Taiwan_holiday_lore__93/fff8d665b86d3ae416da1f8bd5d9945e4fb8845a07973aa3efee1f8c76d02d99/run.json",
+      "retry_after_seconds": null,
+      "raw_usage": {
+        "candidatesTokenCount": 1411,
+        "promptTokenCount": 40974,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 40974
+          }
+        ],
+        "serviceTier": "standard",
+        "thoughtsTokenCount": 3442,
+        "totalTokenCount": 45827
+      }
+    },
+    {
+      "model": "gemini_flash",
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "before_completed": false,
+      "after_completed": false,
+      "before_schema_valid": false,
+      "after_schema_valid": false,
+      "http_status": 429,
+      "latency_seconds": 0.258,
+      "attempts": 1,
+      "generation": {
+        "max_tokens": 65536,
+        "temperature": 0
+      },
+      "transport": {
+        "initial_backoff_seconds": 10.0,
+        "max_attempts": 5,
+        "timeout_seconds": 300.0
+      },
+      "run_path": "/Users/vkhans/Desktop/foklore-archive-experiments/outputs/runs/archive/evaluation/gemini_flash/00003_Anglo_Folkspeech_VI_A67_C6__74/85ea15bf33deb4f177cd7e6b2ab57f704f2886860f398b0bb0ae265eeb9d89fb/run.json",
+      "retry_after_seconds": 18470.0
+    },
+    {
+      "model": "gemini_flash_high",
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "before_completed": false,
+      "after_completed": false,
+      "before_schema_valid": false,
+      "after_schema_valid": false,
+      "http_status": 429,
+      "latency_seconds": 0.323,
+      "attempts": 1,
+      "generation": {
+        "max_tokens": 65536,
+        "temperature": 0
+      },
+      "transport": {
+        "initial_backoff_seconds": 10.0,
+        "max_attempts": 5,
+        "timeout_seconds": 300.0
+      },
+      "run_path": "/Users/vkhans/Desktop/foklore-archive-experiments/outputs/runs/archive/evaluation/gemini_flash_high/00002_56_Thailand_Folkspeech__38/3bce7ce84842ff59d7a43176282081f02e511fc5e5a4c2ebcca3ae70c3336b05/run.json",
+      "retry_after_seconds": 18457.0
+    }
+  ],
+  "valid_outputs_before": 13,
+  "valid_outputs_after": 14,
+  "aggregate": [
+    {
+      "target": "archive",
+      "phase": "evaluation",
+      "model_alias": "gemini_flash",
+      "prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+      "attempted": 5,
+      "request_completed": 4,
+      "transport_failures": 1,
+      "json_parsed": 4,
+      "schema_compliant": 4,
+      "request_completion_rate": 0.8,
+      "json_parsing_rate_of_completed": 1.0,
+      "schema_compliance_rate_of_completed": 1.0
+    },
+    {
+      "target": "archive",
+      "phase": "evaluation",
+      "model_alias": "gemini_flash_high",
+      "prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+      "attempted": 5,
+      "request_completed": 4,
+      "transport_failures": 1,
+      "json_parsed": 1,
+      "schema_compliant": 1,
+      "request_completion_rate": 0.8,
+      "json_parsing_rate_of_completed": 0.25,
+      "schema_compliance_rate_of_completed": 0.25
+    },
+    {
+      "target": "archive",
+      "phase": "evaluation",
+      "model_alias": "haiku",
+      "prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+      "attempted": 5,
+      "request_completed": 5,
+      "transport_failures": 0,
+      "json_parsed": 4,
+      "schema_compliant": 4,
+      "request_completion_rate": 1.0,
+      "json_parsing_rate_of_completed": 0.8,
+      "schema_compliance_rate_of_completed": 0.8
+    },
+    {
+      "target": "archive",
+      "phase": "evaluation",
+      "model_alias": "sonnet",
+      "prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+      "attempted": 5,
+      "request_completed": 5,
+      "transport_failures": 0,
+      "json_parsed": 5,
+      "schema_compliant": 5,
+      "request_completion_rate": 1.0,
+      "json_parsing_rate_of_completed": 1.0,
+      "schema_compliance_rate_of_completed": 1.0
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 1,
+  "cache_key": "929fdb3c05b0238af72a529eaaf8b78c6063669310c057506560901622d9c0a1",
+  "doc_id": "00003_Legend_Vietnam__38.pdf",
+  "errors": [],
+  "finish_reason": "end_turn",
+  "generation": {
+    "max_tokens": 65536,
+    "temperature": 0
+  },
+  "input_sha256": "6573fdfeaf09c692d09650c03c0b15bd121fddbb39f04c9d7d51d05472e582c5",
+  "json_parsed": true,
+  "labels_sha256": "15b64d83707f4d3df55963887ecfdd26789847f998dfda638caf03ba95660195",
+  "latency_seconds": 117.829,
+  "location": null,
+  "model_alias": "haiku",
+  "phase": "evaluation",
+  "project_id": null,
+  "prompt_version": "regions_v3",
+  "provider": "anthropic_direct",
+  "provider_adapter_sha256": "a7a7d395f5fe7961e38fd2078165d9d7e1e258a3a6d9522387dedad99ad10c41",
+  "request_completed": true,
+  "request_error": null,
+  "request_sha256": "a9ca0433c24ab84215b9dd4eab15a891e4807d426d10fe98699e2b6bb60cc8d6",
+  "requested_model": "claude-haiku-5-5",
+  "returned_model": "claude-haiku-5-5",
+  "runner_sha256": "4e4d0eb94f253aadf0b2b41e12b95e0a41cc0d63fe820e795196b4e87fdf84be",
+  "schema_compliant": true,
+  "schema_sha256": "69b155692dd189a98034d8488e13e53baffb72162e849a170bf8637bf9bcfb16",
+  "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+  "system_prompt_sha256": "d03541010171f9e814bc4665c4d41d17e3d2e2f7bdba11eefb30bf3879d4874a",
+  "target": "regions",
+  "timestamp_utc": "2026-10-19T04:02:01.386394+00:00",
+  "transport": {
+    "initial_backoff_seconds": 10.0,
+    "max_attempts": 5,
+    "timeout_seconds": 300.0
+  },
+  "truncated": false,
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 124482,
+    "output_tokens": 33684,
+    "output_tokens_details": {
+      "thinking_tokens": 29869
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

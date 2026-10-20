@@ -1,0 +1,202 @@
+{
+  "annotations": [
+    {
+      "bbox": [
+        0.715037,
+        0.061373,
+        0.804416,
+        0.075652
+      ],
+      "label": "informant_name",
+      "page_num": 0,
+      "text": "Defne Ezgi,"
+    },
+    {
+      "bbox": [
+        0.809674,
+        0.061373,
+        0.865403,
+        0.075652
+      ],
+      "label": "informant_gender",
+      "page_num": 0,
+      "text": "female,"
+    },
+    {
+      "bbox": [
+        0.873817,
+        0.061373,
+        0.88959,
+        0.075652
+      ],
+      "label": "informant_age",
+      "page_num": 0,
+      "text": "18"
+    },
+    {
+      "bbox": [
+        0.566772,
+        0.079115,
+        0.705575,
+        0.093394
+      ],
+      "label": "informant_ethnicity",
+      "page_num": 0,
+      "text": "Turkish-American"
+    },
+    {
+      "bbox": [
+        0.711882,
+        0.079115,
+        0.889594,
+        0.093394
+      ],
+      "label": "informant_occupation",
+      "page_num": 0,
+      "text": "Student (U.C.Berkeley)"
+    },
+    {
+      "bbox": [
+        0.701367,
+        0.096051,
+        0.890642,
+        0.11033
+      ],
+      "label": "informant_languages",
+      "page_num": 0,
+      "text": "English, Turkish, Erench"
+    },
+    {
+      "bbox": [
+        0.639327,
+        0.113793,
+        0.740273,
+        0.128072
+      ],
+      "label": "informant_address",
+      "page_num": 0,
+      "text": "Berkeley, Ca."
+    },
+    {
+      "bbox": [
+        0.746582,
+        0.113793,
+        0.88959,
+        0.128072
+      ],
+      "label": "collection_context",
+      "page_num": 0,
+      "text": "(collected at dorm)"
+    },
+    {
+      "bbox": [
+        0.735016,
+        0.130728,
+        0.889588,
+        0.145007
+      ],
+      "label": "collection_date",
+      "page_num": 0,
+      "text": "November 19, 1997"
+    },
+    {
+      "bbox": [
+        0.22082,
+        0.153725,
+        0.51316,
+        0.215975
+      ],
+      "label": "folklore_item",
+      "page_num": 0,
+      "text": "Keskin sirke kupune zarar"
+    },
+    {
+      "bbox": [
+        0.270242,
+        0.218631,
+        0.598317,
+        0.232911
+      ],
+      "label": "folklore_translation",
+      "page_num": 0,
+      "text": "pungent vinegar to its container harm"
+    },
+    {
+      "bbox": [
+        0.15142,
+        0.252447,
+        0.477391,
+        0.267824
+      ],
+      "label": "folklore_translation",
+      "page_num": 0,
+      "text": "Pungent vinegar is harmful to its container."
+    },
+    {
+      "bbox": [
+        0.150368,
+        0.287124,
+        0.887486,
+        0.475889
+      ],
+      "label": "collection_context",
+      "page_num": 0,
+      "text": "Defne first heard this proverb from her best friend Banu’s mother in Ayvalik, ‘Turkey, when the two girls were on a summer vacation in this resort town, at the age of fifteen in 1994, Banu, who was sixteen at the time, was living a terribly frivolous and extreme life style that included a great deal of parties and frivolous spending. Also, given that they were in a resort town, she had little time to concern herself with such mundane activities as chores and homework that had always kept he so grounded in the past."
+    },
+    {
+      "bbox": [
+        0.150368,
+        0.460511,
+        0.858045,
+        0.545244
+      ],
+      "label": "informant_explanation",
+      "page_num": 0,
+      "text": "According to the informant, This proverb has only one meaning: living an extreme life far removed from any balance can do serious damage to an individual."
+    },
+    {
+      "bbox": [
+        0.150368,
+        0.564599,
+        0.888538,
+        0.82105
+      ],
+      "label": "collector_annotation",
+      "page_num": 0,
+      "text": "The following interpretation represents the thoughts of the collector, although I presented this interpretation to the informant and it met with her approval. This proverb, which is used by both male and female adults, is most often directed towards young people in their late teens and early twenties. In this proverb, I i vinegar as being of an extremely acidic substance that does damage to every thing it touches. The vinegar, thus, represents a destructive force that can “eat away” at an individual. The container can be interpreted as representing the body, which can be damaged and harmed by such extreme activities as drinking, abusing drugs, and smoking."
+    },
+    {
+      "bbox": [
+        0.770768,
+        0.896162,
+        0.87066,
+        0.908244
+      ],
+      "label": "collector_name",
+      "page_num": 0,
+      "text": "Vivian Samano,"
+    },
+    {
+      "bbox": [
+        0.878023,
+        0.896162,
+        0.890642,
+        0.908244
+      ],
+      "label": "collector_age",
+      "page_num": 0,
+      "text": "19"
+    },
+    {
+      "bbox": [
+        0.761304,
+        0.909872,
+        0.891693,
+        0.93647
+      ],
+      "label": "collector_address",
+      "page_num": 0,
+      "text": "2601 Warring, #215\nBerkeley, Ca. 94720"
+    }
+  ]
+}

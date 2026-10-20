@@ -1,0 +1,50 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 3,
+  "cache_key": "afdda16e464bb82f0515513fcc41c2810ea10118a796461eedbbf63319b78d50",
+  "doc_id": "00003_Legend_Vietnam__38.pdf",
+  "errors": [],
+  "finish_reason": null,
+  "generation": {
+    "max_tokens": 16384,
+    "temperature": 0
+  },
+  "input_sha256": "6573fdfeaf09c692d09650c03c0b15bd121fddbb39f04c9d7d51d05472e582c5",
+  "json_parsed": false,
+  "latency_seconds": 3.026,
+  "location": null,
+  "model_alias": "haiku",
+  "phase": "evaluation",
+  "project_id": null,
+  "provider": "anthropic_direct",
+  "provider_adapter_sha256": "af1b7ca0c71632db3eb7bb4965284b2a6b9fbaed5ba17c5a4fe6d1a233c704bc",
+  "request_completed": false,
+  "request_error": {
+    "category": "network_or_timeout",
+    "message": "Connection error.",
+    "next_step": "Check network access and timeout settings, then retry.",
+    "provider_body": null,
+    "provider_request_id": null,
+    "status_code": null,
+    "transient": true,
+    "type": "APIConnectionError"
+  },
+  "request_sha256": "0cd763eddc3d71372346c32ffe63c5bbc7b1c70e1210ea97d319d5856c4a23ec",
+  "requested_model": "claude-haiku-5-5",
+  "returned_model": null,
+  "runner_sha256": "4e50b39895b51c6873c66d94cc44e9d30834cca5849a4ef2143747eca97aad68",
+  "schema_compliant": false,
+  "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+  "settings_loader_sha256": "57d5f030e8c736577723cdefb2d4cd33f2d6de1c8ae4db4b4950e6a1bdd51a25",
+  "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+  "target": "archive",
+  "timestamp_utc": "2026-10-16T06:59:33.251623+00:00",
+  "transport": {
+    "initial_backoff_seconds": 1.0,
+    "max_attempts": 3,
+    "timeout_seconds": 120.0
+  },
+  "truncated": false,
+  "usage": null,
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

@@ -1,0 +1,35 @@
+{
+  "container": null,
+  "content": [
+    {
+      "citations": null,
+      "text": "{\n  \"_id\": null,\n  \"filename\": \"JSONs/Thailand Folkspeech.pdf\",\n  \"contributor\": {\n    \"name\": null,\n    \"age_bucket\": \"18-24\",\n    \"gender\": \"Female\",\n    \"ethnicity\": \"4th generation Chinese in Thailand\",\n    \"nationality\": \"Thai\",\n    \"languages_spoken\": [\"English\", \"Central Thai\"],\n    \"occupation\": \"Student, Library Assistant, Admin. Assistant\"\n  },\n  \"folklore\": {\n    \"item\": \"sam/wan/dee/ see / wan / khai/\",\n    \"medium\": null,\n    \"translation\": \"three/day/good/ four/day/fever/ Good for three days and fevered for four days.\",\n    \"place_mentioned\": []\n  },\n  \"collector\": {\n    \"name\": \"Varinthorn Nakkeow\",\n    \"gender\": null,\n    \"collector_comments\": null\n  },\n  \"analysis\": {\n    \"context\": {\n      \"use_context\": \"Boonlert Nakkeow used this to describe the contributor's relationship with her 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. The roommate was prone to extreme moodswings: one day she would be laughing and smiling and the next she would be really terse and quiet.\",\n      \"cultural_background\": null,\n      \"collection_context\": \"This is a description I learned from my father, Boonlert Nakkeow.\"\n    },\n    \"interpretation\": \"This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain why either.\",\n    \"collector_comments\": null\n  },\n  \"storage_medium\": \"PDF\",\n  \"cleaned_full_text\": \"Folk Speech — Thai Myself, Age 21. Female Student, Library Assistant, Admin. Assistant Thai and 4th generation Chinese in Thailand English, Central Thai Bellflower, CA.; November 8, 2002 sam/wan/dee/ see / wan / khai/ three /day /good/ four/ day / fever/ Good for three days and fevered for four days. This is a description I learned from my father, Boonlert Nakkeow. He used this to describe my relationship with my 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. She was prone to extreme moodswings. One day should she would be laughing and smiling and the next she would be really terse and quiet. This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain why either. Varinthorn Nakkeow, Age 21. 10420 Trabuco St.; Bellflower, CA 90706\",\n  \"date_collected\": \"November 8, 2002\",\n  \"location_collected\": {\n    \"city\": \"Bellflower\",\n    \"state\": \"CA\",\n    \"country\": null,\n    \"geolocation\": null\n  }\n}",
+      "type": "text"
+    }
+  ],
+  "diagnostics": null,
+  "id": "msg_011Cg5VpgicP6nYBykbzB5yT",
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 13171,
+    "output_tokens": 955,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  }
+}

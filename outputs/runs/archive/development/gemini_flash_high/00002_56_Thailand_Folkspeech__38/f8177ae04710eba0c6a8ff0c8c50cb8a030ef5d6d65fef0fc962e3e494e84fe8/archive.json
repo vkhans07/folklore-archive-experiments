@@ -1,0 +1,45 @@
+{
+  "_id": null,
+  "analysis": {
+    "collector_comments": "Suspect OCR 'mutual aly' precedes 'ony /3u/#/ as tus 14' and may represent a heading or Thai script ('สำนวนไทย', Thai idiom). The folklore item includes the Thai script and transliteration 'sam/wan/dee/ see / wan / khai/'.",
+    "context": {
+      "collection_context": "This is a description I learned from my father, Boonlert Nakkeow.",
+      "cultural_background": null,
+      "use_context": "He used this to describe my relationship with my 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. She was prone to extreme moodswings. One day should she would be laughing and smiling and the next she would be really terse and quiet."
+    },
+    "interpretation": "This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain why either."
+  },
+  "cleaned_full_text": "Folk Speech — Thai Myself, Age 21. Female Student, Library Assistant, Admin. Assistant ‘Thai and 4\" generation Chinese in Thailand English, Central Thai Bellflower, CA.; November 8, 2002 mutual aly ony /3u/#/ as tus 14 sam/wan/dee/ see / wan / khai/ three /day /good/ —_four/ day / fever/ Good for three days and fevered for four days. This is a description I learned from my father, Boonlert Nakkeow. He used this to describe my relationship with my 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. She was prone to extreme moodswings. One day should she would be laughing and smiling and the next she would be really terse and quiet. This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain why either. Varinthorn Nakkeow, Age 21. 10420 Trabuco St.; Bellflower, CA 90706",
+  "collector": {
+    "collector_comments": "The contributor is identified as 'Myself' (collector Varinthorn Nakkeow). The item was learned from her father, Boonlert Nakkeow.",
+    "gender": "Female",
+    "name": "Varinthorn Nakkeow"
+  },
+  "contributor": {
+    "age_bucket": "18-24",
+    "ethnicity": "‘Thai and 4\" generation Chinese in Thailand",
+    "gender": "Female",
+    "languages_spoken": [
+      "English",
+      "Central Thai"
+    ],
+    "name": "Varinthorn Nakkeow",
+    "nationality": null,
+    "occupation": "Student, Library Assistant, Admin. Assistant"
+  },
+  "date_collected": "November 8, 2002",
+  "filename": "JSONs/Thailand Folkspeech.pdf",
+  "folklore": {
+    "item": "mutual aly\nony /3u/#/ as tus 14\nsam/wan/dee/ see / wan / khai/",
+    "medium": null,
+    "place_mentioned": [],
+    "translation": "three /day /good/ —_four/ day / fever/\nGood for three days and fevered for four days."
+  },
+  "location_collected": {
+    "city": "Bellflower",
+    "country": null,
+    "geolocation": null,
+    "state": "CA"
+  },
+  "storage_medium": "PDF"
+}

@@ -1,0 +1,45 @@
+{
+  "_id": null,
+  "filename": "JSONs/Thailand Folkspeech.pdf",
+  "contributor": {
+    "name": "Varinthorn Nakkeow",
+    "age_bucket": "18-24",
+    "gender": "Female",
+    "ethnicity": "‘Thai and 4\" generation Chinese in Thailand",
+    "nationality": null,
+    "languages_spoken": [
+      "English",
+      "Central Thai"
+    ],
+    "occupation": "Student, Library Assistant, Admin. Assistant"
+  },
+  "folklore": {
+    "item": "mutual aly\nony /3u/#/ as tus 14\nsam/wan/dee/ see / wan / khai/",
+    "medium": null,
+    "translation": "three /day /good/ —_four/ day / fever/\nGood for three days and fevered for four days.",
+    "place_mentioned": []
+  },
+  "collector": {
+    "name": "Varinthorn Nakkeow",
+    "gender": "Female",
+    "collector_comments": "The contributor is identified as 'Myself' (collector Varinthorn Nakkeow). The item was learned from her father, Boonlert Nakkeow."
+  },
+  "analysis": {
+    "context": {
+      "use_context": "He used this to describe my relationship with my 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. She was prone to extreme moodswings. One day should she would be laughing and smiling and the next she would be really terse and quiet.",
+      "cultural_background": null,
+      "collection_context": "This is a description I learned from my father, Boonlert Nakkeow."
+    },
+    "interpretation": "This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain why either.",
+    "collector_comments": "Suspect OCR 'mutual aly' precedes 'ony /3u/#/ as tus 14' and may represent a heading or Thai script ('สำนวนไทย', Thai idiom). The folklore item includes the Thai script and transliteration 'sam/wan/dee/ see / wan / khai/'."
+  },
+  "storage_medium": "PDF",
+  "cleaned_full_text": "Folk Speech — Thai Myself, Age 21. Female Student, Library Assistant, Admin. Assistant ‘Thai and 4\" generation Chinese in Thailand English, Central Thai Bellflower, CA.; November 8, 2002 mutual aly ony /3u/#/ as tus 14 sam/wan/dee/ see / wan / khai/ three /day /good/ —_four/ day / fever/ Good for three days and fevered for four days. This is a description I learned from my father, Boonlert Nakkeow. He used this to describe my relationship with my 2000-2001 roommate at Stern Hall, the all-female dormitory at UC Berkeley. She was prone to extreme moodswings. One day should she would be laughing and smiling and the next she would be really terse and quiet. This bit of folk speech is a personality description used to describe a person with rapidly changing moods who also does not pause to explain why either. Varinthorn Nakkeow, Age 21. 10420 Trabuco St.; Bellflower, CA 90706",
+  "date_collected": "November 8, 2002",
+  "location_collected": {
+    "city": "Bellflower",
+    "state": "CA",
+    "country": null,
+    "geolocation": null
+  }
+}

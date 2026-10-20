@@ -1,0 +1,55 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 3,
+  "cache_key": "b28f190d52182730e8a25a546d4d34ea161d66d41a64cc75b41afa0e063d0ce1",
+  "doc_id": "00003_Legend_Vietnam__38.pdf",
+  "errors": [],
+  "finish_reason": null,
+  "generation": {
+    "max_tokens": 16384,
+    "temperature": 0.0
+  },
+  "input_sha256": "6573fdfeaf09c692d09650c03c0b15bd121fddbb39f04c9d7d51d05472e582c5",
+  "json_parsed": false,
+  "latency_seconds": 4.353,
+  "location": "us",
+  "model_alias": "sonnet",
+  "phase": "development",
+  "project_id": "folklore-archive",
+  "provider_adapter_sha256": "feb6aad8ad602b2a023955607ce0e96d4a4def7cc0944b44b69dec942bde14cc",
+  "request_completed": false,
+  "request_error": {
+    "category": "quota_or_capacity",
+    "message": "Error code: 429 - {'error': {'code': 429, 'message': 'Quota exceeded for aiplatform.googleapis.com/us_multi_region_online_prediction_requests_per_base_model with base model: anthropic-claude-sonnet. Please submit a quota increase request. https://cloud.google.com/vertex-ai/docs/generative-ai/quotas-genai.', 'status': 'RESOURCE_EXHAUSTED'}}",
+    "next_step": "Check Agent Platform quota for this model lineage and endpoint location; verify the project used for quota billing.",
+    "provider_body": {
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for aiplatform.googleapis.com/us_multi_region_online_prediction_requests_per_base_model with base model: anthropic-claude-sonnet. Please submit a quota increase request. https://cloud.google.com/vertex-ai/docs/generative-ai/quotas-genai.",
+        "status": "RESOURCE_EXHAUSTED"
+      }
+    },
+    "provider_request_id": null,
+    "status_code": 429,
+    "transient": true,
+    "type": "RateLimitError"
+  },
+  "request_sha256": "e91dd55a54b9c4d492cd0f7a7574c65a16b0ca69912797b664b9781c45d6fc74",
+  "requested_model": "claude-sonnet-5-5",
+  "returned_model": null,
+  "runner_sha256": "a316ec2c8845aabda83e7c89d456ea6ec1c513f8eb2ec5859c324e4eeece3846",
+  "schema_compliant": false,
+  "schema_sha256": "5052f80396d5115b709ffd355f1a93440b05836cd51ec4b446eb9b8f976e042b",
+  "settings_loader_sha256": "3e644c27540498e0ec9c26fb0427a24ca8f09beb400f733ad340c7dbe78565e4",
+  "system_prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3",
+  "target": "archive",
+  "timestamp_utc": "2026-10-14T17:02:14.779806+00:00",
+  "transport": {
+    "initial_backoff_seconds": 1.0,
+    "max_attempts": 3,
+    "timeout_seconds": 120.0
+  },
+  "truncated": false,
+  "usage": null,
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

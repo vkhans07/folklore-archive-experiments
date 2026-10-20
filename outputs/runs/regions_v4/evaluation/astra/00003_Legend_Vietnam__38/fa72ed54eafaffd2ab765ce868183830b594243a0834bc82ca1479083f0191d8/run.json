@@ -1,0 +1,60 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 1,
+  "cache_key": "fa72ed54eafaffd2ab765ce868183830b594243a0834bc82ca1479083f0191d8",
+  "doc_id": "00003_Legend_Vietnam__38.pdf",
+  "errors": [],
+  "finish_reason": null,
+  "generation": {
+    "max_tokens": 65536,
+    "temperature": 0
+  },
+  "input_sha256": "6573fdfeaf09c692d09650c03c0b15bd121fddbb39f04c9d7d51d05472e582c5",
+  "json_parsed": false,
+  "labels_sha256": "c015b892cbb0929c38100c14636a17e62e77dee5e4dd289d71c8cc6d808f8b50",
+  "latency_seconds": 1.603,
+  "location": null,
+  "max_concurrency": 1,
+  "model_alias": "astra",
+  "phase": "evaluation",
+  "project_id": null,
+  "prompt_version": "regions_v4",
+  "provider": "openai_api",
+  "provider_adapter_sha256": "d34bbb703c2f62b18aeeda7f2669a014a3734da1f45afbe1aad7a02e663a34c3",
+  "request_completed": false,
+  "request_error": {
+    "category": "quota_or_capacity",
+    "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.",
+    "next_step": "Check OpenAI API key, project access, model availability, and request details.",
+    "provider_body": {
+      "error": {
+        "code": "credit_balance_exhausted",
+        "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.",
+        "param": null,
+        "type": "insufficient_quota"
+      }
+    },
+    "provider_request_id": "req_0cd762741e834431a732eb671d1be376",
+    "status_code": 429,
+    "transient": true,
+    "type": "HTTPError"
+  },
+  "request_sha256": "af72f9dc5d7dc187b62e1d9fc66bf100030a1f305be34ccda75c4cc543a59c0a",
+  "requested_model": "gpt-6-astra",
+  "returned_model": null,
+  "runner_sha256": "240e075367a8cb000366870b208c09d34425f4173e61b165266b06686a6be087",
+  "schema_compliant": false,
+  "schema_sha256": "69b155692dd189a98034d8488e13e53baffb72162e849a170bf8637bf9bcfb16",
+  "settings_loader_sha256": "4b22a081bf14685ec8e1039301767973bde82ccdd76be6ddd33f2b7c52f5552f",
+  "system_prompt_sha256": "3e0a3f912a54ba699833e3e3da9494b31776970df435552f422bc0c6e053e994",
+  "target": "regions",
+  "timestamp_utc": "2026-10-20T05:20:59.781167+00:00",
+  "transport": {
+    "initial_backoff_seconds": 1.0,
+    "max_attempts": 1,
+    "timeout_seconds": 300.0
+  },
+  "truncated": false,
+  "usage": null,
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

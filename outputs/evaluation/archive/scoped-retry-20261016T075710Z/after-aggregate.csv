@@ -1,0 +1,5 @@
+attempted,json_parsed,json_parsing_rate_of_completed,model_alias,phase,prompt_sha256,request_completed,request_completion_rate,schema_compliance_rate_of_completed,schema_compliant,target,transport_failures
+5,4,1.0,gemini_flash,evaluation,0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3,4,0.8,1.0,4,archive,1
+5,1,0.25,gemini_flash_high,evaluation,0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3,4,0.8,0.25,1,archive,1
+5,4,0.8,haiku,evaluation,0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3,5,1.0,0.8,4,archive,0
+5,5,1.0,sonnet,evaluation,0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3,5,1.0,1.0,5,archive,0

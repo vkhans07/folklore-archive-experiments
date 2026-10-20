@@ -1,0 +1,13 @@
+{
+  "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+  "model_alias": "gemini_flash",
+  "attempted": true,
+  "run_json_written": false,
+  "outcome": "Interrupted sandbox-only attempt after repeated DNS resolution failure (URLError; nodename nor servname provided, or not known). No HTTP response was received. The escalated retry is preserved separately.",
+  "settings": {
+    "max_tokens": 65536,
+    "max_attempts": 5,
+    "initial_backoff_seconds": 10,
+    "timeout_seconds": 300
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "anthropic_sdk_version": "0.125.0",
+  "attempts": 1,
+  "cache_key": "db6202ccf3a6f5e186e0b9bbc0861e0e38b1cf60e486289aad60aae74154d173",
+  "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+  "errors": [],
+  "finish_reason": "end_turn",
+  "generation": {
+    "max_tokens": 65536,
+    "temperature": 0
+  },
+  "input_sha256": "225440896fe05f5aead0af99864829194d57e86136385b501a0b3cc5230f9576",
+  "json_parsed": true,
+  "labels_sha256": "c015b892cbb0929c38100c14636a17e62e77dee5e4dd289d71c8cc6d808f8b50",
+  "latency_seconds": 17.833,
+  "location": null,
+  "max_concurrency": 1,
+  "model_alias": "opus",
+  "phase": "evaluation",
+  "project_id": null,
+  "prompt_version": "regions_v4",
+  "provider": "anthropic_direct",
+  "provider_adapter_sha256": "d34bbb703c2f62b18aeeda7f2669a014a3734da1f45afbe1aad7a02e663a34c3",
+  "request_completed": true,
+  "request_error": null,
+  "request_sha256": "5c91e42c93a4fc48927d0810b0dd7ac68ef2d61264cd7a09ca4818d657825ff8",
+  "requested_model": "claude-opus-5-5",
+  "returned_model": "claude-opus-5-5",
+  "runner_sha256": "240e075367a8cb000366870b208c09d34425f4173e61b165266b06686a6be087",
+  "schema_compliant": true,
+  "schema_sha256": "69b155692dd189a98034d8488e13e53baffb72162e849a170bf8637bf9bcfb16",
+  "settings_loader_sha256": "4b22a081bf14685ec8e1039301767973bde82ccdd76be6ddd33f2b7c52f5552f",
+  "system_prompt_sha256": "3e0a3f912a54ba699833e3e3da9494b31776970df435552f422bc0c6e053e994",
+  "target": "regions",
+  "timestamp_utc": "2026-10-20T05:20:02.631465+00:00",
+  "transport": {
+    "initial_backoff_seconds": 1.0,
+    "max_attempts": 1,
+    "timeout_seconds": 300.0
+  },
+  "truncated": false,
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 14650,
+    "output_tokens": 2206,
+    "output_tokens_details": {
+      "thinking_tokens": 759
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  },
+  "validation_sha256": "4f79a557dacbe9ebfb635009a7cb0d9a3247af501609d2a7f69ab5529fee2642"
+}

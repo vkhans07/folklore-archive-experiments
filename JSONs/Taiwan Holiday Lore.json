@@ -19152,5 +19152,357 @@
     "updated_at": "2026-05-09T17:11:07.719726Z",
     "deleted_at": null,
     "text_joined": "I obtained this expression from my mother, Diana Center, who came from a small town, Stressin, Minsk County, in Russia, several hundred miles from Gomel, I believe, close to the former Lithuanian border. She came to the United States in 1906 or 1907 and lived in Brooklyn, New York, for the rest of her life. (See biography of informant.)"
+  },
+  {
+    "annotation_id": "098731e1-e8db-4b51-98df-2adfdaff706d",
+    "project_id": "label_200",
+    "annotator_id": "annotator_4",
+    "schema_id": "unified_schema",
+    "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+    "page_num": 1,
+    "label": "informant_name",
+    "tokens": [
+      {
+        "token_id": "p1_w0"
+      },
+      {
+        "token_id": "p1_w1"
+      },
+      {
+        "token_id": "p1_w2"
+      }
+    ],
+    "region_bbox_norm": [
+      0.747573,
+      0.047825,
+      0.874865,
+      0.062654
+    ],
+    "text_joined_original": "Linda Wei Chen",
+    "text_joined_user": "Linda Wei Chen",
+    "text_joined_final": "Linda Wei Chen",
+    "text_joined_derived": "Linda Wei Chen",
+    "revision": 1,
+    "created_at": "2026-10-19T22:34:11.732779Z",
+    "updated_at": "2026-10-19T22:34:11.732779Z",
+    "deleted_at": null,
+    "text_joined": "Linda Wei Chen"
+  },
+  {
+    "annotation_id": "9a46d93e-0380-4f39-8962-8c8c16d84b9f",
+    "project_id": "label_200",
+    "annotator_id": "annotator_4",
+    "schema_id": "unified_schema",
+    "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+    "page_num": 1,
+    "label": "collector_annotation",
+    "tokens": [
+      {
+        "token_id": "p1_w0"
+      },
+      {
+        "token_id": "p1_w1"
+      },
+      {
+        "token_id": "p1_w2"
+      },
+      {
+        "token_id": "p1_w3"
+      },
+      {
+        "token_id": "p1_w4"
+      },
+      {
+        "token_id": "p1_w5"
+      },
+      {
+        "token_id": "p1_w6"
+      },
+      {
+        "token_id": "p1_w7"
+      },
+      {
+        "token_id": "p1_w8"
+      },
+      {
+        "token_id": "p1_w9"
+      },
+      {
+        "token_id": "p1_w10"
+      },
+      {
+        "token_id": "p1_w11"
+      },
+      {
+        "token_id": "p1_w12"
+      },
+      {
+        "token_id": "p1_w13"
+      },
+      {
+        "token_id": "p1_w14"
+      },
+      {
+        "token_id": "p1_w15"
+      },
+      {
+        "token_id": "p1_w16"
+      },
+      {
+        "token_id": "p1_w17"
+      },
+      {
+        "token_id": "p1_w18"
+      },
+      {
+        "token_id": "p1_w19"
+      },
+      {
+        "token_id": "p1_w20"
+      },
+      {
+        "token_id": "p1_w21"
+      },
+      {
+        "token_id": "p1_w22"
+      },
+      {
+        "token_id": "p1_w23"
+      },
+      {
+        "token_id": "p1_w24"
+      },
+      {
+        "token_id": "p1_w25"
+      },
+      {
+        "token_id": "p1_w26"
+      },
+      {
+        "token_id": "p1_w27"
+      },
+      {
+        "token_id": "p1_w28"
+      },
+      {
+        "token_id": "p1_w29"
+      },
+      {
+        "token_id": "p1_w30"
+      },
+      {
+        "token_id": "p1_w31"
+      },
+      {
+        "token_id": "p1_w32"
+      },
+      {
+        "token_id": "p1_w33"
+      },
+      {
+        "token_id": "p1_w34"
+      },
+      {
+        "token_id": "p1_w35"
+      },
+      {
+        "token_id": "p1_w36"
+      },
+      {
+        "token_id": "p1_w37"
+      },
+      {
+        "token_id": "p1_w38"
+      },
+      {
+        "token_id": "p1_w39"
+      },
+      {
+        "token_id": "p1_w40"
+      },
+      {
+        "token_id": "p1_w41"
+      },
+      {
+        "token_id": "p1_w42"
+      },
+      {
+        "token_id": "p1_w43"
+      },
+      {
+        "token_id": "p1_w44"
+      },
+      {
+        "token_id": "p1_w45"
+      },
+      {
+        "token_id": "p1_w46"
+      },
+      {
+        "token_id": "p1_w47"
+      },
+      {
+        "token_id": "p1_w48"
+      },
+      {
+        "token_id": "p1_w49"
+      },
+      {
+        "token_id": "p1_w50"
+      },
+      {
+        "token_id": "p1_w51"
+      },
+      {
+        "token_id": "p1_w52"
+      },
+      {
+        "token_id": "p1_w53"
+      },
+      {
+        "token_id": "p1_w54"
+      },
+      {
+        "token_id": "p1_w55"
+      },
+      {
+        "token_id": "p1_w56"
+      },
+      {
+        "token_id": "p1_w57"
+      },
+      {
+        "token_id": "p1_w58"
+      },
+      {
+        "token_id": "p1_w59"
+      },
+      {
+        "token_id": "p1_w60"
+      },
+      {
+        "token_id": "p1_w61"
+      },
+      {
+        "token_id": "p1_w62"
+      },
+      {
+        "token_id": "p1_w63"
+      },
+      {
+        "token_id": "p1_w64"
+      },
+      {
+        "token_id": "p1_w65"
+      },
+      {
+        "token_id": "p1_w66"
+      },
+      {
+        "token_id": "p1_w67"
+      },
+      {
+        "token_id": "p1_w68"
+      },
+      {
+        "token_id": "p1_w69"
+      },
+      {
+        "token_id": "p1_w70"
+      },
+      {
+        "token_id": "p1_w71"
+      },
+      {
+        "token_id": "p1_w72"
+      },
+      {
+        "token_id": "p1_w73"
+      },
+      {
+        "token_id": "p1_w74"
+      },
+      {
+        "token_id": "p1_w75"
+      },
+      {
+        "token_id": "p1_w76"
+      },
+      {
+        "token_id": "p1_w77"
+      },
+      {
+        "token_id": "p1_w78"
+      },
+      {
+        "token_id": "p1_w79"
+      },
+      {
+        "token_id": "p1_w80"
+      },
+      {
+        "token_id": "p1_w81"
+      },
+      {
+        "token_id": "p1_w82"
+      },
+      {
+        "token_id": "p1_w83"
+      },
+      {
+        "token_id": "p1_w84"
+      },
+      {
+        "token_id": "p1_w85"
+      },
+      {
+        "token_id": "p1_w86"
+      },
+      {
+        "token_id": "p1_w87"
+      },
+      {
+        "token_id": "p1_w88"
+      },
+      {
+        "token_id": "p1_w89"
+      },
+      {
+        "token_id": "p1_w90"
+      },
+      {
+        "token_id": "p1_w91"
+      },
+      {
+        "token_id": "p1_w92"
+      },
+      {
+        "token_id": "p1_w93"
+      },
+      {
+        "token_id": "p1_w94"
+      },
+      {
+        "token_id": "p1_w95"
+      },
+      {
+        "token_id": "p1_w96"
+      }
+    ],
+    "region_bbox_norm": [
+      0.116505,
+      0.16502,
+      0.871628,
+      0.355541
+    ],
+    "text_joined_original": "Every year around this date, young lovers celebrate their love for each other with gifts and romance. It is in fact very similar to Valentine’s Day. At first when I heard this story, I struggled between characterizing it as a myth or a legend, because it explains the origin of a date and includes divine intervention. However, it does take place after the creation of man and the world, Also, Chinese people take this to be a true story. They believe that the couple existed, and that it is because of them that we have Chi Shi.",
+    "text_joined_user": "Every year around this date, young lovers celebrate their love for each other with gifts and romance. It is in fact very similar to Valentine’s Day. At first when I heard this story, I struggled between characterizing it as a myth or a legend, because it explains the origin of a date and includes divine intervention. However, it does take place after the creation of man and the world, Also, Chinese people take this to be a true story. They believe that the couple existed, and that it is because of them that we have Chi Shi.",
+    "text_joined_final": "Every year around this date, young lovers celebrate their love for each other with gifts and romance. It is in fact very similar to Valentine’s Day. At first when I heard this story, I struggled between characterizing it as a myth or a legend, because it explains the origin of a date and includes divine intervention. However, it does take place after the creation of man and the world, Also, Chinese people take this to be a true story. They believe that the couple existed, and that it is because of them that we have Chi Shi.",
+    "text_joined_derived": "Every year around this date, young lovers celebrate their love for each other with gifts and romance. It is in fact very similar to Valentine’s Day. At first when I heard this story, I struggled between characterizing it as a myth or a legend, because it explains the origin of a date and includes divine intervention. However, it does take place after the creation of man and the world, Also, Chinese people take this to be a true story. They believe that the couple existed, and that it is because of them that we have Chi Shi.",
+    "revision": 1,
+    "created_at": "2026-10-19T22:34:11.732779Z",
+    "updated_at": "2026-10-19T22:34:11.732779Z",
+    "deleted_at": null,
+    "text_joined": "Every year around this date, young lovers celebrate their love for each other with gifts and romance. It is in fact very similar to Valentine’s Day. At first when I heard this story, I struggled between characterizing it as a myth or a legend, because it explains the origin of a date and includes divine intervention. However, it does take place after the creation of man and the world, Also, Chinese people take this to be a true story. They believe that the couple existed, and that it is because of them that we have Chi Shi."
   }
 ]

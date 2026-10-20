@@ -1,0 +1,224 @@
+{
+  "annotations": [
+    {
+      "bbox": [
+        0.530744,
+        0.09576,
+        0.584682,
+        0.11263
+      ],
+      "label": "informant_name",
+      "page_num": 0,
+      "text": "Myself,"
+    },
+    {
+      "bbox": [
+        0.590076,
+        0.09576,
+        0.645092,
+        0.11263
+      ],
+      "label": "informant_age",
+      "page_num": 0,
+      "text": "Age 21."
+    },
+    {
+      "bbox": [
+        0.651564,
+        0.09576,
+        0.703344,
+        0.11263
+      ],
+      "label": "informant_gender",
+      "page_num": 0,
+      "text": "Female"
+    },
+    {
+      "bbox": [
+        0.530631,
+        0.109784,
+        0.852232,
+        0.127252
+      ],
+      "label": "informant_occupation",
+      "page_num": 0,
+      "text": "Student, Library Assistant, Admin. Assistant"
+    },
+    {
+      "bbox": [
+        0.530744,
+        0.12543,
+        0.845738,
+        0.143425
+      ],
+      "label": "informant_ethnicity",
+      "page_num": 0,
+      "text": "‘Thai and 4\" generation Chinese in Thailand"
+    },
+    {
+      "bbox": [
+        0.530744,
+        0.143768,
+        0.688,
+        0.158389
+      ],
+      "label": "informant_languages",
+      "page_num": 0,
+      "text": "English, Central Thai"
+    },
+    {
+      "bbox": [
+        0.530744,
+        0.159401,
+        0.650485,
+        0.175146
+      ],
+      "label": "informant_address",
+      "page_num": 0,
+      "text": "Bellflower, CA.;"
+    },
+    {
+      "bbox": [
+        0.659116,
+        0.159401,
+        0.791802,
+        0.175146
+      ],
+      "label": "collection_date",
+      "page_num": 0,
+      "text": "November 8, 2002"
+    },
+    {
+      "bbox": [
+        0.121899,
+        0.307212,
+        0.42287,
+        0.322958
+      ],
+      "label": "folklore_item",
+      "page_num": 0,
+      "text": "sam/wan/dee/ see / wan / khai/"
+    },
+    {
+      "bbox": [
+        0.121899,
+        0.337765,
+        0.428264,
+        0.353511
+      ],
+      "label": "folklore_translation",
+      "page_num": 0,
+      "text": "three /day /good/ —_four/ day / fever/"
+    },
+    {
+      "bbox": [
+        0.122977,
+        0.398872,
+        0.483281,
+        0.414618
+      ],
+      "label": "folklore_translation",
+      "page_num": 0,
+      "text": "Good for three days and fevered for four days."
+    },
+    {
+      "bbox": [
+        0.121899,
+        0.459153,
+        0.860841,
+        0.474898
+      ],
+      "label": "informant_explanation",
+      "page_num": 0,
+      "text": "This is a description I learned from my father, Boonlert Nakkeow. He used this to describe my"
+    },
+    {
+      "bbox": [
+        0.121899,
+        0.489706,
+        0.807982,
+        0.505452
+      ],
+      "label": "informant_explanation",
+      "page_num": 0,
+      "text": "relationship with my 2000-2001 roommate at Stern Hall, the all-female dormitory at UC"
+    },
+    {
+      "bbox": [
+        0.122977,
+        0.520259,
+        0.859763,
+        0.536005
+      ],
+      "label": "informant_explanation",
+      "page_num": 0,
+      "text": "Berkeley. She was prone to extreme moodswings. One day should she would be laughing and"
+    },
+    {
+      "bbox": [
+        0.121899,
+        0.54993,
+        0.867312,
+        0.5668
+      ],
+      "label": "informant_explanation",
+      "page_num": 0,
+      "text": "smiling and the next she would be really terse and quiet. This bit of folk speech is a personality"
+    },
+    {
+      "bbox": [
+        0.121899,
+        0.581366,
+        0.854369,
+        0.597111
+      ],
+      "label": "informant_explanation",
+      "page_num": 0,
+      "text": "description used to describe a person with rapidly changing moods who also does not pause to"
+    },
+    {
+      "bbox": [
+        0.121899,
+        0.611919,
+        0.269687,
+        0.627665
+      ],
+      "label": "informant_explanation",
+      "page_num": 0,
+      "text": "explain why either."
+    },
+    {
+      "bbox": [
+        0.66343,
+        0.920043,
+        0.819848,
+        0.933539
+      ],
+      "label": "collector_name",
+      "page_num": 0,
+      "text": "Varinthorn Nakkeow,"
+    },
+    {
+      "bbox": [
+        0.825243,
+        0.920043,
+        0.88026,
+        0.933539
+      ],
+      "label": "collector_age",
+      "page_num": 0,
+      "text": "Age 21."
+    },
+    {
+      "bbox": [
+        0.580367,
+        0.935732,
+        0.880258,
+        0.949229
+      ],
+      "label": "collector_address",
+      "page_num": 0,
+      "text": "10420 Trabuco St.; Bellflower, CA 90706"
+    }
+  ]
+}

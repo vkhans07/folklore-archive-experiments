@@ -3,6 +3,8 @@
   "models": {
     "sonnet": {"id": "claude-sonnet-5-5", "provider": "anthropic_direct"},
     "haiku": {"id": "claude-haiku-5-5", "provider": "anthropic_direct"},
+    "opus": {"id": "claude-opus-5-5", "provider": "anthropic_direct"},
+    "astra": {"id": "gpt-6-astra", "provider": "openai_api", "reasoning_effort": "medium"},
     "gemini_flash": {"id": "gemini-3.8-flash", "provider": "gemini_api", "thinking_level": "medium"},
     "gemini_flash_high": {"id": "gemini-3.8-flash", "provider": "gemini_api", "thinking_level": "high"}
   },

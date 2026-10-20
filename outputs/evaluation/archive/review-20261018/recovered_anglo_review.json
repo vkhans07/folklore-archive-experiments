@@ -1,0 +1,82 @@
+{
+  "review_date": "2026-10-18",
+  "document": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+  "model_alias": "gemini_flash",
+  "run_path": "outputs/runs/archive/evaluation/gemini_flash/00003_Anglo_Folkspeech_VI_A67_C6__74/85ea15bf33deb4f177cd7e6b2ab57f704f2886860f398b0bb0ae265eeb9d89fb-retry-20261018T210435458144Z/run.json",
+  "output_path": "outputs/runs/archive/evaluation/gemini_flash/00003_Anglo_Folkspeech_VI_A67_C6__74/85ea15bf33deb4f177cd7e6b2ab57f704f2886860f398b0bb0ae265eeb9d89fb-retry-20261018T210435458144Z/archive.json",
+  "status": {
+    "request_completed": true,
+    "json_parsed": true,
+    "schema_compliant": true,
+    "truncated": false,
+    "max_tokens": 65536,
+    "prompt_sha256": "0ce4a68f81ebbf8b4bbc63047890d885004dd5b03f90626d74b4ac357f9f3ac3"
+  },
+  "source_basis": {
+    "prepared_ocr": "outputs/inputs/00003_Anglo_Folkspeech_VI_A67_C6__74.json",
+    "prior_reference_diagnostics": "outputs/evaluation/archive/review-20261018/reference_text_presence.json",
+    "visual_page_inspection": false
+  },
+  "findings": [
+    {
+      "id": "candidate_proverb_item_completeness",
+      "type": "candidate_mismatch_against_existing_region_reference",
+      "source_ocr_lines": [
+        "Tre gia mang moc!",
+        "Chare ya mung mowk",
+        "Bamboo old shoot grow",
+        "Old bamboo is replaced by its shoots."
+      ],
+      "archive_output": {
+        "folklore.item": "Tre gia mang moc!",
+        "folklore.translation": "Bamboo old shoot grow\nOld bamboo is replaced by its shoots."
+      },
+      "prior_reference": {
+        "folklore_item": "Tre gia mang moc! Chare ya mung mowk",
+        "folklore_translation": "Bamboo old shoot grow Old bamboo is replaced by its shoots."
+      },
+      "assessment": "The phonetic line is present in cleaned_full_text but not in folklore.item or translation. Candidate completeness mismatch against the prior region reference; archive-to-region mapping is not a validated scoring contract, and prompt semantics require human adjudication."
+    },
+    {
+      "id": "identity_and_collection_metadata",
+      "type": "source_supported_fields",
+      "source_ocr": [
+        "Thinh Nguyen, male, 20",
+        "student at UCB, Vietnamese",
+        "Vietnamese",
+        "Berkeley, Ca",
+        "11-22-92",
+        "Jon Tai Tran, 21"
+      ],
+      "output": {
+        "contributor.name": "Thinh Nguyen",
+        "contributor.gender": "male",
+        "contributor.age_bucket": "18-24",
+        "contributor.occupation": "student at UCB",
+        "contributor.languages_spoken": [],
+        "collector.name": "Jon Tai Tran",
+        "collector.gender": null,
+        "date_collected": "11-22-92",
+        "location_collected": {
+          "city": "Berkeley",
+          "state": "Ca",
+          "country": null,
+          "geolocation": null
+        }
+      },
+      "assessment": "Name, gender, age bucket, occupation, collector name, date, and collection location are supported. The standalone Vietnamese line may denote language spoken, but its role is uncertain; confirm before classifying the empty language array as an omission. Collector gender is unstated, so null is appropriate."
+    },
+    {
+      "id": "collector_comment_field_boundary",
+      "type": "semantic_field_choice",
+      "source_ocr_excerpt": "I agree with his interpretation. Even though some believe that wisdom grows with age...",
+      "output_field": "analysis.collector_comments",
+      "assessment": "The passage is in the source and attributed to the collector, but its assignment between collector.collector_comments and analysis.collector_comments depends on the prompt's field boundary."
+    }
+  ],
+  "limitations": [
+    "Qualitative spot review only; no archive accuracy score computed.",
+    "Prior reference diagnostics use text-presence checks and include OCR-mismatch candidates; they are not benchmark scores.",
+    "No visual inspection of the scanned page was performed."
+  ]
+}

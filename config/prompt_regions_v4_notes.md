@@ -6,7 +6,7 @@
 
 The raw export rows contain provenance and workflow metadata. The evaluator projects active rows to `page_num`, `label`, `text` (using `text_joined_final` with logged fallbacks), and `bbox` (from `region_bbox_norm`). Each prediction is scoped to one document by its run metadata, so it does not need a `doc_id` field. The prediction schema already matches these four evaluation fields.
 
-The five target documents contain 102 active references across 20 labels. The full export contains 226 active annotations, including documents outside the current manifest. No reference rows, expected counts, or answer examples are included in provider requests.
+The five target documents contain 104 active references across 20 labels. The full export contains 228 active annotations, including documents outside the current manifest. No reference rows, expected counts, or answer examples are included in provider requests.
 
 ## Prompt decisions
 

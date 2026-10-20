@@ -25,6 +25,11 @@ def model_settings():
     for alias, model in config["models"].items():
         key = alias.upper()
         model["id"] = os.getenv("FOLKLORE_%s_MODEL" % key) or model["id"]
+        if "reasoning_effort" in model:
+            effort = os.getenv("FOLKLORE_%s_REASONING_EFFORT" % key) or model["reasoning_effort"]
+            if effort not in ("low", "medium", "high", "xhigh", "max"):
+                raise ValueError("FOLKLORE_%s_REASONING_EFFORT is not supported" % key)
+            model["reasoning_effort"] = effort
         if "thinking_level" in model:
             level = os.getenv("FOLKLORE_%s_THINKING_LEVEL" % key) or model["thinking_level"]
             if level not in ("low", "medium", "high"):

@@ -1,0 +1,44 @@
+{
+  "new_results": [
+    {
+      "model": "gemini_flash",
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash/00003_Anglo_Folkspeech_VI_A67_C6__74/85ea15bf33deb4f177cd7e6b2ab57f704f2886860f398b0bb0ae265eeb9d89fb-retry-20261018T210435458144Z/run.json",
+      "schema_valid": true,
+      "attempts": 1,
+      "latency_seconds": 24.303
+    },
+    {
+      "model": "gemini_flash_high",
+      "doc_id": "00002_56_Thailand_Folkspeech__38.pdf",
+      "run_path": "outputs/runs/archive/evaluation/gemini_flash_high/00002_56_Thailand_Folkspeech__38/3bce7ce84842ff59d7a43176282081f02e511fc5e5a4c2ebcca3ae70c3336b05-retry-20261018T210518010105Z/run.json",
+      "schema_valid": true,
+      "attempts": 2,
+      "latency_seconds": 478.755
+    }
+  ],
+  "other_selected_pairs_unchanged": 18,
+  "total_schema_valid": 16,
+  "remaining_invalid": [
+    {
+      "model": "haiku",
+      "doc_id": "00003_Legend_Vietnam__38.pdf",
+      "truncated": true
+    },
+    {
+      "model": "gemini_flash_high",
+      "doc_id": "00003_Legend_Vietnam__38.pdf",
+      "truncated": true
+    },
+    {
+      "model": "gemini_flash_high",
+      "doc_id": "00001_09_Taiwan_holiday_lore__93.pdf",
+      "truncated": true
+    },
+    {
+      "model": "gemini_flash_high",
+      "doc_id": "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf",
+      "truncated": true
+    }
+  ]
+}

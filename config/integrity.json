@@ -1,16 +1,31 @@
 {
   "expected_counts": {
     "00003_Legend_Vietnam__38.pdf": 31,
-    "00001_09_Taiwan_holiday_lore__93.pdf": 17,
+    "00001_09_Taiwan_holiday_lore__93.pdf": 19,
     "00002_86_Turkey_Proverbs_III__147.pdf": 18,
     "00002_56_Thailand_Folkspeech__38.pdf": 19,
     "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf": 17
   },
   "expected_pages": {
-    "00003_Legend_Vietnam__38.pdf": [0, 1, 2, 3, 4],
-    "00001_09_Taiwan_holiday_lore__93.pdf": [0, 1],
-    "00002_86_Turkey_Proverbs_III__147.pdf": [0],
-    "00002_56_Thailand_Folkspeech__38.pdf": [0],
-    "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf": [0]
+    "00003_Legend_Vietnam__38.pdf": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "00001_09_Taiwan_holiday_lore__93.pdf": [
+      0,
+      1
+    ],
+    "00002_86_Turkey_Proverbs_III__147.pdf": [
+      0
+    ],
+    "00002_56_Thailand_Folkspeech__38.pdf": [
+      0
+    ],
+    "00003_Anglo_Folkspeech_VI_A67_C6__74.pdf": [
+      0
+    ]
   }
 }

@@ -261,3 +261,75 @@ def request_gemini_api(request, transport):
             error = _error_details(exc, provider="gemini_api")
             error["transient"] = False
             return None, round(time.monotonic() - started, 3), error, attempt
+
+
+def request_openai_api(request, transport):
+    """Call the OpenAI Responses API and normalize its result for the runner."""
+    import os
+    started = time.monotonic()
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        error = {"type": "ValueError", "message": "OPENAI_API_KEY is not set", "category": "authentication_or_permission",
+                 "next_step": "Set OPENAI_API_KEY before using the OpenAI API.", "transient": False}
+        return None, 0.0, error, 0
+
+    for attempt in range(1, transport["max_attempts"] + 1):
+        http_request = Request(
+            "https://api.openai.com/v1/responses",
+            data=json.dumps(request).encode("utf-8"),
+            headers={"Authorization": "Bearer " + api_key, "Content-Type": "application/json"},
+            method="POST",
+        )
+        try:
+            with urlopen(http_request, timeout=transport["timeout_seconds"]) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            output_text = []
+            for item in payload.get("output", []):
+                for content in item.get("content", []):
+                    if content.get("type") == "output_text" and content.get("text"):
+                        output_text.append(content["text"])
+            status = payload.get("status")
+            incomplete_reason = (payload.get("incomplete_details") or {}).get("reason")
+            stop_reason = "max_tokens" if incomplete_reason in ("max_output_tokens", "max_tokens") else ("stop" if status == "completed" else status)
+            usage = payload.get("usage") or {}
+            normalized = {
+                "model": payload.get("model") or request["model"],
+                "content": [{"type": "text", "text": "".join(output_text)}],
+                "stop_reason": stop_reason,
+                "usage": {"input_tokens": usage.get("input_tokens"), "output_tokens": usage.get("output_tokens")},
+                "provider_response": payload,
+            }
+            return normalized, round(time.monotonic() - started, 3), None, attempt
+        except HTTPError as exc:
+            try:
+                body_text = exc.read().decode("utf-8", errors="replace")
+                body = json.loads(body_text) if body_text else {}
+            except Exception:
+                body = {"raw": "OpenAI returned an unreadable error body."}
+            message = ((body.get("error") or {}).get("message") if isinstance(body, dict) else None) or "OpenAI API HTTP %s" % exc.code
+            error = {"type": "HTTPError", "message": message, "status_code": exc.code,
+                     "provider_request_id": exc.headers.get("x-request-id"), "provider_body": body,
+                     "category": "quota_or_capacity" if exc.code == 429 else ("authentication_or_permission" if exc.code in (401, 403) else ("model_or_location" if exc.code == 404 else ("invalid_request" if exc.code == 400 else ("provider_service" if exc.code >= 500 else "provider_error")))),
+                     "next_step": "Check OpenAI API key, project access, model availability, and request details.",
+                     "transient": exc.code in (408, 409, 429, 500, 502, 503, 504)}
+            if not error["transient"] or attempt == transport["max_attempts"]:
+                return None, round(time.monotonic() - started, 3), error, attempt
+            try:
+                retry_after = float(exc.headers.get("Retry-After", "0"))
+            except (TypeError, ValueError):
+                retry_after = 0.0
+            delay = max(retry_after, transport["initial_backoff_seconds"] * (2 ** (attempt - 1)))
+            print("OpenAI: HTTP %s; retrying in %.1fs" % (exc.code, delay), file=sys.stderr, flush=True)
+            time.sleep(delay)
+        except (URLError, TimeoutError) as exc:
+            error = {"type": type(exc).__name__, "message": str(exc), "status_code": None,
+                     "category": "network_or_timeout", "next_step": "Check network access and timeout settings, then retry.", "transient": True}
+            if attempt == transport["max_attempts"]:
+                return None, round(time.monotonic() - started, 3), error, attempt
+            delay = transport["initial_backoff_seconds"] * (2 ** (attempt - 1))
+            print("OpenAI: %s; retrying in %.1fs" % (type(exc).__name__, delay), file=sys.stderr, flush=True)
+            time.sleep(delay)
+        except Exception as exc:
+            error = {"type": type(exc).__name__, "message": str(exc), "status_code": None,
+                     "category": "provider_error", "next_step": "Inspect the saved request and provider response details.", "transient": False}
+            return None, round(time.monotonic() - started, 3), error, attempt

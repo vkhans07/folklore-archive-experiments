@@ -6,23 +6,28 @@ from .matching import iou, normalized_text
 
 
 def load_references(docs, prepared_by_doc):
-    """Only evaluator code calls this; source JSON exports are never changed."""
+    """Load active rows from the source exports; evaluation itself is read-only."""
     paths = sorted((ROOT / "JSONs").glob("*.json"))
     if not paths:
         raise FileNotFoundError("No annotation export in JSONs/")
     by_hash = defaultdict(list)
     for path in paths:
         by_hash[file_sha(path)].append(path)
-    records, seen_ids = [], set()
+    records_by_id, records = {}, []
     for group in by_hash.values():
         rows = read_json(group[0])
         if not isinstance(rows, list):
             raise ValueError("Reference export must be a list: " + str(group[0]))
         for row in rows:
             annotation_id = row.get("annotation_id")
-            if not annotation_id or annotation_id in seen_ids:
-                raise ValueError("Missing or duplicate annotation_id: " + str(annotation_id))
-            seen_ids.add(annotation_id)
+            if not annotation_id:
+                raise ValueError("Missing annotation_id")
+            previous = records_by_id.get(annotation_id)
+            if previous is not None:
+                if previous != row:
+                    raise ValueError("Conflicting duplicate annotation_id: " + str(annotation_id))
+                continue
+            records_by_id[annotation_id] = row
             if row.get("deleted_at") is None:
                 records.append(row)
     target = {d["doc_id"] for d in docs}
@@ -65,5 +70,5 @@ def load_references(docs, prepared_by_doc):
             for other in refs[doc_id][i + 1:]:
                 if ref["page_num"] == other["page_num"] and ref["label"] == other["label"] and iou(ref["bbox"], other["bbox"]) >= 0.8:
                     flags.append({"doc_id": doc_id, "annotation_id": ref["annotation_id"], "other_annotation_id": other["annotation_id"], "type": "ambiguous_overlapping_references"})
-    audit = {"source_exports": [{"sha256": digest, "canonical_file": str(group[0].relative_to(ROOT)), "duplicate_files": [str(p.relative_to(ROOT)) for p in group[1:]]} for digest, group in by_hash.items()], "unique_annotation_ids_all_documents": len(seen_ids), "fallbacks": fallbacks}
+    audit = {"source_exports": [{"sha256": digest, "canonical_file": str(group[0].relative_to(ROOT)), "duplicate_files": [str(p.relative_to(ROOT)) for p in group[1:]]} for digest, group in by_hash.items()], "unique_annotation_ids_all_documents": len(records_by_id), "fallbacks": fallbacks}
     return refs, flags, audit
